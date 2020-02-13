@@ -35,7 +35,7 @@ Does proximity to sport parks and access to fast food influcence the health of c
 ### Data used in this dashboard:
 * Mapbox API
 * Data from the [city of Amsterdam](https://data.amsterdam.nl), [Central Bureau of Statistics](https://www.cbs.nl)
-- School data
-- Income data
-- Housing data
+  - School data
+  - Income data
+  - Housing data
 * (PanorAMS dataset)
