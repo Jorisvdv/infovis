@@ -6,36 +6,47 @@
 * Sander van Wickeren
 * Guido Visser
 
-## Suggestions
-For the information visualization project we have two possible projects that live at the interaction of data storytelling and visual analytics.
+# Meeting notes 13-2
+* Notes from each TA meeting will be added to the readme file in the Gihub.
 
-## Music Project
+## Project proposal: Music Project
 This interactive dashboard lets you dive into the music genres, topics and emotions over the years. An example of a question that our dashboard might answer is: Was the music around 9/11 more negative or was it actually more positive to act as a counter movement?
 Inspired by pudding.cool [Best Year in Music project](https://pudding.cool/projects/music-history/) [Github](https://github.com/the-pudding/music-taste-2019)
 
-### Data used in this dashboard:
-* Scrape the music top 2000 over x years. Scrape the names, artists and lyrics of these songs.
-* Do topic analysis on the text.
-* Take the emotions and other properties of the songs through the Spotify API. The Spotify endpoint includes objects like “audio features”: this includes song properties like danceability, energy, tempo, valence(positive or negative).
-* Scrape big events over the years (artist deaths)
+* Earlier projects have been done with Spotify and Deezer, but no Top 2000.
+* We have historic data of the ranking for all 20 years, these will be combined with additional information using the Spotify API. The Spotify endpoint includes objects like “audio features”: this includes song properties like danceability, energy, tempo, valence(positive or negative).
+* We will send an email to Radio 2 to request additional demographic data on the voting. Gjorgji will be cc’ed in that mail
+
+## Goals
+Our goal for next week 20-02 will be:
+- [ ] Have one or two visualisations.
+- [ ] Think of three questions the users wants to answer using the visualisation.
+- [ ] How do we want to show ? Shapes, colours transitions?
+	* Expecting custom components for the final end product
+- [ ] Think of a Name. Have it be descriptive and catchy.
+- [ ] Plot out most interesting parts of the dataset.
+
+## Ideas
+* Circular design
+“Simon says game”
+Energy levels as colors
+Burst that fills up screen
+Multiple interaction levels (center and corners)
+
+* Directed graphs
+Different (data) dimensions (genre/year of release) as different paths between edges
 
 
-## Healthy neighbourhoods
-Combining neighbourhoods level health statistics with GIS data
+Tasks for this week:
+* Everyone create a couple of suggestions for the questions above.
+* Study spotify api on types of data available.
+- [x] Mail to radio 2
+- [ ] Combine top 2000 list
+- [ ] Merge top 2000 list with spotify id's
+- [ ] Think on extra sources (scrape radio 2 website?/ Scrape big events over the years (artist deaths))
+- [ ] Decide on development envoirment.
+- [ ] Mail to [Gjorgji](mailto:g.strezoski@uva.nl) on adding Guido to the group 
 
-This dashboard centered around an interactive map tells the story of income inequality and the effect that that has on kids growing up. Data shows that poor neighborhoods have less places to buy healthy food, less good schools and less places to do sports. Poor neighborhoods include more convenience stores, fastfood and other negative influences. This lack of opportunity keeps inequality in its place.
-
-We let users explore this interactively layer by layer. Next to the Mapbox map we will use D3 to build interactive components to control the dashboard.
 
 
-### Questions:
-Does proximity to sport parks and access to fast food influcence the health of citizens in a neighbourhood?
 
-
-### Data used in this dashboard:
-* Mapbox API
-* Data from the [city of Amsterdam](https://data.amsterdam.nl), [Central Bureau of Statistics](https://www.cbs.nl)
-  - School data
-  - Income data
-  - Housing data
-* (PanorAMS dataset)
