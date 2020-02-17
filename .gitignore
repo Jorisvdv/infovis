@@ -1,3 +1,8 @@
+# user config
+.idea
+.node-version
+.python-version
+
 
 # Created by https://www.gitignore.io/api/node,macos,python,pycharm,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,macos,python,pycharm,visualstudiocode
