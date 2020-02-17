@@ -6,6 +6,32 @@
 * Sander van Wickeren
 * Guido Visser
 
+# Setup
+
+## Prerequisites
+This project is made with the following software. It may work on older version but we don't guarantee it.
+
+* Nodejs 12.16.0
+* Python 3.8.0
+* npm or yarn
+
+## Setup
+
+```shell script
+npm install  # Install node dependencies
+pip install -r requirements.txt  # Install python dependencies
+```
+
+# Developing
+
+To work on the projects you need to run two commands. The javascript is bundled by parcel, it rebundles files on chance.
+These static files are served by Flask.
+
+```shell script
+npm run watch  # this runs parcel which will build the static files
+npm start  # this starts flask and serves the files
+```
+
 # Meeting notes 13-2
 * Notes from each TA meeting will be added to the readme file in the Gihub.
 
