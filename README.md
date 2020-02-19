@@ -49,7 +49,7 @@ Our goal for next week 20-02 will be:
 - [ ] Think of three questions the users wants to answer using the visualisation.
 - [ ] How do we want to show ? Shapes, colours transitions?
 	* Expecting custom components for the final end product
-- [ ] Think of a Name. Have it be descriptive and catchy.
+- [x] Think of a Name. Have it be descriptive and catchy.
 - [ ] Plot out most interesting parts of the dataset.
 
 ## Ideas
@@ -70,7 +70,7 @@ Tasks for this week:
 - [ ] Combine top 2000 list
 - [ ] Merge top 2000 list with spotify id's
 - [ ] Think on extra sources (scrape radio 2 website?/ Scrape big events over the years (artist deaths))
-- [ ] Decide on development envoirment.
+- [x] Decide on development envoirment.
 - [ ] Mail to [Gjorgji](mailto:g.strezoski@uva.nl) on adding Guido to the group 
 
 
