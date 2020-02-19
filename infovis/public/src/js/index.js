@@ -1,3 +1,3 @@
-import stackArea from "./stacked-area"
+import stackArea from './stacked-area'
 
-stackArea("#genre-stacked-area");
+stackArea('#genre-stacked-area')

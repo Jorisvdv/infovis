@@ -1,11 +1,12 @@
 import * as d3 from "d3"
-import data from "../../../../data/mock_genres"
+import data from "../../../../data/mock_genres.json"
 
 const width = 720;
 const height = 520;
-const margin = 30;
+const margin = 40;
 
 export default (id) => {
+    // Create graph and set margins
     const graph = d3
         .select(id)
         .append("svg")
@@ -14,38 +15,35 @@ export default (id) => {
         .append("g")
         .attr("transform", `translate(${margin}, ${margin})`);
 
-    const x = d3
+    const xAxis = d3
         .scaleTime()
-        .domain([new Date("1999"), new Date("2019")])
-        .range([0, width])
+        .domain(d3.extent(data.rock, d => new Date(d.year)))
+        .range([0, width]);
 
-    const y = d3.scaleLinear()
-        .domain([0, 100])
-        .range([0, height])
+    const yAxis = d3.scaleLinear()
+        .domain([0, 1000])
+        .range([height, 0]);
 
     graph
         .append("g")
         .attr("transform", `translate(0, ${height})`)
-        .call(d3.axisBottom(x))
+        .call(d3.axisBottom(xAxis));
 
     graph
         .append("g")
-        .call(d3.axisLeft(y))
+        .call(d3.axisLeft(yAxis));
 
-    console.log(data)
-    const data = data.rock
+    const area = d3.area()
+        .x((d) => xAxis(new Date(d.year))) 
+        .y0(yAxis(0))
+        .y1((d) => yAxis(d.value));
 
-    const total = data.reduce((a, b) => a + b);
     graph
         .append("path")
-        .data(data)
+        .datum(data.rock)
         .attr("fill", "#cce5df")
         .attr("stroke", "#69b3a2")
         .attr("stroke-width", 1.5)
-        .attr("d", d3.area()
-            .x((_, i) => 1999+i)
-            .y0(0)
-            .y1((d) => d / total * 100)
-        )
+        .attr("d", area);
 
 }
