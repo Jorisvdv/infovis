@@ -2,7 +2,8 @@ import numpy as np
 import json
 
 AMOUNT_OF_TRACKS = 2000
-AMOUNT_OF_YEARS = 20
+AMOUNT_OF_YEARS = 21
+START_YEAR = 1999
 
 
 def generate_probability_matrix(amount_of_genres):
@@ -13,11 +14,11 @@ def generate_probability_matrix(amount_of_genres):
         probability_matrix (np.Array): probability matrix, columns are normalized to 1
     """
 
-    probability_matrix = np.random.uniform(0, 1, (amount_of_genres, amount_of_genres))
+    probability_matrix = np.random.uniform(0, .1, (amount_of_genres, amount_of_genres))
     for i in range(amount_of_genres):
         probability_matrix[i, i] = 0
 
-    return probability_matrix
+    return probability_matrix / probability_matrix.sum()
 
 
 def generate_mock_data(genres):
@@ -47,27 +48,58 @@ def generate_mock_data(genres):
         next_year = last_year + gained - stolen
         next_year = AMOUNT_OF_TRACKS * next_year / np.sum(next_year)
 
-        mock_data = np.concatenate((mock_data, next_year), axis=0)
+        mock_data = np.concatenate((mock_data, np.expand_dims(next_year, axis=0)), axis=0)
         last_year = next_year
 
     return mock_data
 
-def generate_kut_mock_data(genres):
+def convert_to_json(mock_data, genres):
     """
+    Convert the mock data to a json in the format below and saves the json object.
+    {
+        "rock": [
+                    {
+                        "year": 1999,
+                        "value": 293
+                    },
+                    {
+                        "year": 2000,
+                        "value": 542
+                    },
+                    :
+                    :
+                ],
+        "hip hop": ...
+        :
+        :
+    }
+
+    Args:
+        mock_data (np.Array)
 
     """
-    mock_data = np.random.randint(0, 2000, size=(len(genres), AMOUNT_OF_YEARS))
-    mock_data_dict = {}
+
+    mock_json = {}
     for i in range(len(genres)):
-        mock_data_dict[genres[i]] = mock_data[i, :].tolist()
+        current_year_data = mock_data[:,i]
+        data_points = []
+        for j in range(AMOUNT_OF_YEARS):
+            current_year_data_point = {}
+            current_year_data_point["year"] = START_YEAR + j
+            current_year_data_point["value"] = current_year_data[j]
+            data_points.append(current_year_data_point)
+        mock_json[genres[i]] = data_points
 
     with open("mock_genres.json", "w") as f:
-        json.dump(mock_data_dict, f)
+        json.dump(mock_json, f)
+
+    return
+
 
 
 if __name__ == "__main__":
 
-    genres = ['rock', 'hiphop']
+    genres = ['rock', 'hiphop', 'jazz', 'techno', 'classic', 'pop']
 
-    x = generate_mock_data(genres)
-    print(x)
+    mock_data = generate_mock_data(genres)
+    convert_to_json(mock_data, genres)
