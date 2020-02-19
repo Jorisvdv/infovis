@@ -48,7 +48,7 @@ Our goal for next week 20-02 will be:
 - [ ] Have one or two visualisations.
 - [x] Think of three questions the users want to answer using the visualisation.
 	* Main question: How has the Top 2000 (and by extension, the opinion on music itself) changed over time
-		1. How long do numbers/artists stay ini the Top 2000
+		1. How long do numbers/artists stay in the Top 2000 and how does their ranking change over time?
 		2. How did style and characteristics of tracks in the Top 2000 change over time
 		3. What songs are in the Top 2000?
 - [ ] How do we want to show ? Shapes, colours transitions?
