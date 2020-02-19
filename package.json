@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "parcel watch --no-hmr --cache-dir infovis/public/.cache --out-dir infovis/public/dist infovis/public/src/index.html",
-    "start": "FLASK_APP=infovis/main.py FLASK_ENV=development flask run",
+    "start": "cross-env FLASK_APP=infovis/main.py FLASK_ENV=development flask run",
     "build": "parcel build --out-dir infovis/public/dist infovis/public/src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Jorisvdv/infovis#readme",
   "dependencies": {
+    "cross-env": "^7.0.0",
     "d3": "^5.15.0",
     "parcel-bundler": "^1.12.4"
   }
