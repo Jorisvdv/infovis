@@ -1,6 +1,3 @@
-import * as d3 from "d3"
+import stackArea from "./stacked-area"
 
-const body = d3.select("body");
-body
-    .append("h1")
-    .text("Hello from d3")
+stackArea("#genre-stacked-area");
