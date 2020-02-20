@@ -3,6 +3,7 @@
 .node-version
 .python-version
 data/login_token.json
+.vscode
 
 
 # Created by https://www.gitignore.io/api/node,macos,python,pycharm,visualstudiocode
