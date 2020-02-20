@@ -90,12 +90,6 @@ export default (id, year) => {
 
 
     const updateBars = function(data) {
-        console.log("data", data);
-        // y.domain([0, d3.max(data, function (d) {
-        //     return d.freq;
-        // })]);
-        // yAxisHandleForUpdate.call(yAxis);
-
         const bars = svg.selectAll(".bar").data(data);
 
         bars.enter()
