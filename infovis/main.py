@@ -11,8 +11,7 @@ def route_index():
     return send_file("public/dist/index.html")
 
 
-@app.route("/music_age", methods=["GET", "POST"])
-def route_music_age():
-    with open(os.path.join(os.getcwd(), "data", "year_distribution_per_edition.json")) as jsonfile:
-        return jsonify(json.load(jsonfile)["1999"])
-    #return jsonify([{"test": "Test"}])
+# @app.route("/music_age", methods=["GET", "POST"])
+# def route_music_age():
+#     with open(os.path.join(os.getcwd(), "data", "year_distribution_per_edition.json")) as jsonfile:
+#         return jsonify(json.load(jsonfile)["1999"])

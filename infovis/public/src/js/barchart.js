@@ -1,8 +1,11 @@
 import * as d3 from "d3"
+import barchartData from "../../../../data/year_distribution_per_edition"
 
 
-drawBarChart();
-function drawBarChart() {
+export default (id, year) => {
+  const data = barchartData[year];
+  console.log(id, year, data);
+
   const margin = {top: 20, right: 20, bottom: 30, left: 40},
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
@@ -17,15 +20,17 @@ function drawBarChart() {
   //
   const yAxis = d3.axisLeft(y);
 
-  const svg = d3.select("body").append("svg")
+  const svg = d3
+      .select(id)
+      .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  fetch('/music_age').then(res => {
-    return res.json()}).then((data) => {
-        console.log(data);
+  // fetch('/music_age').then(res => {
+  //   return res.json()}).then((data) => {
+  //       console.log(data);
 
 
     x.domain(data.map(function (d) {
@@ -73,5 +78,5 @@ function drawBarChart() {
           .attr("x", function(d) {return x(d.year) + 20;})
           .attr("y", function(d) {return y(d.freq) - 5;})
           .text(function(d) {return d.freq;})
-  });
+
 }
