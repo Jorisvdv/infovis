@@ -151,4 +151,21 @@ export default (id, year) => {
         .append("option")
         .attr("value", function(d) { return d;})
         .text(function (d) {return d});
+
+    const sliderChange = function() {
+        const newYear = d3.select(this).property('value');
+        const newData = barchartData[parseInt(newYear)];
+        updateBars(newData);
+    };
+
+    const slider = d3
+        .select(id)
+        .insert("input", "svg")
+        .attr("type", "range")
+        .attr("min", Math.min.apply(null, Object.keys(barchartData).map(Number)))
+        .attr("max", Math.max.apply(null, Object.keys(barchartData).map(Number)))
+        .attr("value", Math.min.apply(null, Object.keys(barchartData).map(Number)))
+        .on("change", sliderChange)
+        .insert("p", "svg")
+        .attr("id", "slider-text")
 };
