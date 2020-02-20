@@ -32,7 +32,7 @@ export default (id, year) => {
       return d.year;
     }));
     y.domain([0, d3.max(data, function (d) {
-      return d.freq;
+      return d.freq + 100;
     })]);
 
     svg.append("g")
@@ -65,7 +65,7 @@ export default (id, year) => {
           return height - y(d.freq);
         });
 
-      svg.selectAll("text.bar")
+      svg.selectAll("text.bar-label")
           .data(data)
           .enter().append("text")
           .attr("class", "bar")
@@ -84,22 +84,17 @@ export default (id, year) => {
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
-        .style("text-anchor", "middle")
-        .text("Value");
+        .style("text-anchor", "middle");
 
     // Dropdown
 
 
     const updateBars = function(data) {
         console.log("data", data);
-        //y.domain(d3.extent(data.freq));
-        //yAxisHandleForUpdate.call(yAxis);
-
-        y.domain([0, d3.max(data, function (d) {
-          return d.freq;
-        })]);
-
-        //d3.select("y axis").call(y);
+        // y.domain([0, d3.max(data, function (d) {
+        //     return d.freq;
+        // })]);
+        // yAxisHandleForUpdate.call(yAxis);
 
         const bars = svg.selectAll(".bar").data(data);
 
@@ -126,7 +121,7 @@ export default (id, year) => {
                 return height - y(d.freq);
             });
 
-        const bars_text = svg.selectAll("text.bar").data(data, y);
+        const bars_text = svg.selectAll("text.bar-label").data(data, y);
 
         bars_text
           .enter().append("text")
