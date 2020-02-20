@@ -28,11 +28,6 @@ export default (id, year) => {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  // fetch('/music_age').then(res => {
-  //   return res.json()}).then((data) => {
-  //       console.log(data);
-
-
     x.domain(data.map(function (d) {
       return d.year;
     }));
@@ -77,6 +72,94 @@ export default (id, year) => {
           .attr("text-anchor", "middle")
           .attr("x", function(d) {return x(d.year) + 20;})
           .attr("y", function(d) {return y(d.freq) - 5;})
-          .text(function(d) {return d.freq;})
+          .text(function(d) {return d.freq;});
 
-}
+
+      // Used to update y axis to new data
+    const yAxisHandleForUpdate = svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+
+    yAxisHandleForUpdate.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "middle")
+        .text("Value");
+
+    // Dropdown
+
+
+    const updateBars = function(data) {
+        console.log("data", data);
+        //y.domain(d3.extent(data.freq));
+        //yAxisHandleForUpdate.call(yAxis);
+
+        y.domain([0, d3.max(data, function (d) {
+          return d.freq;
+        })]);
+
+        //d3.select("y axis").call(y);
+
+        const bars = svg.selectAll(".bar").data(data);
+
+        bars.enter()
+            .append("rect")
+            .attr("class", "bar")
+            .attr("x", function (d) {
+                return x(d.year);
+            })
+            .attr("width", 40)
+            .attr("y", function (d) {
+                return y(d.freq);
+            })
+            .attr("height", function (d) {
+                return height - y(d.freq);
+            });
+
+        bars.transition()
+            .duration(250)
+            .attr("y", function (d, i) {
+                return y(d.freq);
+            })
+            .attr("height", function (d, i) {
+                return height - y(d.freq);
+            });
+
+        const bars_text = svg.selectAll("text.bar").data(data, y);
+
+        bars_text
+          .enter().append("text")
+          .attr("class", "bar")
+          .attr("text-anchor", "middle")
+          .attr("x", function(d) {return x(d.year) + 20;})
+          .attr("y", function(d) {return y(d.freq) - 5;})
+          .text(function(d) {return d.freq;});
+
+        bars_text.transition()
+            .duration(250);
+
+
+        bars_text.exit().remove();
+        bars.exit().remove();
+    };
+
+    const dropdownChange = function() {
+          const newYear = d3.select(this).property('value');
+          const newData = barchartData[parseInt(newYear)];
+          console.log(newData, newYear);
+          updateBars(newData);
+    };
+
+    const dropdown = d3
+        .select(id)
+        .insert("select", "svg")
+        .on("change", dropdownChange);
+
+    dropdown.selectAll("option")
+        .data(Object.keys(barchartData))
+        .enter()
+        .append("option")
+        .attr("value", function(d) { return d;})
+        .text(function (d) {return d});
+};
