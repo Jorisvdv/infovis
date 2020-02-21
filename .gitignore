@@ -3,6 +3,7 @@
 .node-version
 .python-version
 data/login_token.json
+data/login_token.env
 .vscode
 
 
