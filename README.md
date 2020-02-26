@@ -33,6 +33,41 @@ npm start  # this starts parcel which transpiles and serves the javascript files
 
 # Meeting notes
 
+## InfoVis Meeting 26-2
+
+### Ideas:
+* Artclouds: aggregate images in a circle
+-> pick a songs from a genre bubble
+* Decision, how to go from small sphere to larger sphere
+	* Hover and larger sphere + album art
+* More than 1 radar chart ->  Onmieyes -> as surface, not lines
+* Streamchart: not stacked, but behind each other using alpha
+
+- [ ] Forward radio 2 mail to TA
+- [ ] Speak with producer radio 2
+- [ ] Get artclouds javascript from discussion
+	- [ ] Replace metadata
+- [ ] Next week: functional prototype
+
+### Taakverdeling
+- [ ] Verwerken ideeën in design (Rens)
+- [ ] Radar chart (Sander)
+- [ ] Componenten combineren (Stijn)
+	* Spec voor elk component
+	* Elke chart een functie init+updaten
+- [ ] Data prepareren (Joris + Joey)
+	* FEATURES + links albumart + genre + lengte
+	* link liedjes (30 sec preview)
+	* Unit value normalisatie
+- [ ] Timeline (Guido + Stijn)
+	* Afspelen
+- [ ] Flask uit python envoirment + presentatie (Stijn)
+
+### Timeline
+* 5-3: 50% componenten
+* 12-3: 100% componenten
+* 19-3: Alles samenwerken
+
 ## Meeting notes 20-2
 Reaction TA to proposal: There is a lot of information (and trends and individual songs and artists) you want to show, this may be too much to visualize.  For now focus on one or two things and add on later.
 Scrolling though a page might be boring and focus of course is not on an article.
@@ -48,10 +83,10 @@ Next view, parallax, but this is an add on
 
 ### Tasks for next week
 - [ ] Get functional prototype running in appropriate format
-- [ ] Two spaces
-- [ ] Think on colors, what shapes and sizes represent which features
-- [ ] Placement of components
-- [ ] Data understanding
+- [x] Two spaces
+- [x] Think on colors, what shapes and sizes represent which features
+- [x] Placement of components
+- [x] Data understanding
 
 
 ## Meeting notes 13-2
@@ -73,7 +108,7 @@ Our goal for next week 20-02 will be:
 		1. How long do numbers/artists stay in the Top 2000 and how does their ranking change over time?
 		2. How did style and characteristics of tracks in the Top 2000 change over time
 		3. What songs are in the Top 2000?
-- [ ] How do we want to show ? Shapes, colours transitions?
+- [x] How do we want to show ? Shapes, colours transitions?
 	* Expecting custom components for the final end product
 - [x] Think of a Name. 
 Plot2000
@@ -95,6 +130,6 @@ Tasks for this week:
 - [x] Mail to radio 2
 - [x]  Combine top 2000 list
 - [x] Merge top 2000 list with spotify id's
-- [ ] Think on extra sources (scrape radio 2 website?/ Scrape big events over the years (artist deaths))
+- [x] Think on extra sources (scrape radio 2 website?/ Scrape big events over the years (artist deaths))
 - [x] Decide on development envoirment.
 - [x] Mail to [Gjorgji](mailto:g.strezoski@uva.nl) on adding Guido to the group 
