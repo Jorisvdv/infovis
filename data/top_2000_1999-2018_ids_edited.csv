@@ -7,7 +7,7 @@ Paradise By The Dashboard Light,Meat Loaf,1978,5.0,5.0,5.0,5.0,5.0,6.0,6.0,7.0,1
 Yesterday,Beatles,1965,6.0,8.0,24.0,30.0,34.0,37.0,46.0,39.0,32.0,28.0,44.0,33.0,50.0,85.0,76.0,89.0,96.0,97.0,87.0,122.0,3BQHpFgAp4l80e1XslIjNI
 Imagine,John Lennon,1971,7.0,7.0,11.0,11.0,13.0,9.0,15.0,15.0,41.0,15.0,41.0,26.0,28.0,22.0,23.0,38.0,1.0,12.0,16.0,16.0,7pKfPomDEeI4TPT6EOYjn9
 Angie,Rolling Stones,1973,8.0,9.0,22.0,12.0,10.0,13.0,18.0,21.0,45.0,20.0,36.0,35.0,41.0,26.0,46.0,54.0,77.0,78.0,70.0,79.0,1GcVa4jFySlun4jLSuMhiq
-Bridge Over Troubled Water,Simon & Garfunkel,1970,9.0,27.0,17.0,32.0,32.0,45.0,42.0,43.0,66.0,43.0,39.0,32.0,33.0,38.0,38.0,48.0,59.0,52.0,58.0,61.0,6QhXQOpyYvbpdbyjgAqKdY
+Bridge Over Troubled Water,Simon & Garfunkel,1970,9.0,27.0,17.0,32.0,32.0,45.0,42.0,43.0,66.0,43.0,39.0,32.0,33.0,38.0,38.0,48.0,59.0,52.0,58.0,61.0,6l8EbYRtQMgKOyc1gcDHF9
 A Whiter Shade Of Pale,Procol Harum,1967,10.0,18.0,23.0,20.0,22.0,28.0,22.0,25.0,47.0,26.0,50.0,42.0,65.0,61.0,83.0,98.0,105.0,119.0,117.0,153.0,78ZqE2tjAxbqEGGlvGnQfT
 Hey Jude,Beatles,1968,11.0,6.0,9.0,15.0,18.0,18.0,14.0,22.0,18.0,16.0,23.0,24.0,24.0,33.0,45.0,58.0,48.0,39.0,61.0,70.0,0aym2LBJBk9DAYuHHutrIl
 Riders On The Storm,Doors,1971,12.0,14.0,12.0,10.0,12.0,16.0,24.0,26.0,33.0,22.0,26.0,27.0,23.0,32.0,30.0,40.0,49.0,46.0,49.0,58.0,14XWXWv5FoCbFzLksawpEe
@@ -106,7 +106,7 @@ If You Leave Me Now,Chicago,1976,104.0,103.0,103.0,119.0,218.0,165.0,214.0,250.0
 32 Jaar (Sinds 1 Dag Of 2),Doe Maar,1981,105.0,203.0,367.0,366.0,338.0,363.0,424.0,449.0,450.0,395.0,509.0,566.0,439.0,172.0,531.0,678.0,584.0,605.0,626.0,461.0,1ksgGtjAPqTIC5pvhPOZE6
 "Non, Je Ne Regrette Rien",Edith Piaf,1961,106.0,234.0,403.0,507.0,312.0,313.0,309.0,236.0,158.0,224.0,277.0,328.0,263.0,413.0,363.0,427.0,460.0,622.0,582.0,577.0,3dkIE8P7hvl3tHl9KSb6dA
 All Along The Watchtower,Jimi Hendrix Experience,1968,107.0,130.0,242.0,146.0,146.0,136.0,162.0,158.0,147.0,142.0,120.0,138.0,131.0,123.0,97.0,156.0,160.0,179.0,179.0,137.0,2aoo2jlRnM3A0NyLQqMN2f
-Stayin' Alive,Bee Gees,1978,108.0,153.0,101.0,255.0,284.0,277.0,409.0,434.0,503.0,357.0,489.0,407.0,455.0,633.0,533.0,579.0,525.0,399.0,388.0,481.0,3mRM4NM8iO7UBqrSigCQFH
+Stayin' Alive,Bee Gees,1978,108.0,153.0,101.0,255.0,284.0,277.0,409.0,434.0,503.0,357.0,489.0,407.0,455.0,633.0,533.0,579.0,525.0,399.0,388.0,481.0,4UDmDIqJIbrW0hMBQMFOsM
 Con Te Partiro,Andrea Bocelli,1996,109.0,,155.0,251.0,364.0,248.0,326.0,373.0,135.0,228.0,755.0,493.0,556.0,735.0,706.0,898.0,697.0,724.0,779.0,912.0,7zrpoAJte9o12TzawqgdD0
 Hello,Lionel Richie,1984,110.0,267.0,351.0,430.0,480.0,305.0,550.0,489.0,694.0,483.0,666.0,665.0,682.0,753.0,905.0,894.0,912.0,1044.0,1023.0,1191.0,0mHyWYXmmCB9iQyK18m3FQ
 In The Ghetto,Elvis Presley,1969,111.0,163.0,247.0,168.0,112.0,158.0,114.0,157.0,186.0,140.0,203.0,216.0,245.0,292.0,266.0,321.0,261.0,248.0,203.0,241.0,7KWoeBqSdZHEloYKVxssfG
@@ -132,7 +132,7 @@ Lola,Kinks,1970,130.0,85.0,156.0,205.0,181.0,188.0,265.0,227.0,361.0,222.0,242.0
 I Will Always Love You,Whitney Houston,1992,131.0,405.0,476.0,551.0,537.0,463.0,636.0,513.0,483.0,505.0,505.0,534.0,687.0,401.0,433.0,446.0,381.0,453.0,484.0,447.0,4eHbdreAnSOrDDsFfc4Fpm
 Take On Me,A-Ha,1985,132.0,68.0,72.0,79.0,145.0,146.0,147.0,247.0,179.0,152.0,345.0,293.0,308.0,368.0,394.0,284.0,227.0,178.0,156.0,321.0,2WfaOiMkCvy7F5fcp2zZ8L
 Under Pressure,David Bowie & Queen,1981,133.0,265.0,332.0,185.0,308.0,273.0,345.0,493.0,524.0,376.0,229.0,352.0,324.0,265.0,192.0,193.0,201.0,87.0,101.0,38.0,11IzgLRXV7Cgek3tEgGgjw
-Living Doll,Cliff Richard & The Young Ones,1986,134.0,371.0,374.0,450.0,1008.0,696.0,967.0,1081.0,1103.0,887.0,916.0,973.0,1049.0,1574.0,1160.0,1314.0,1433.0,1490.0,1661.0,1766.0,2g41MCbLgAU0kPH4SkKGnF
+Living Doll,Cliff Richard & The Young Ones,1986,134.0,371.0,374.0,450.0,1008.0,696.0,967.0,1081.0,1103.0,887.0,916.0,973.0,1049.0,1574.0,1160.0,1314.0,1433.0,1490.0,1661.0,1766.0,2OqzR7I7GF19T2qPrbmYQC
 Owner Of A Lonely Heart,Yes,1983,135.0,94.0,86.0,101.0,165.0,221.0,233.0,318.0,374.0,235.0,270.0,348.0,361.0,364.0,406.0,379.0,389.0,412.0,458.0,662.0,0GTK6TesV108Jj5D3MHsYb
 Fragile,Sting,1988,136.0,249.0,99.0,118.0,99.0,105.0,98.0,90.0,115.0,98.0,117.0,110.0,111.0,78.0,74.0,86.0,95.0,102.0,110.0,155.0,5oE6INocVL9viDow5y8QNM
 Zelfs Je Naam Is Mooi,Henk Westbroek,1998,137.0,129.0,210.0,171.0,97.0,144.0,122.0,96.0,124.0,113.0,190.0,141.0,232.0,260.0,320.0,340.0,380.0,514.0,526.0,659.0,5RWOzvrzPQnt5Ybqxgddrc
@@ -210,12 +210,12 @@ Give Up Your Guns,Buoys,1972,208.0,254.0,299.0,250.0,271.0,355.0,430.0,570.0,587
 Whole Lotta Love ,Led Zeppelin,1969,209.0,120.0,185.0,132.0,93.0,124.0,158.0,192.0,211.0,151.0,93.0,136.0,135.0,91.0,86.0,96.0,125.0,124.0,130.0,141.0,0hCB0YR03f6AmQaHbwWDe8
 Love Hurts,Nazareth,1974,210.0,372.0,373.0,395.0,425.0,426.0,535.0,475.0,443.0,436.0,611.0,557.0,531.0,718.0,554.0,499.0,603.0,653.0,562.0,741.0,1i5oEx2vFczQ2sCY3c6Kn5
 My Generation,Who,1965,211.0,385.0,344.0,377.0,339.0,445.0,512.0,589.0,627.0,497.0,396.0,448.0,482.0,444.0,475.0,635.0,695.0,886.0,1000.0,1564.0,4u9f8hqstB7iITDJNzKhQx
-Think (Blues Brothers Version),Aretha Franklin,1968,212.0,273.0,308.0,305.0,301.0,241.0,339.0,384.0,259.0,288.0,583.0,314.0,374.0,459.0,631.0,681.0,841.0,910.0,952.0,459.0,4kXbcScK3ScRFrZVlBytnm
+Think (Blues Brothers Version),Aretha Franklin,1968,212.0,273.0,308.0,305.0,301.0,241.0,339.0,384.0,259.0,288.0,583.0,314.0,374.0,459.0,631.0,681.0,841.0,910.0,952.0,459.0,6kie23fo40j9gBNWGWg5Dc
 All You Need Is Love,Beatles,1967,213.0,332.0,492.0,608.0,545.0,377.0,249.0,476.0,379.0,392.0,560.0,596.0,688.0,,1459.0,1159.0,698.0,822.0,1205.0,1153.0,68BTFws92cRztMS1oQ7Ewj
 Massachusetts,Bee Gees,1967,214.0,233.0,171.0,295.0,227.0,253.0,259.0,287.0,230.0,243.0,425.0,349.0,468.0,802.0,870.0,785.0,1070.0,863.0,977.0,1195.0,3o7k5Mcdi0PFAXICTqjxra
 More Than A Feeling,Boston,1977,215.0,96.0,111.0,109.0,150.0,156.0,169.0,234.0,219.0,171.0,279.0,307.0,231.0,252.0,242.0,272.0,250.0,228.0,227.0,313.0,1QEEqeFIZktqIpPI4jSVSF
 Layla ,Derek & The Dominos,1971,216.0,440.0,623.0,465.0,332.0,508.0,543.0,623.0,593.0,526.0,491.0,612.0,677.0,558.0,515.0,633.0,771.0,919.0,833.0,599.0,2kkvB3RNRzwjFdGhaUA0tz
-Zeg Me Dat Het Niet Zo Is,Frank Boeijen,1990,217.0,,301.0,287.0,192.0,246.0,229.0,200.0,205.0,208.0,236.0,284.0,344.0,255.0,256.0,134.0,129.0,172.0,220.0,233.0,68avKu8llm4sHD7MtQfpOr
+Zeg Me Dat Het Niet Zo Is,Frank Boeijen,1990,217.0,,301.0,287.0,192.0,246.0,229.0,200.0,205.0,208.0,236.0,284.0,344.0,255.0,256.0,134.0,129.0,172.0,220.0,233.0,5SO1xQrOt9JfiLsNmp2Ha8
 White Christmas,Bing Crosby,1954,218.0,712.0,1732.0,1480.0,1402.0,1476.0,1579.0,1927.0,1701.0,1612.0,,,,,,,,,,,4so0Wek9Ig1p6CRCHuINwW
 Vincent,Don McLean,1972,219.0,202.0,225.0,273.0,241.0,162.0,304.0,266.0,285.0,240.0,395.0,297.0,350.0,502.0,512.0,435.0,538.0,611.0,585.0,414.0,0VNzEY1G4GLqcNx5qaaTl6
 Like A Prayer,Madonna,1989,220.0,341.0,409.0,386.0,450.0,553.0,580.0,804.0,1082.0,656.0,942.0,949.0,943.0,932.0,929.0,887.0,729.0,804.0,784.0,728.0,1z3ugFmUKoCzGsI6jdY4Ci
@@ -434,7 +434,7 @@ Romeo And Juliet,Dire Straits,1980,432.0,,,269.0,203.0,331.0,295.0,316.0,320.0,3
 Zonder Jou,Paul de Leeuw & Simone Kleinsma,1995,433.0,,549.0,818.0,824.0,509.0,565.0,297.0,293.0,402.0,222.0,395.0,444.0,542.0,464.0,483.0,614.0,692.0,639.0,548.0,4AKFs5MZFYDd7k4wuETyy7
 How Can We Hang On To A Dream,Tim Hardin,1967,434.0,570.0,521.0,478.0,632.0,564.0,685.0,690.0,737.0,633.0,948.0,859.0,864.0,1274.0,1098.0,1253.0,1422.0,1574.0,1484.0,1972.0,1wed13CuglKBkOnVFFzI1D
 Holding Back The Years,Simply Red,1985,435.0,465.0,569.0,661.0,319.0,408.0,379.0,454.0,633.0,446.0,378.0,363.0,357.0,451.0,478.0,404.0,451.0,449.0,503.0,538.0,1yg7fwwYmx9DQ2TdXUmfpJ
-Storm And Thunder,Earth & Fire,1971,436.0,408.0,394.0,284.0,291.0,450.0,462.0,575.0,820.0,510.0,608.0,695.0,818.0,946.0,906.0,886.0,1035.0,1111.0,1095.0,1112.0,6Jwddt9NSEujC29SAd6kIA
+Storm And Thunder,Earth & Fire,1971,436.0,408.0,394.0,284.0,291.0,450.0,462.0,575.0,820.0,510.0,608.0,695.0,818.0,946.0,906.0,886.0,1035.0,1111.0,1095.0,1112.0,7uzbAYvAnH49ld7ZH96jo2
 In The Dutch Mountains,Nits,1987,437.0,363.0,390.0,636.0,250.0,483.0,486.0,458.0,697.0,477.0,408.0,316.0,493.0,494.0,588.0,524.0,711.0,723.0,675.0,707.0,7JLjdk1PX5LMBxM5zfYCQV
 The Load Out / Stay,Jackson Browne,1977,438.0,177.0,114.0,80.0,100.0,109.0,95.0,91.0,74.0,88.0,80.0,95.0,108.0,128.0,131.0,95.0,104.0,139.0,150.0,231.0,0Bk7XD1UQoqI0M8cTgmkNf
 Heaven Must Be Missing An Angel,Tavares,1976,439.0,569.0,455.0,567.0,467.0,525.0,521.0,511.0,599.0,523.0,457.0,402.0,599.0,565.0,580.0,461.0,590.0,832.0,719.0,992.0,3ad1MVf3CUFCWW1EyMc9kk
@@ -659,7 +659,7 @@ Don't Leave Me This Way,Communards & Sarah Jane Morris,1986,657.0,853.0,951.0,84
 Sex Machine,James Brown,1970,658.0,1118.0,1068.0,892.0,661.0,798.0,1090.0,1077.0,982.0,934.0,876.0,852.0,985.0,1001.0,1081.0,952.0,1163.0,1150.0,1299.0,1655.0,7tMCIOFe99cWEYr21wfsDp
 China Girl,David Bowie,1983,659.0,564.0,580.0,633.0,734.0,888.0,962.0,1079.0,1100.0,930.0,901.0,786.0,956.0,968.0,896.0,780.0,871.0,379.0,614.0,752.0,5Ei9o2fHEnfHb84YrPuz4v
 Oxygene IV,Jean Michel Jarre,1977,660.0,596.0,469.0,815.0,1028.0,771.0,982.0,1032.0,969.0,916.0,1354.0,1107.0,1164.0,1004.0,1046.0,1048.0,1198.0,1423.0,1460.0,1497.0,4bePJElCkyg8Zb9rY2gTYZ
-Sound Of The Screaming Day,Golden Earrings,1967,661.0,896.0,1075.0,799.0,1175.0,1087.0,897.0,981.0,1425.0,1079.0,1057.0,1024.0,1160.0,1766.0,1371.0,1513.0,1737.0,1695.0,1964.0,,3ZjdHk8l1Naje6v6ZbTcVJ
+Sound Of The Screaming Day,Golden Earrings,1967,661.0,896.0,1075.0,799.0,1175.0,1087.0,897.0,981.0,1425.0,1079.0,1057.0,1024.0,1160.0,1766.0,1371.0,1513.0,1737.0,1695.0,1964.0,,2UlCFQZgZckWXwH1V1RcjL
 Les Lacs Du Connemara,Michel Sardou,1982,662.0,,781.0,869.0,1140.0,797.0,691.0,633.0,916.0,766.0,1014.0,918.0,1154.0,1048.0,1004.0,1213.0,1215.0,1459.0,1443.0,1489.0,3vHswuqTNO0hIiW6am0tKB
 Jessie,Joshua Kadison,1994,663.0,796.0,1266.0,1222.0,752.0,1247.0,1355.0,1605.0,1557.0,1327.0,,1999.0,1660.0,1635.0,1662.0,1901.0,1930.0,,,,4n8iSiSWRdaSeSpJMbdk9O
 Memories,Earth & Fire,1972,664.0,788.0,362.0,688.0,724.0,793.0,834.0,825.0,1285.0,841.0,975.0,862.0,971.0,1068.0,1268.0,1209.0,1345.0,1488.0,1430.0,1487.0,5malcEQy6M2qmfKdS6ajZs
@@ -1071,7 +1071,7 @@ She Goes Nana,Radios,1993,1069.0,1290.0,1329.0,1435.0,1452.0,1850.0,1916.0,,,,,,
 Spiegelbeeld,Willeke Alberti,1963,1070.0,,1364.0,1693.0,1459.0,999.0,1731.0,1673.0,1725.0,1550.0,1981.0,1939.0,,,,,,,,,7s8GtbGZRf1QAlEXXVytxS
 Bright Side Of The Road,Van Morrison,1979,1071.0,2000.0,727.0,616.0,744.0,795.0,910.0,711.0,773.0,739.0,802.0,791.0,937.0,1062.0,1120.0,1228.0,1452.0,1856.0,1883.0,,5WvD5cjxtmQz0gclIV81Hc
 Conquistador,Procol Harum,1972,1072.0,1132.0,986.0,1147.0,972.0,1328.0,1220.0,1421.0,1821.0,1366.0,1499.0,1587.0,1707.0,1994.0,,,,,,,2Wr1PqAw6bzMYhngpb3f96
-I Lie And I Cheat,Won Ton Ton,1988,1073.0,1068.0,1083.0,1293.0,1221.0,1757.0,1528.0,1891.0,1754.0,1624.0,1564.0,1795.0,,,,,,,,,5UDbH6e4kfAkKIfaNojXGS
+I Lie And I Cheat,Won Ton Ton,1988,1073.0,1068.0,1083.0,1293.0,1221.0,1757.0,1528.0,1891.0,1754.0,1624.0,1564.0,1795.0,,,,,,,,,
 Lazy Sunday,Small Faces,1968,1074.0,1110.0,1201.0,1543.0,1227.0,1366.0,1361.0,1757.0,,1782.0,1611.0,1679.0,1716.0,,1968.0,,,,,,11jw9nN4jdQEb82hKJCgKG
 One Day In Your Life,Michael Jackson,1981,1075.0,,770.0,,1830.0,1665.0,1910.0,1962.0,,1969.0,1090.0,1414.0,1775.0,1916.0,1920.0,,,,,,7vtaQNW7QHtQsLeshQlm3D
 Quiereme Mucho,Julio Iglesias,1979,1076.0,1396.0,,,,,,1968.0,,,,,,,,,,,,,3D1ourR6ar31jOZmHGCoa2
@@ -1115,7 +1115,7 @@ Sealed With A Kiss,Bobby Vinton,1972,1113.0,1075.0,971.0,1378.0,1340.0,1145.0,12
 Ticket To Ride,Beatles,1965,1114.0,1011.0,1534.0,1576.0,1746.0,1621.0,1795.0,1719.0,1579.0,1640.0,1773.0,,,,1853.0,,,,,,7CZiDzGVjUssMSOXrDNYHL
 Touch,Outsiders,1966,1115.0,974.0,1354.0,1358.0,1074.0,1323.0,1006.0,1329.0,1810.0,1345.0,1566.0,1492.0,,,,,,,,,3rIRw7bLVlLSeR39XpSQX1
 Starlight Dancer,Kayak,1977,1116.0,720.0,691.0,646.0,696.0,1074.0,1034.0,1170.0,1629.0,1093.0,698.0,1093.0,938.0,1055.0,1163.0,1302.0,1608.0,,1786.0,,1YkU5fLIBNLVAJPK6air20
-The Last Seven Days,Unit Gloria,1969,1117.0,1580.0,1122.0,1234.0,977.0,1110.0,948.0,1057.0,1049.0,1044.0,1131.0,1084.0,1549.0,1921.0,,,,,,,5UDbH6e4kfAkKIfaNojXGS
+The Last Seven Days,Unit Gloria,1969,1117.0,1580.0,1122.0,1234.0,977.0,1110.0,948.0,1057.0,1049.0,1044.0,1131.0,1084.0,1549.0,1921.0,,,,,,,
 You Are,Dolly Parton,1983,1118.0,866.0,240.0,1540.0,1612.0,1353.0,1443.0,1549.0,1319.0,1343.0,1955.0,1847.0,1971.0,1716.0,,,,,,,6okcxWVQetuXyRKMcVqJXZ
 The Eyes Of Jenny,Sandy Coast,1981,1119.0,1149.0,1208.0,1254.0,1621.0,1491.0,1422.0,1762.0,1894.0,1621.0,,1401.0,1226.0,1172.0,1219.0,1063.0,1337.0,1678.0,768.0,1628.0,6w8T2AwZ4k47OF1w2Jj2e1
 Then I Kissed Her,Beach Boys,1967,1120.0,1228.0,1186.0,1352.0,1775.0,1344.0,1427.0,1638.0,1270.0,1429.0,1632.0,1515.0,1965.0,,,,,,,,3Ez3Pk5Xe6GmocOVZ6dEks
@@ -1168,7 +1168,7 @@ I Don't Want To Talk About It,Rod Stewart,1977,1166.0,,1427.0,1712.0,1715.0,1561
 Love Shine A Light,Katrina & The Waves,1997,1167.0,,1700.0,1920.0,1662.0,1971.0,,1959.0,,,,,,,,,,,,,0WdBh2BQOq9U7PMk6sWzMz
 Pick Up The Pieces,Average White Band,1975,1168.0,,1388.0,1458.0,1726.0,1568.0,,,,,,,,,,,,,,,2x1LQq8lsUzAA2wNj8yjC9
 Secret Garden,Bruce Springsteen,1995,1169.0,,828.0,979.0,981.0,1170.0,1244.0,1309.0,1164.0,1182.0,1781.0,1713.0,1643.0,1676.0,1233.0,1625.0,1411.0,1637.0,1921.0,1973.0,68uuz61IqrSJjO6ffO3yHc
-Soul Man,Sam & Dave,1967,1170.0,1743.0,1763.0,,1517.0,1723.0,1686.0,,,,1567.0,1494.0,1423.0,1422.0,1742.0,1535.0,1980.0,1577.0,1996.0,,2g2GkH3vZHk4lWzBjgQ6nY
+Soul Man,Sam & Dave,1967,1170.0,1743.0,1763.0,,1517.0,1723.0,1686.0,,,,1567.0,1494.0,1423.0,1422.0,1742.0,1535.0,1980.0,1577.0,1996.0,,4eGHlplaq1ME8oetnTuFFf
 Kon Ik Maar Even Bij Je Zijn,Gordon,1991,1171.0,,,1942.0,1484.0,1644.0,1837.0,1523.0,,1873.0,,,,,,,,,,,0CnWJx8wEg3i2aS0QOIkJF
 Lovin' Whiskey,Rory Block,1988,1172.0,,1818.0,1447.0,1831.0,1818.0,1700.0,1491.0,1930.0,1689.0,1956.0,1910.0,1723.0,1873.0,,,,,,,5537Y4aYjibeVdTSX3w7y2
 Nightshift,Commodores,1985,1173.0,919.0,688.0,1124.0,1144.0,1053.0,1492.0,1652.0,1464.0,1351.0,1712.0,1654.0,1689.0,,,,,,,,23IK8TF2MSiLnuEjaYPfVV
@@ -1289,7 +1289,7 @@ Volare,Al Martino,1976,1287.0,942.0,948.0,1240.0,1615.0,1418.0,1306.0,1814.0,133
 Pictures Of Lily,Who,1967,1288.0,,1373.0,1492.0,1497.0,1655.0,1924.0,,1994.0,1935.0,,,,,,,,,,,123RhEzztpTieeEd13NexC
 Save The Best For Last,Vanessa Williams,1992,1289.0,1902.0,,,,,,,,,,,,,,,,,,,7okbmgA8lRBGl5limZ7LFM
 Wasted Words,Motions,1965,1290.0,1406.0,1631.0,1073.0,929.0,1336.0,1163.0,1097.0,1433.0,1193.0,1480.0,1524.0,1842.0,1821.0,1653.0,1551.0,,,,,1JtRqTvdVqR4qD4Pv8ms5O
-Show Me Heaven,Maria Mc Kee,1990,1291.0,,,1975.0,,,,,,,,,,,,,,,,,1JtRqTvdVqR4qD4Pv8ms5O
+Show Me Heaven,Maria Mc Kee,1990,1291.0,,,1975.0,,,,,,,,,,,,,,,,,7vOhmiURT3Bv8iFeNxw7Oh
 Ballad Of John & Yoko,Beatles,1969,1292.0,899.0,1192.0,1257.0,1352.0,1501.0,1758.0,1678.0,1941.0,1623.0,1665.0,1778.0,1892.0,1631.0,,,,,,,1F7s27lLKshLPt9TPCgMDL
 London Town,Paul McCartney & Wings,1978,1293.0,,,,,,,,,,,,,,,,,,,,73JqQIGZUZxCVfY54RSpCH
 Time Of The Season,The Zombies,1969,1294.0,,827.0,1353.0,1136.0,734.0,710.0,762.0,903.0,809.0,843.0,1135.0,1264.0,1352.0,1412.0,1442.0,1981.0,,,,5AJrhrwz4oSZX2PwwV4qrN
@@ -1398,7 +1398,7 @@ Per Spoor (Kedeng Kedeng),Guus Meeuwis & Vagant,1996,1396.0,,,1646.0,1510.0,1397
 Hé Kom Aan,Dimitri van Toren,1973,1397.0,1435.0,1237.0,1585.0,1687.0,1396.0,1500.0,1721.0,1695.0,1601.0,,,,,,,,,,,6X8pXys5m7kIpaXWUNXfN7
 Kayuta Hill,Partner,1978,1398.0,,1620.0,1679.0,1733.0,1738.0,1633.0,,,,,,,,,,,,,,6cnBj58iK3wKvfCZmKg0hp
 How Will I Know,Whitney Houston,1986,1399.0,,,,,,,,,,,,,,,,,,,,5tdKaKLnC4SgtDZ6RlWeal
-I Feel Like I'm Fixing To Die' Rag,Country Joe & The Fish,1970,1400.0,1670.0,,,,,,,,,,,,,,,,,,,4i0HqFY1cggDYuzts5I4bL
+I Feel Like I'm Fixing To Die' Rag,Country Joe & The Fish,1970,1400.0,1670.0,,,,,,,,,,,,,,,,,,,4ekhcmbinPu8eLHtxD2lav
 Am I Losing You Forever,Mai Tai,1985,1401.0,,1551.0,1316.0,,,,,,,,,,,,,,,,,4LTLEWk49ZoEMEkDxiM1qa
 Lady Of The Dawn,Mike Batt,1979,1402.0,1563.0,1801.0,1623.0,1845.0,,,,,,,,,,,,,,,,2vuXBL31jvaLxo7IdnLegC
 High Noon,Frankie Laine,1952,1403.0,,1975.0,,1909.0,,,,,,,,,,,,,,,,1yGBGPgpGi5ua0HbHcvesQ
@@ -1531,7 +1531,7 @@ Mighty Quinn,Manfred Mann,1968,1529.0,1390.0,1769.0,1532.0,,1842.0,,,,,,,,,,,,,,
 Hi Hi Hi,Paul McCartney & Wings,1972,1530.0,1377.0,1204.0,1927.0,,,,,,,,,,,,,,,,,6ccHuWQAQhdZ0JCFlTHvNM
 Get Down,Gilbert O'Sullivan,1973,1531.0,,970.0,,,,,,,,,,,,,,,,,,4GjIIjBM20NhaBrvQKkQ5I
 On The Sunny Side Of The Street,Tommy Dorsey & Sentimentalists,1944,1532.0,,,,,,,,,,,,,,,,,,,,3XDharvL8vEyxdQwOQKmww
-Star,"Earth, Wind & Fire",1979,1533.0,,1410.0,1696.0,1824.0,,,,1889.0,,,,,,,,,,,,0RgcOUQg4qYAEt9RIdf3oB
+Star,"Earth, Wind & Fire",1979,1533.0,,1410.0,1696.0,1824.0,,,,1889.0,,,,,,,,,,,,4e0Yl8XceW6RLi8zZpL1qW
 Rainy Day Women # 12 & 35,Bob Dylan,1966,1534.0,,,1476.0,1421.0,1132.0,1769.0,1802.0,1568.0,1597.0,,,,,,,,,,,7BkAlVpGwXXl3sYNn5OoJ7
 Never Gonna Give You Up,Rick Astley,1987,1535.0,1683.0,1654.0,638.0,,,,,,,723.0,1684.0,1074.0,1272.0,1534.0,1103.0,825.0,1036.0,847.0,824.0,7GhIk7Il098yCjg4BQjzvb
 Reminiscing,Little River Band,1978,1536.0,,1753.0,,,,,,,,,,,,,,,,,,34D6mvDTAPypm92EPs8Rxa
@@ -2204,7 +2204,7 @@ Jan Klaassen De Trompetter,Rob de Nijs,1973,,993.0,874.0,1176.0,1427.0,1286.0,12
 La Bamba,Los Lobos,1987,,994.0,,1267.0,,1815.0,1954.0,1958.0,,,,,,,,,,,,,0uMMLry3hzWGn3q3loqMkm
 Mien,Robert Long,1974,,996.0,,,,,,,,,,,,,,,,,,,
 Papa Don't Preach,Madonna,1986,,1000.0,1621.0,1586.0,1457.0,1505.0,1603.0,1897.0,,1862.0,1926.0,1577.0,,,1998.0,1769.0,,,1915.0,1828.0,5FXogmNvmLoS6bWxHoau03
-Pied Piper,Jets,1966,,1001.0,,,,,,,,,,,,,,,,,,,5qvmp62WSqZE80tIyKoOv5
+Pied Piper,Jets,1966,,1001.0,,,,,,,,,,,,,,,,,,,7jomBoBIB21WCr2NYDhu47
 Tigerfeet,Mud,1974,,1012.0,1628.0,855.0,1121.0,1281.0,1326.0,1155.0,1611.0,1277.0,1606.0,1584.0,,1903.0,1990.0,,,,,,0JTexNTWFuNLw4U5TDnUYj
 Tin Soldier,Small Faces,1968,,1013.0,,1439.0,1101.0,1061.0,1252.0,1327.0,1595.0,1339.0,1501.0,1698.0,1797.0,,1546.0,1672.0,1935.0,1993.0,1822.0,,5OwSlMCeO12Skgcz80AdfG
 Wake Me Up Before You Go Go,Wham,1984,,1018.0,982.0,1065.0,1240.0,1150.0,1399.0,1249.0,1519.0,1299.0,1489.0,1638.0,1919.0,1650.0,1488.0,1493.0,1471.0,1400.0,1087.0,1235.0,0ikz6tENMONtK6qGkOrU3c
@@ -2546,7 +2546,7 @@ Tribute (Right On),Pasadenas,1988,,1869.0,,,,,,,,,,,,,,,,,,,4baAkyIjpj49MImHjJlj
 Walk Don't Run,The Ventures,1960,,1871.0,,,1975.0,,,,,,,,,,,,,,,,7B2pUwzvlbNG9D855r9ugf
 We Just,Moses,1985,,1872.0,,,,,,,,,,,,,,,,,,,539USDrn8ai4zTwhmX6Ygo
 What Kind Of Dance Is This,Veronica Unlimited,1977,,1873.0,,,,,,,,,,,,,,,,,,,
-You're The Reason Why,The Rubettes,1976,,1875.0,,,,,,,,,,,,,,,,,,,0ItlbY5mHDSYQd3SOgAlZu
+You're The Reason Why,The Rubettes,1976,,1875.0,,,,,,,,,,,,,,,,,,,6UL9qC3ASsKJfkPkOPVxwV
 Bernadette,Four Tops,1967,,1877.0,1758.0,1957.0,,,1946.0,,,,,,,,,,,,,,0LVvnJs7eOuHIkWwjWHEWF
 Darling,Frankie Miller,1978,,1878.0,1984.0,,,,,,,,,,,,,,,,,,6f93JbFYdvFYcSZEGMuHyD
 Don't Take Away The Music,Tavares,1976,,1880.0,,,,,,,,,,,,,,,,,,,2VsK5maDIMwgWM0rLMFCLG
@@ -2786,7 +2786,7 @@ Mooi Liedje,Acda & De Munnik,1997,,,,,893.0,419.0,286.0,469.0,338.0,437.0,613.0,
 How Can You Mend A Broken Heart,Bee Gees,1971,,,,,895.0,1126.0,1056.0,1173.0,1039.0,1156.0,1265.0,1162.0,1506.0,,1873.0,,,,,,1jy0RbDHyBMTupSdc98XbG
 After Midnight,Eric Clapton,1970,,,,,938.0,1497.0,1708.0,1272.0,1631.0,1485.0,1473.0,1308.0,1644.0,1034.0,1509.0,1641.0,,,,,27mdmXNcO0gNpXlrWi9DPZ
 Dead Flowers,Rolling Stones,1971,,,,,940.0,994.0,,956.0,1296.0,1350.0,1500.0,1379.0,1400.0,1244.0,1626.0,1681.0,1893.0,1907.0,1923.0,,3oJtUnnt5uYPtzulIbLw3D
-Sailing To Philadelphia,Mark Knopfler & James Taylor,2000,,,,,942.0,427.0,367.0,405.0,515.0,513.0,458.0,393.0,479.0,670.0,582.0,733.0,764.0,1254.0,1317.0,866.0,1RVZH0clK31T3qB4eZykLp
+Sailing To Philadelphia,Mark Knopfler & James Taylor,2000,,,,,942.0,427.0,367.0,405.0,515.0,513.0,458.0,393.0,479.0,670.0,582.0,733.0,764.0,1254.0,1317.0,866.0,5ti5SeraA9Ci7OtbLhEkz2
 Get Up Stand Up,Bob Marley & The Wailers,1973,,,,,971.0,,,,,,951.0,815.0,931.0,1072.0,1111.0,1703.0,1514.0,1669.0,1993.0,,0q5giEtY4wsFTwjWqswLwx
 Zij Gelooft In Mij,André Hazes,2000,,,,,1039.0,30.0,62.0,101.0,291.0,123.0,215.0,192.0,208.0,169.0,187.0,275.0,283.0,256.0,254.0,254.0,54fhJhjCSjGPDh5szTqXj3
 Walking On The Moon,Police,1979,,,,,1052.0,935.0,1214.0,1366.0,1289.0,1297.0,1197.0,1174.0,1144.0,1159.0,890.0,1035.0,1138.0,1043.0,1082.0,921.0,62uLNJgVZaFiEiKV4LpoYJ
@@ -2912,12 +2912,12 @@ Tusk,Fleetwood Mac,1979,,,,,,,619.0,683.0,757.0,1029.0,432.0,440.0,492.0,626.0,4
 Wind Beneath My Wings,Bette Midler,1988,,,,,,,626.0,603.0,471.0,817.0,858.0,746.0,902.0,1301.0,1445.0,1249.0,1431.0,1797.0,1841.0,,2Pxqs0WmxxHTV5QaTdmt3Q
 Yours Is No Disgrace,Yes,1971,,,,,,,642.0,719.0,840.0,1097.0,657.0,832.0,892.0,1192.0,968.0,956.0,1131.0,1520.0,1370.0,1914.0,2ab1xYXLiGMWKBKlMgoB62
 Heb Je Even Voor Mij,Frans Bauer,2004,,,,,,,652.0,349.0,534.0,710.0,1157.0,1812.0,1837.0,,,,,,,,4tdZ0T8V5QK1l7PvydjXay
-Droomland,André Hazes & Paul de Leeuw,1993,,,,,,,663.0,362.0,528.0,720.0,450.0,630.0,783.0,599.0,603.0,702.0,815.0,1015.0,987.0,916.0,4EsHC0ms7bYJtJpOs9L21Q
+Droomland,André Hazes & Paul de Leeuw,1993,,,,,,,663.0,362.0,528.0,720.0,450.0,630.0,783.0,599.0,603.0,702.0,815.0,1015.0,987.0,916.0,3hiURl5d4M3ihHWW8ZdvPS
 Sacrifice,Anouk,1998,,,,,,,675.0,420.0,440.0,722.0,671.0,725.0,847.0,782.0,1061.0,1274.0,1476.0,1943.0,1906.0,1739.0,7ohTiUYgmAfuEcSosdhhMF
 All I Need,Air,1999,,,,,,,690.0,415.0,201.0,559.0,461.0,480.0,414.0,432.0,539.0,516.0,553.0,528.0,546.0,841.0,7jOM0KIKgIppqIEvEjixaj
 Durgerdam Slaapt,Zijlstra,2002,,,,,,,711.0,708.0,492.0,909.0,597.0,764.0,919.0,1105.0,1216.0,1425.0,1682.0,,,,0wOYdGya3BIVDdP22hkXNb
 Home,Simply Red,2003,,,,,,,747.0,950.0,1034.0,1362.0,1228.0,1065.0,1168.0,937.0,1094.0,1220.0,1457.0,1789.0,,,0tFfKFnwSiqxluUDb0G0Zz
-Harvest,Neil Young,1972,,,,,,,751.0,538.0,641.0,917.0,524.0,483.0,673.0,660.0,655.0,858.0,1015.0,1035.0,1083.0,1170.0,5l9c6bJmzvftumhz4TMPgk
+Harvest,Neil Young,1972,,,,,,,751.0,538.0,641.0,917.0,524.0,483.0,673.0,660.0,655.0,858.0,1015.0,1035.0,1083.0,1170.0,7hpk3H8tjWh23edusCKW5O
 My Immortal,Evanescence,2003,,,,,,,763.0,302.0,325.0,602.0,500.0,605.0,527.0,377.0,300.0,341.0,303.0,305.0,283.0,345.0,4UzVcXufOhGUwF56HT7b8M
 Cloudbusting,Kate Bush,1985,,,,,,,767.0,896.0,909.0,1275.0,661.0,751.0,736.0,496.0,614.0,478.0,620.0,578.0,598.0,644.0,5atQ2haKP5LT65WM0KUts3
 Mijn Houten Hart,Poema's,1999,,,,,,,791.0,293.0,431.0,645.0,332.0,346.0,386.0,562.0,494.0,590.0,577.0,593.0,670.0,654.0,3KxBgn1DhmxhntSOJyduF0
@@ -3455,7 +3455,7 @@ Hallelujah,Lisa Lois,2009,,,,,,,,,,,,409.0,296.0,393.0,458.0,593.0,761.0,807.0,8
 Fireflies,Owl City,2009,,,,,,,,,,,,471.0,924.0,971.0,1001.0,1184.0,1018.0,1293.0,1245.0,1284.0,3DamFFqW32WihKkTVlwTYQ
 Woman,Anouk,2009,,,,,,,,,,,,656.0,1220.0,1145.0,1485.0,1556.0,,,,,2LLgD2v7MaAvzX0wIWJYsc
 Hey Soul Sister,Train,2010,,,,,,,,,,,,685.0,1193.0,1078.0,1544.0,1941.0,,,,,4HlFJV71xXKIGcU3kRyttv
-Empire State Of Mind (Part 2),Alicia Keys,2009,,,,,,,,,,,,712.0,173.0,72.0,110.0,129.0,1773.0,221.0,382.0,412.0,63kqWV4uJovbh830PAwC1J
+Empire State Of Mind (Part 2),Alicia Keys,2009,,,,,,,,,,,,712.0,173.0,72.0,110.0,129.0,1773.0,221.0,382.0,412.0,5sra5UY6sD658OabHL3QtI
 Wicked Way,Waylon,2009,,,,,,,,,,,,723.0,831.0,1344.0,1677.0,1439.0,,820.0,1420.0,,78ATYGA1lx4J3FvuE1ACdw
 Half Of My Heart,John Mayer & Taylor Swift,2010,,,,,,,,,,,,811.0,1327.0,864.0,986.0,1557.0,1865.0,,,,7hR5toSPEgwFZ78jfHdANM
 Geloven In Het Leven,3JS,2010,,,,,,,,,,,,819.0,642.0,1131.0,1255.0,1181.0,1420.0,1923.0,,,1FQUPfW7zKyiUHMJFr8c8d
@@ -3465,7 +3465,7 @@ Sex On Fire,Kings Of Leon,2008,,,,,,,,,,,,966.0,122.0,122.0,98.0,139.0,150.0,166
 Hold On,Michael Bublé,2010,,,,,,,,,,,,1056.0,1805.0,,,,,,,,0Xwfq9T1CruynQcHKY1hs4
 Het Masker,Nick & Simon,2009,,,,,,,,,,,,1074.0,948.0,1796.0,1798.0,,,,,,3M9xAOXdINeZNAfE0P8PVr
 The Cave,Mumford & Sons,2010,,,,,,,,,,,,1236.0,147.0,58.0,117.0,200.0,239.0,272.0,316.0,306.0,7IxVWmdabNVhfLBV3JD0nJ
-Twee Meisjes,Raymond van het Groenewoud,1996,,,,,,,,,,,,1453.0,1633.0,1700.0,1719.0,1885.0,,,,,1TMewCUjVY6DNMBy2ogSbx
+Twee Meisjes,Raymond van het Groenewoud,1996,,,,,,,,,,,,1453.0,1633.0,1700.0,1719.0,1885.0,,,,,31VdbMngS4qIXl6USIEYMr
 Morning Sun,Robbie Williams,2009,,,,,,,,,,,,1462.0,,,,,,,,,0tOpMcr2I01zrr4lyVUHJk
 Killing Me Softly,Fugees,1996,,,,,,,,,,,,1643.0,1872.0,1815.0,1697.0,1911.0,1937.0,1728.0,1631.0,1452.0,0Q0IVlqMV64kNLlwjPj0Hl
 Lucky All My Life,Racoon,2008,,,,,,,,,,,,1656.0,1878.0,1557.0,1850.0,1915.0,,,,,7xC4oDMlgayqePi1T9YSRN
@@ -3619,7 +3619,7 @@ Meer Kan Het Niet Zijn,Bløf & Sabrina Starke,2011,,,,,,,,,,,,,,1075.0,1072.0,11
 In The End,Linkin Park,2001,,,,,,,,,,,,,,1100.0,612.0,189.0,144.0,157.0,40.0,47.0,60a0Rd6pjrkxjPbaKzXjfq
 Home Again,Michael Kiwanuka,2012,,,,,,,,,,,,,,1142.0,1263.0,1810.0,1992.0,1663.0,1753.0,1338.0,46EuzanXhKwIc7755wLAvS
 Voetstuk Staan,Acda en De Munnik,2012,,,,,,,,,,,,,,1144.0,1425.0,1515.0,,,,,4zQF9JVE3p0IvzC2ug7pSP
-I Will Wait,Mumford & Sons,2012,,,,,,,,,,,,,,1149.0,214.0,434.0,436.0,531.0,642.0,498.0,0hm8rgOY17z7kQJlqGKbu7
+I Will Wait,Mumford & Sons,2012,,,,,,,,,,,,,,1149.0,214.0,434.0,436.0,531.0,642.0,498.0,0Wj2iUmo89RyjJ4geu8J1s
 Home,Edward Sharpe & The Magnetic Zeros,2011,,,,,,,,,,,,,,1182.0,1087.0,1607.0,1904.0,,,,7KWGfnsUU4Ri46TIvjpAPx
 Balada (Tchê Tcherere Tchê Tchê),Gusttavo Lima,2012,,,,,,,,,,,,,,1264.0,,,,,,,0O13EyQvISUcBAHdU4X3px
 Better Think Twice,Trijntje Oosterhuis,2012,,,,,,,,,,,,,,1275.0,,,,,,,01VbJcT7mmHQFZXU9Rws3b
@@ -3678,7 +3678,7 @@ Birds,Anouk,2013,,,,,,,,,,,,,,,398.0,213.0,378.0,470.0,459.0,463.0,5FYmx75rnDhzg
 Diamonds,Rihanna,2012,,,,,,,,,,,,,,,559.0,1057.0,1291.0,1722.0,1742.0,1492.0,1z9kQ14XBSN0r2v6fx4IdG
 Blurred Lines,Robin Thicke ft. T.I. & Pharrell,2013,,,,,,,,,,,,,,,571.0,674.0,997.0,1543.0,,1786.0,7MaG3MV913ycofT3XDcMjd
 Happy,Pharrell Williams,2013,,,,,,,,,,,,,,,587.0,25.0,111.0,159.0,226.0,378.0,60nZcImufyMA1MKQY3dcCH
-Just Give Me A Reason,Pink ft. Nate Ruess,2012,,,,,,,,,,,,,,,590.0,494.0,606.0,562.0,928.0,613.0,6waac5r2gjPazfXFT3JORP
+Just Give Me A Reason,Pink ft. Nate Ruess,2012,,,,,,,,,,,,,,,590.0,494.0,606.0,562.0,928.0,613.0,1mKXFLRA179hdOWQBwUk9e
 All Of Me,John Legend,2013,,,,,,,,,,,,,,,634.0,74.0,124.0,197.0,241.0,400.0,3U4isOIWM3VvDubwSI3y7a
 Dat ik je Mis,Maaike Ouboter,2013,,,,,,,,,,,,,,,819.0,140.0,106.0,167.0,195.0,308.0,5YYeOieVKYk5fH0dtqZvpp
 Another Love,Tom Odell,2012,,,,,,,,,,,,,,,983.0,316.0,350.0,340.0,355.0,311.0,7otCGmgp9h4CsR2LhwB6gt
@@ -3720,7 +3720,7 @@ Roar,Katy Perry,2013,,,,,,,,,,,,,,,1654.0,879.0,1080.0,1698.0,1651.0,1720.0,6F5c
 Mirrors,Justin Timberlake,2013,,,,,,,,,,,,,,,1663.0,867.0,944.0,1099.0,1298.0,1094.0,4rHZZAmHpZrA3iH5zx8frV
 Ho Hey,The Lumineers,2013,,,,,,,,,,,,,,,1673.0,1594.0,,,,,0W4Kpfp1w2xkY3PrV714B7
 With You,Matt Simons,2013,,,,,,,,,,,,,,,1716.0,938.0,1252.0,1284.0,1738.0,,3u0cm2AwmuIxInF9F7lOyF
-Try,Pink,2012,,,,,,,,,,,,,,,1728.0,675.0,472.0,600.0,451.0,533.0,6yL8vmNnWrD1VdcV5VhXTt
+Try,Pink,2012,,,,,,,,,,,,,,,1728.0,675.0,472.0,600.0,451.0,533.0,1jF7IL57ayN4Ity3jQqGu0
 Slow Dancing In A Burning Room,John Mayer,2006,,,,,,,,,,,,,,,1729.0,712.0,574.0,599.0,594.0,619.0,2jdAk8ATWIL3dwT47XpRfu
 How You Remind Me,Nickelback,2001,,,,,,,,,,,,,,,1783.0,592.0,604.0,848.0,899.0,839.0,0gmbgwZ8iqyMPmXefof8Yf
 Story Of My Life,One Direction,2013,,,,,,,,,,,,,,,1787.0,809.0,873.0,1750.0,1984.0,1778.0,4nVBt6MZDDP6tRVdQTgxJg
@@ -3882,7 +3882,7 @@ Secrets,One Republic,2010,,,,,,,,,,,,,,,,1803.0,1176.0,,,,7nIKiBspFEhLaHSXZ0DgIW
 Fly Away,Lenny Kravitz,1998,,,,,,,,,,,,,,,,1811.0,,,,,1OxcIUqVmVYxT6427tbhDW
 Sonne,Rammstein,2001,,,,,,,,,,,,,,,,1828.0,947.0,187.0,182.0,168.0,4w3R0GZ2rScJMKlgPJzHRq
 Here Comes The Rain Again,Eurythmics,1983,,,,,,,,,,,,,,,,1834.0,,,,1911.0,78RIER8V6EhrqVPOBi2GYa
-Into The Great Wide Open,Tom Petty & The Heartbreakers,1992,,,,,,,,,,,,,,,,1842.0,,,1562.0,1724.0,17S4XrLvF5jlGvGCJHgF51
+Into The Great Wide Open,Tom Petty & The Heartbreakers,1992,,,,,,,,,,,,,,,,1842.0,,,1562.0,1724.0,4FZJ1Ongn1HZDJcCMTBTlN
 Limit To Your Love,James Blake,2011,,,,,,,,,,,,,,,,1847.0,1874.0,,,,33BnSMHgX0AsbKSIbkuMwh
 Always On My Mind,Pet Shop Boys,1987,,,,,,,,,,,,,,,,1848.0,,,,,2SWn864dJI5RNyrp3F4Kp1
 Seven Days In Sunny June,Jamiroquai,2005,,,,,,,,,,,,,,,,1856.0,1954.0,1704.0,1777.0,,2bwxqGKS5GPXfNanAIRe2p
@@ -3972,7 +3972,7 @@ The Saints Are Coming,U2 & Green Day,2006,,,,,,,,,,,,,,,,,1186.0,1481.0,1587.0,1
 Walk,Foo Fighters,2009,,,,,,,,,,,,,,,,,1190.0,601.0,606.0,493.0,76Je5Wklky23mVoxiRszcN
 How Soon Is Now,Smiths,1984,,,,,,,,,,,,,,,,,1221.0,1515.0,1692.0,,1YrnDTqvcnUKxAIeXyaEmU
 What Do You Mean,Justin Bieber,2015,,,,,,,,,,,,,,,,,1229.0,1288.0,,,4B0JvthVoAAuygILe3n4Bs
-Like The Way I Do (live) Edit,Melissa Etheridge,1993,,,,,,,,,,,,,,,,,1238.0,1257.0,1488.0,,3Fe3L3N5pGaa0BBT4eVypZ
+Like The Way I Do (live) Edit,Melissa Etheridge,1993,,,,,,,,,,,,,,,,,1238.0,1257.0,1488.0,,727PSIMEEPFUyDmNuZ4k0V
 Dear Mama,2Pac,1998,,,,,,,,,,,,,,,,,1248.0,1336.0,1196.0,1137.0,6tDxrq4FxEL2q15y37tXT9
 Every Breaking Wave,U2,2014,,,,,,,,,,,,,,,,,1254.0,1801.0,,,0gcPlCmT36t4uzSwlIrfQh
 All The Small Things,Blink-182,1999,,,,,,,,,,,,,,,,,1259.0,1107.0,1383.0,1253.0,2m1hi0nfMR9vdGC8UcrnwU
@@ -4105,7 +4105,7 @@ Love Yourself,Justin Bieber,2015,,,,,,,,,,,,,,,,,,512.0,1216.0,1371.0,50kpGaPAhY
 The Sound Of Silence,Disturbed,2016,,,,,,,,,,,,,,,,,,518.0,54.0,39.0,1Cj2vqUwlJVG27gJrun92y
 Hymn For The Weekend,Coldplay,2015,,,,,,,,,,,,,,,,,,522.0,792.0,902.0,3RiPr603aXAoi4GHyXx0uy
 Sabotage,Beastie Boys,1994,,,,,,,,,,,,,,,,,,548.0,560.0,734.0,0Puj4YlTm6xNzDDADXHMI9
-Folsom Prison Blues,Johnny Cash,1969,,,,,,,,,,,,,,,,,,556.0,658.0,396.0,2fDHuS1PTkHBbCWWZF1ph9
+Folsom Prison Blues,Johnny Cash,1969,,,,,,,,,,,,,,,,,,556.0,658.0,396.0,0LTSNmOLBt25GMjHlxp9OR
 Human,Rag'n'Bone Man,2016,,,,,,,,,,,,,,,,,,583.0,204.0,343.0,269x1zpPRCH8jdEwxHwhgs
 The Man Who Sold The World,David Bowie,1970,,,,,,,,,,,,,,,,,,616.0,965.0,1083.0,4mWahKerLaVddUjb8d1Q4Q
 American idiot,Green Day,2004,,,,,,,,,,,,,,,,,,651.0,683.0,570.0,6nTiIhLmQ3FWhvrGafw2zj
@@ -4171,7 +4171,7 @@ You Want It Darker,Leonard Cohen,2016,,,,,,,,,,,,,,,,,,1407.0,698.0,811.0,5zb7np
 Little Red Corvette,Prince,1983,,,,,,,,,,,,,,,,,,1409.0,1995.0,,6X4JeTWCuKEzKOEHXDtyBo
 Follow The Sun,Xavier Rudd,2016,,,,,,,,,,,,,,,,,,1411.0,1131.0,1663.0,3Y7fpFZbHLpAvWJJYGehz0
 Both Sides Now,Joni Mitchell,1967,,,,,,,,,,,,,,,,,,1412.0,1215.0,1096.0,1pjATX7sbd6Y4jMVqIvzHk
-San Quentin,Johnny Cash,1969,,,,,,,,,,,,,,,,,,1426.0,1339.0,1212.0,5xMNjx7uqCzMpJZSo4Wq55
+San Quentin,Johnny Cash,1969,,,,,,,,,,,,,,,,,,1426.0,1339.0,1212.0,6oITpHnMfc7R7wTLGvrjWD
 Sing For Absolution,Muse,2004,,,,,,,,,,,,,,,,,,1435.0,1512.0,1515.0,1hHuyqVCZCbhYQixEkdQCo
 Witch Doctor,De Staat,2014,,,,,,,,,,,,,,,,,,1439.0,533.0,695.0,5EcfCs4t0DsxQTXtcYasCq
 Lean On,Major Lazor & DJ Snake Feat Mo,2015,,,,,,,,,,,,,,,,,,1443.0,,,2YWjW3wwQIBLNhxWKBQd16
@@ -4261,7 +4261,7 @@ Politik,Coldplay,2002,,,,,,,,,,,,,,,,,,2000.0,1547.0,1670.0,0u35Dpz37TY2M2j20RUd
 Shape Of You,Ed Sheeran,2017,,,,,,,,,,,,,,,,,,,103.0,205.0,7qiZfU4dY1lWllzX7mPBI3
 Perfect,Ed Sheeran,2017,,,,,,,,,,,,,,,,,,,177.0,85.0,0tgVpDi06FyKpA1z0VMD4v
 Castle On The Hill,Ed Sheeran,2017,,,,,,,,,,,,,,,,,,,185.0,341.0,6PCUP3dWmTjcTtXY02oFdT
-What About Us,Pink,2017,,,,,,,,,,,,,,,,,,,482.0,274.0,0dDebMd3esKmWpH8FYENbM
+What About Us,Pink,2017,,,,,,,,,,,,,,,,,,,482.0,274.0,0Qh38w01QRXK6KHIv0e3hb
 Amigo,Chef'Special,2016,,,,,,,,,,,,,,,,,,,493.0,506.0,3EgzTIZI6UlLMGrmRGiJ2C
 Everything Now,Arcade Fire,2017,,,,,,,,,,,,,,,,,,,495.0,563.0,7KsZHCfOitA5V9oQYVdltG
 Whiskey In The Jar,Metallica,1998,,,,,,,,,,,,,,,,,,,569.0,402.0,3ZpWy5rBZv2aLQAldnmTsP
@@ -4364,7 +4364,7 @@ The Monster,Eminem & Rihanna,2013,,,,,,,,,,,,,,,,,,,,1382.0,48RrDBpOSSl1aLVCalGl
 It's Time,Imagine Dragons,2013,,,,,,,,,,,,,,,,,,,,1383.0,6BtmXhTJMM9sBTHeYYASGz
 Hopeless Wanderer,Mumford & Sons,2013,,,,,,,,,,,,,,,,,,,,1385.0,7rME25EmgXGVPQqKtU4CIK
 Let There Be Rock,AC/DC,1977,,,,,,,,,,,,,,,,,,,,1402.0,753KutoAy00apPsplMRetG
-One,Johnny Cash,2000,,,,,,,,,,,,,,,,,,,,1403.0,2fDHuS1PTkHBbCWWZF1ph9
+One,Johnny Cash,2000,,,,,,,,,,,,,,,,,,,,1403.0,5eReKc1D8ZQAg9kzQeHRdH
 Havana,Camila Cabello,2017,,,,,,,,,,,,,,,,,,,,1423.0,1rfofaqEpACxVEHIZBJe6W
 Is This Love,Bob Marley & The Wailers,1979,,,,,,,,,,,,,,,,,,,,1428.0,6JRLFiX9NJSoRRKxowlBYr
 Seven Wonders,Fleetwood Mac,1987,,,,,,,,,,,,,,,,,,,,1447.0,1VN2vWSkSmMKOhxr8lHzSx
@@ -4382,7 +4382,7 @@ The Miracle,Queen,1989,,,,,,,,,,,,,,,,,,,,1576.0,55ZMyYbRQRYjcNWceCL5oT
 These Days,Foo Fighters,2011,,,,,,,,,,,,,,,,,,,,1577.0,2kN05N1AQQplsgFweFAqYb
 Uninvited,Alanis Morissette,1999,,,,,,,,,,,,,,,,,,,,1579.0,7c1iI6dwdCpHGYT8DGEfab
 An End Has A Start,Editors,2007,,,,,,,,,,,,,,,,,,,,1581.0,1U2xFfjK1QUuicENnW0iwv
-Beautiful Trauma,Pink,2017,,,,,,,,,,,,,,,,,,,,1588.0,0Qh38w01QRXK6KHIv0e3hb
+Beautiful Trauma,Pink,2017,,,,,,,,,,,,,,,,,,,,1588.0,2DlIwu1iDTILEMXA7MUotn
 That's Life,Frank Sinatra,1966,,,,,,,,,,,,,,,,,,,,1612.0,4FmCUATNIarCQh72JYdvnm
 Riverside,Agnes Obel,2011,,,,,,,,,,,,,,,,,,,,1624.0,7kaub3iYrvVz5gaPVemsWE
 Home By The Sea,Genesis,1983,,,,,,,,,,,,,,,,,,,,1631.0,14AI8Qt9giIa8uzek1I24O
