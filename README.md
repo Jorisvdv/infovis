@@ -28,8 +28,7 @@ To work on the projects you need to run two commands. The javascript is bundled 
 These static files are served by Flask.
 
 ```shell script
-npm run watch  # this runs parcel which will build the static files
-npm start  # this starts flask and serves the files
+npm start  # this starts parcel which transpiles and serves the javascript files
 ```
 
 # Meeting notes
