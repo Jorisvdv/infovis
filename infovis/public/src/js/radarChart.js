@@ -16,10 +16,23 @@ function fakeData() {
 
 fakeData()
 
-function drawRadar(location, width, height, size=1) {
+// Inspired by https://yangdanny97.github.io/blog/2019/03/01/D3-Spider-Chart
+function drawRadar(location, size=1, features=["A", "B", "C", "D", "E"]) {
+	let width = 300;
+	let height = 300;
+	let basicSize = width / 2;
+
+	// Functions
+	function angleToCoordinate(angle, value) {
+		let x = Math.cos(angle) * radialScale(value);
+		let y = Math.sin(angle) * radialScale(value);
+		return {"x": basicSize * size + x, "y": basicSize * size - y};
+	}
 
 
 
+
+	// Creating the graph
 	let svg = d3.select(location)
 		.append("svg")
 		.attr("width", size * width)
@@ -36,21 +49,48 @@ function drawRadar(location, width, height, size=1) {
 
 	ticks.forEach(t =>
 		svg.append("circle")
-		.attr("cx", size * 150)
-		.attr("cy", size * 150)
+		.attr("cx", size * basicSize)
+		.attr("cy", size * basicSize)
 		.attr("fill", "none")
 		.attr("stroke", "gray")
 		.attr("r", radialScale(t))
 	);
 
-	// Adding the text labels
+	// Adding the text labels with a small offset
 	ticks.forEach(t =>
 		svg.append("text")
-		.attr("x", size * 145)
-		.attr("y", size * 148 - radialScale(t))
+		.attr("x", size * (basicSize + 5))
+		.attr("y", size * (basicSize - 2) - radialScale(t))
 		.text(t)
 		.attr("font-size", size * 10)
 	);
+
+
+	// Draw the straight lines, each representing a feature
+	for (var i = 0; i < features.length; i++) {
+	    let ft_name = features[i];
+	    let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
+	    let line_coordinate = angleToCoordinate(angle, 1);
+	    let label_coordinate = angleToCoordinate(angle, 1.2);
+
+	    //draw axis line
+	    svg.append("line")
+	    .attr("x1", size * basicSize)
+	    .attr("y1", size * basicSize)
+	    .attr("x2", line_coordinate.x)
+	    .attr("y2", line_coordinate.y)
+	    .attr("stroke","black");
+
+	    //draw axis label
+	    svg.append("text")
+	    .attr("x", label_coordinate.x - 3)
+	    .attr("y", label_coordinate.y + 4)
+	    .text(ft_name)
+	    .attr("font-size", size * 12);
+	}
+
+
+
 }
 
-drawRadar("#radarchart", 300, 300);
+drawRadar("#radarchart", 1);
