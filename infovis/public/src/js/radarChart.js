@@ -47,6 +47,7 @@ function drawRadar(location, data, size=1, features=["A","B","C","D","E","F"]) {
 		.attr("cy", size * basicSize)
 		.attr("fill", "none")
 		.attr("stroke", "gray")
+		.attr("opacity", 0.5)
 		.attr("r", radialScale(t))
 	);
 
@@ -73,7 +74,8 @@ function drawRadar(location, data, size=1, features=["A","B","C","D","E","F"]) {
 	    .attr("y1", size * basicSize)
 	    .attr("x2", line_coordinate.x)
 	    .attr("y2", line_coordinate.y)
-	    .attr("stroke","black");
+	    .attr("stroke","black")
+	    .attr("opacity", 0.5);
 
 	    //draw axis label
 	    svg.append("text")
@@ -90,7 +92,6 @@ function drawRadar(location, data, size=1, features=["A","B","C","D","E","F"]) {
 		.y(d => d.y);
 	let colors = ["darkorange", "gray", "navy", "green"];
 
-	console.log(data)
 
 	function getPathCoordinates(data_point){
 	    let coordinates = [];
