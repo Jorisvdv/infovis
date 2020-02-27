@@ -10,14 +10,11 @@ function fakeData() {
 	    features.forEach(f => point[f] = Math.random() );
 	    data.push(point);
 	}
-	console.log(data);
 	return data
 }
 
-fakeData()
-
 // Inspired by https://yangdanny97.github.io/blog/2019/03/01/D3-Spider-Chart
-function drawRadar(location, size=1, features=["A", "B", "C", "D", "E"]) {
+function drawRadar(location, data, size=1, features=["A","B","C","D","E","F"]) {
 	let width = 300;
 	let height = 300;
 	let basicSize = width / 2;
@@ -28,9 +25,6 @@ function drawRadar(location, size=1, features=["A", "B", "C", "D", "E"]) {
 		let y = Math.sin(angle) * radialScale(value);
 		return {"x": basicSize * size + x, "y": basicSize * size - y};
 	}
-
-
-
 
 	// Creating the graph
 	let svg = d3.select(location)
@@ -90,7 +84,44 @@ function drawRadar(location, size=1, features=["A", "B", "C", "D", "E"]) {
 	}
 
 
+	// Plotting the data
+	let line = d3.line()
+		.x(d => d.x)
+		.y(d => d.y);
+	let colors = ["darkorange", "gray", "navy", "green"];
 
+	console.log(data)
+
+	function getPathCoordinates(data_point){
+	    let coordinates = [];
+	    for (var i = 0; i < features.length; i++){
+	        let ft_name = features[i];
+	        let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
+	        coordinates.push(angleToCoordinate(angle, data_point[ft_name]));
+	    }
+	    return coordinates;
+	}
+
+	let t = d3.transition().delay(200).duration(700);
+
+	 for (var i = 0; i < data.length; i ++){
+		    let d = data[i];
+		    let color = colors[i];
+		    let coordinates = getPathCoordinates(d);
+
+		    //draw the path element
+		    svg.append("path")
+			    .datum(coordinates)
+			    .attr("stroke", color)
+			    .attr("stroke-opacity", 1)
+			    .attr("stroke", color)
+			    .transition(t)
+			    	.attr("d", line)
+			    	.attr("stroke-width", 3)
+			    	.attr("opacity", 0.5)
+			    	.attr("stroke", color)
+				    .attr("fill", color)
+	}
 }
 
-drawRadar("#radarchart", 1);
+drawRadar("#radarchart", fakeData(), 1, ["A", "B", "C"]);
