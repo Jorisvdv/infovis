@@ -78,7 +78,7 @@ function realData() {
 realData()
 
 // Inspired by https://yangdanny97.github.io/blog/2019/03/01/D3-Spider-Chart
-function drawRadar(location, data, size=1, features=[]) {
+export default function drawRadar(location, data, size=1, features=[]) {
 
 	// Parsing the features
 	if (features.length === 0) {
@@ -229,10 +229,6 @@ function drawRadar(location, data, size=1, features=[]) {
 	
 	 for (let i=0; i<data.length; i++){
  		timedExecution(i);
-
- 		if (i === (data.length - 1)) {
- 			location.reload(true)
- 		}
 		    //draw the path element
 		    // svg.append("path")
 			   //  .datum(coordinates)
@@ -247,5 +243,3 @@ function drawRadar(location, data, size=1, features=[]) {
 				  //   .attr("fill", color)
 	}
 }
-
-drawRadar("#radarchart", realData(), 1);
