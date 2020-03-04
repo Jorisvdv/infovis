@@ -4,8 +4,7 @@
   "description": "Project for information visualization",
   "main": "index.js",
   "scripts": {
-    "watch": "parcel watch --no-hmr --cache-dir infovis/public/.cache --out-dir infovis/public/dist infovis/public/src/index.html",
-    "start": "FLASK_APP=infovis/main.py FLASK_ENV=development flask run",
+    "start": "parcel serve infovis/public/src/index.html",
     "build": "parcel build --out-dir infovis/public/dist infovis/public/src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

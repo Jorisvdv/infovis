@@ -5,6 +5,7 @@
 data/login_token.json
 data/login_token.env
 .vscode
+data/token.py
 
 
 # Created by https://www.gitignore.io/api/node,macos,python,pycharm,visualstudiocode
