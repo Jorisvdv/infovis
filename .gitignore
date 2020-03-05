@@ -2,17 +2,12 @@
 .idea
 .node-version
 .python-version
-<<<<<<< HEAD
 .vscode
 
 # secrets
 data/token.py
-=======
 data/login_token.json
 data/login_token.env
-.vscode
->>>>>>> 117f4a1fc57ca70a93d7dd4fe6b81b078f85a130
-
 
 # Created by https://www.gitignore.io/api/node,macos,python,pycharm,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,macos,python,pycharm,visualstudiocode
