@@ -67,13 +67,6 @@ export default class RadarChart {
             .text(ft_name)
             .attr("font-size", this.size * 12);
         }
-
-
-
-
-
-
-        //this.chart = chart // Save the chart svg here
     }
 
     angleToCoordinate(angle, value) {
