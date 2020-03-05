@@ -1,173 +1,161 @@
 import * as d3 from "d3"
 
-d3.csv("/data/data.csv").then(function(data) {
+const data = JSON.parse('[{"index": "1999", "danceability": 0.5525879082, "energy": 0.5499389796, "loudness": -10.358044898, "speechiness": 0.0482452551, "tempo": 118.4947479592, "valence": 0.5928712245}, {"index": "2000", "danceability": 0.5556916581, "energy": 0.5821206755, "loudness": -9.9927922211, "speechiness": 0.0484955476, "tempo": 119.3857707267, "valence": 0.6064784545}, {"index": "2001", "danceability": 0.5502218479, "energy": 0.5601336396, "loudness": -10.2014139867, "speechiness": 0.0479523737, "tempo": 118.9083772333, "valence": 0.5842190403}, {"index": "2002", "danceability": 0.546340051, "energy": 0.5605739286, "loudness": -10.1481117347, "speechiness": 0.0473251531, "tempo": 118.5309811224, "valence": 0.5775928571}, {"index": "2003", "danceability": 0.5423736493, "energy": 0.5543700306, "loudness": -10.2153888889, "speechiness": 0.0470439348, "tempo": 118.8671508665, "valence": 0.5694063201}, {"index": "2004", "danceability": 0.5409303662, "energy": 0.5558800102, "loudness": -10.1704074262, "speechiness": 0.0468752289, "tempo": 118.8158957274, "valence": 0.5654483723}, {"index": "2005", "danceability": 0.5339431113, "energy": 0.5517878495, "loudness": -10.1425882054, "speechiness": 0.0462561769, "tempo": 118.8120462633, "valence": 0.5535723945}, {"index": "2006", "danceability": 0.5335038677, "energy": 0.552924631, "loudness": -10.095178626, "speechiness": 0.0468318066, "tempo": 118.7722814249, "valence": 0.5477290585}, {"index": "2007", "danceability": 0.5295341302, "energy": 0.5534807731, "loudness": -10.006819939, "speechiness": 0.0462786877, "tempo": 118.3554384537, "valence": 0.5392541709}, {"index": "2008", "danceability": 0.5312891094, "energy": 0.5524810687, "loudness": -10.0798371501, "speechiness": 0.0466943003, "tempo": 118.6970300254, "valence": 0.5440496692}, {"index": "2009", "danceability": 0.5332651292, "energy": 0.5668930056, "loudness": -9.7664445008, "speechiness": 0.0461115053, "tempo": 119.0007475925, "valence": 0.5309147491}, {"index": "2010", "danceability": 0.5319929114, "energy": 0.5664795949, "loudness": -9.7550248101, "speechiness": 0.04584, "tempo": 119.0724470886, "valence": 0.5328185823}, {"index": "2011", "danceability": 0.5312133536, "energy": 0.5698314112, "loudness": -9.6406828528, "speechiness": 0.0459762772, "tempo": 119.1311370764, "valence": 0.5203982802}, {"index": "2012", "danceability": 0.5321227778, "energy": 0.5731574242, "loudness": -9.5523439394, "speechiness": 0.0461559596, "tempo": 119.1726060606, "valence": 0.5173524242}, {"index": "2013", "danceability": 0.5336011599, "energy": 0.5744226425, "loudness": -9.5010660615, "speechiness": 0.0463019163, "tempo": 118.8398219869, "valence": 0.5149931921}, {"index": "2014", "danceability": 0.532372127, "energy": 0.5783654234, "loudness": -9.3929269153, "speechiness": 0.0468087198, "tempo": 118.7446522177, "valence": 0.506247631}, {"index": "2015", "danceability": 0.5337472306, "energy": 0.5869578046, "loudness": -9.2492220544, "speechiness": 0.0486022155, "tempo": 119.057846425, "valence": 0.5000236153}, {"index": "2016", "danceability": 0.5342004018, "energy": 0.5928183827, "loudness": -9.1765233551, "speechiness": 0.0502109493, "tempo": 119.6862225013, "valence": 0.4975547966}, {"index": "2017", "danceability": 0.5327006529, "energy": 0.5935849824, "loudness": -9.1558789553, "speechiness": 0.0502494726, "tempo": 119.6610728277, "valence": 0.4961919136}, {"index": "2018", "danceability": 0.5346745236, "energy": 0.5974602808, "loudness": -9.0359784353, "speechiness": 0.0513200602, "tempo": 119.7288475426, "valence": 0.4929775326}, {"index": "2019", "danceability": 0.5322982456, "energy": 0.5960896241, "loudness": -9.0446857143, "speechiness": 0.0508534837, "tempo": 119.6198035088, "valence": 0.4906610526}]');
 
-    console.log(data)
+var bisectDate = d3.bisector(d => d.index).left,
+    formatValue = d3.format(",.2f");
 
-});
-    // var keys = data.columns.slice(1);
+var svg = d3.select("#linechart"),
+    margin = {top: 15, right: 35, bottom: 15, left: 35},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
 
-    // var parseTime = d3.timeParse("%Y%m%d"),
-    //     formatDate = d3.timeFormat("%Y-%m-%d"),
-    //     bisectDate = d3.bisector(d => d.date).left,
-    //     formatValue = d3.format(",.0f");
+var x = d3.scaleLinear()
+    .rangeRound([margin.left, width - margin.right])
+    .domain(d3.extent(data, d => d.index))
 
-    // data.forEach(function(d) {
-    //     d.date = parseTime(d.date);
-    //     return d;
-    // })
+var y = d3.scaleLinear()
+    .rangeRound([height - margin.bottom, margin.top]);
 
-    // var svg = d3.select("#linechart"),
-    //     margin = {top: 15, right: 35, bottom: 15, left: 35},
-    //     width = +svg.attr("width") - margin.left - margin.right,
-    //     height = +svg.attr("height") - margin.top - margin.bottom;
+var z = d3.scaleOrdinal(d3.schemeCategory10);
 
-    // var x = d3.scaleTime()
-    //     .rangeRound([margin.left, width - margin.right])
-    //     .domain(d3.extent(data, d => d.date))
+var line = d3.line()
+    .x(d => x(d.year))
+    .y(d => y(d.feature_value));
 
-    // var y = d3.scaleLinear()
-    //     .rangeRound([height - margin.bottom, margin.top]);
+svg.append("g")
+    .attr("class","x-axis")
+    .attr("transform", "translate(0," + (height - margin.bottom) + ")")
+    .call(d3.axisBottom(x));
 
-    // var z = d3.scaleOrdinal(d3.schemeCategory10);
+svg.append("g")
+    .attr("class", "y-axis")
+    .attr("transform", "translate(" + margin.left + ",0)")
+    .call(d3.axisLeft(y));
 
-    // var line = d3.line()
-    //     .curve(d3.curveCardinal)
-    //     .x(d => x(d.date))
-    //     .y(d => y(d.degrees));
+var focus = svg.append("g")
+    .attr("class", "focus")
+    .style("display", "none");
 
-    // svg.append("g")
-    //     .attr("class","x-axis")
-    //     .attr("transform", "translate(0," + (height - margin.bottom) + ")")
-    //     .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%b")));
+focus.append("line").attr("class", "lineHover")
+    .style("stroke", "#999")
+    .attr("stroke-width", 1)
+    .style("shape-rendering", "crispEdges")
+    .style("opacity", 0.5)
+    .attr("y1", -height)
+    .attr("y2",0);
 
-    // svg.append("g")
-    //     .attr("class", "y-axis")
-    //     .attr("transform", "translate(" + margin.left + ",0)");
+focus.append("text").attr("class", "lineHoverDate")
+    .attr("text-anchor", "middle")
+    .attr("font-size", 12);
 
-    // var focus = svg.append("g")
-    //     .attr("class", "focus")
-    //     .style("display", "none");
+var overlay = svg.append("rect")
+    .attr("class", "overlay")
+    .attr("x", margin.left)
+    .attr("width", width - margin.right - margin.left)
+    .attr("height", height)
 
-    // focus.append("line").attr("class", "lineHover")
-    //     .style("stroke", "#999")
-    //     .attr("stroke-width", 1)
-    //     .style("shape-rendering", "crispEdges")
-    //     .style("opacity", 0.5)
-    //     .attr("y1", -height)
-    //     .attr("y2",0);
+update(["danceability", "energy", "speechiness", "valence"], 0);
 
-    // focus.append("text").attr("class", "lineHoverDate")
-    //     .attr("text-anchor", "middle")
-    //     .attr("font-size", 12);
+function update(audio_features, speed) {
 
-    // var overlay = svg.append("rect")
-    //     .attr("class", "overlay")
-    //     .attr("x", margin.left)
-    //     .attr("width", width - margin.right - margin.left)
-    //     .attr("height", height)
+    var features = audio_features.map(function(id) {
+        return {
+            id: id,
+            values: data.map(d => {return {year: +d.index, feature_value: +d[id]}})
+        };
+    });
 
-    // update(d3.select('#selectbox').property('value'), 0);
+    // y.domain([
+    //     d3.min(features, d => d3.min(d.values, c => c.feature_value)),
+    //     d3.max(features, d => d3.max(d.values, c => c.feature_value))
+    // ]).nice();
 
-    // function update(input, speed) {
+    var feature = svg.selectAll(".features")
+        .data(features);
 
-    //     var copy = keys.filter(f => f.includes(input))
+    feature.exit().remove();
 
-    //     var cities = copy.map(function(id) {
-    //         return {
-    //             id: id,
-    //             values: data.map(d => {return {date: d.date, degrees: +d[id]}})
-    //         };
-    //     });
+    feature.enter().insert("g", ".focus").append("path")
+        .attr("class", "line features")
+        .style("stroke", d => z(d.id))
+        .merge(feature)
+    .transition().duration(speed)
+        .attr("d", d => line(d.values))
 
-    //     y.domain([
-    //         d3.min(cities, d => d3.min(d.values, c => c.degrees)),
-    //         d3.max(cities, d => d3.max(d.values, c => c.degrees))
-    //     ]).nice();
+    tooltip(audio_features);
+}
 
-    //     svg.selectAll(".y-axis").transition()
-    //         .duration(speed)
-    //         .call(d3.axisLeft(y).tickSize(-width + margin.right + margin.left))
+function tooltip(audio_features) {
+    
+    var labels = focus.selectAll(".lineHoverText")
+        .data(audio_features)
 
-    //     var city = svg.selectAll(".cities")
-    //         .data(cities);
+    labels.enter().append("text")
+        .attr("class", "lineHoverText")
+        .style("fill", d => z(d))
+        .attr("text-anchor", "start")
+        .attr("font-size",12)
+        .attr("dy", (_, i) => 1 + i * 2 + "em")
+        .merge(labels);
 
-    //     city.exit().remove();
+    var circles = focus.selectAll(".hoverCircle")
+        .data(audio_features)
 
-    //     city.enter().insert("g", ".focus").append("path")
-    //         .attr("class", "line cities")
-    //         .style("stroke", d => z(d.id))
-    //         .merge(city)
-    //     .transition().duration(speed)
-    //         .attr("d", d => line(d.values))
+    circles.enter().append("circle")
+        .attr("class", "hoverCircle")
+        .style("fill", d => z(d))
+        .attr("r", 2.5)
+        .merge(circles);
 
-    //     tooltip(copy);
-    // }
+    svg.selectAll(".overlay")
+        .on("mouseover", function() { focus.style("display", null); })
+        .on("mouseout", function() { focus.style("display", "none"); })
+        .on("mousemove", mousemove);
 
-    // function tooltip(copy) {
-        
-    //     var labels = focus.selectAll(".lineHoverText")
-    //         .data(copy)
+    function mousemove() {
 
-    //     labels.enter().append("text")
-    //         .attr("class", "lineHoverText")
-    //         .style("fill", d => z(d))
-    //         .attr("text-anchor", "start")
-    //         .attr("font-size",12)
-    //         .attr("dy", (_, i) => 1 + i * 2 + "em")
-    //         .merge(labels);
+        // get data of the closest year to the corresponding x value of mouse
+        var x0 = x.invert(d3.mouse(this)[0]),
+            i = bisectDate(data, x0, 1),
+            d0 = data[i - 1],
+            d1 = data[i],
+            d = x0 - d0.index > d1.index - x0 ? d1 : d0;
 
-    //     var circles = focus.selectAll(".hoverCircle")
-    //         .data(copy)
+        focus.select(".lineHover")
+            .attr("transform", "translate(" + x(d.index) + "," + height + ")");
 
-    //     circles.enter().append("circle")
-    //         .attr("class", "hoverCircle")
-    //         .style("fill", d => z(d))
-    //         .attr("r", 2.5)
-    //         .merge(circles);
+        focus.select(".lineHoverDate")
+            .attr("transform", 
+                "translate(" + x(d.index) + "," + (height + margin.bottom) + ")")
+            .text(d.index);
+        console.log(d.index)
 
-    //     svg.selectAll(".overlay")
-    //         .on("mouseover", function() { focus.style("display", null); })
-    //         .on("mouseout", function() { focus.style("display", "none"); })
-    //         .on("mousemove", mousemove);
+        focus.selectAll(".hoverCircle")
+            .attr("cy", e => y(d[e]))
+            .attr("cx", x(d.index));
 
-    //     function mousemove() {
+        focus.selectAll(".lineHoverText")
+            .attr("transform", 
+                "translate(" + x(d.index) + "," + height / 2.5 + ")")
+            .text(e => e + " " + formatValue(d[e]));
 
-    //         var x0 = x.invert(d3.mouse(this)[0]),
-    //             i = bisectDate(data, x0, 1),
-    //             d0 = data[i - 1],
-    //             d1 = data[i],
-    //             d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+        x(d.index) > (width - width / 4) 
+            ? focus.selectAll("text.lineHoverText")
+                .attr("text-anchor", "end")
+                .attr("dx", -10)
+            : focus.selectAll("text.lineHoverText")
+                .attr("text-anchor", "start")
+                .attr("dx", 10)
+    }
+}
 
-    //         focus.select(".lineHover")
-    //             .attr("transform", "translate(" + x(d.date) + "," + height + ")");
-
-    //         focus.select(".lineHoverDate")
-    //             .attr("transform", 
-    //                 "translate(" + x(d.date) + "," + (height + margin.bottom) + ")")
-    //             .text(formatDate(d.date));
-
-    //         focus.selectAll(".hoverCircle")
-    //             .attr("cy", e => y(d[e]))
-    //             .attr("cx", x(d.date));
-
-    //         focus.selectAll(".lineHoverText")
-    //             .attr("transform", 
-    //                 "translate(" + (x(d.date)) + "," + height / 2.5 + ")")
-    //             .text(e => e + " " + "º" + formatValue(d[e]));
-
-    //         x(d.date) > (width - width / 4) 
-    //             ? focus.selectAll("text.lineHoverText")
-    //                 .attr("text-anchor", "end")
-    //                 .attr("dx", -10)
-    //             : focus.selectAll("text.lineHoverText")
-    //                 .attr("text-anchor", "start")
-    //                 .attr("dx", 10)
-    //     }
-    // }
-
-    // var selectbox = d3.select("#selectbox")
-    //     .on("change", function() {
-    //         update(this.value, 750);
-    //     })   
-// })
+var selectBox = d3.selectAll(".audioFeature")
+    .on("change", function() {
+        var checkedBoxes = Array.from(document.querySelectorAll('input[name=audioFeature]:checked'));
+        let checkedFeatures = []
+        checkedBoxes.forEach(function(entry) {
+            checkedFeatures.push(entry.value)
+        });
+        update(checkedFeatures, 750);
+    })

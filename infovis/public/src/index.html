@@ -31,9 +31,15 @@
 <body>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="js/index.js"></script>
-<script src="js/line_chart.js"></script>
 
-<svg id="linechart" width=850 height=410></svg>
+<input id="danceability" type="checkbox" name="audioFeature" class="audioFeature" value="danceability" checked> Danceability
+<input id="energy" type="checkbox" name="audioFeature" class="audioFeature" value="energy" checked> Energy
+<input id="speechiness" type="checkbox" name="audioFeature" class="audioFeature" value="speechiness" checked> Speechiness
+<input id="valence" type="checkbox" name="audioFeature" class="audioFeature" value="valence" checked> Valence
+<br>
+<svg id="linechart" width="850" height="410"></svg>
+
+<script src="js/line_chart.js"></script>
 
 </body>
 </html>
