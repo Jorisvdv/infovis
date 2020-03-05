@@ -1,19 +1,23 @@
 import * as d3 from "d3"
 import songData from "./../data/song_data_20200304.json"
-import radar from "./radarchart"
-import RadarChart from "./radarChart2"
+import RadarChart from "./radarChart"
 
 const features = ["acousticness", "danceability", "energy",
 	 "instrumentalness", "liveness", "valence", "speechiness"];
 
-function test() {
+function onClickTest() {
 	return
 }
 
-
-//radar("div#radarchart", [songData[0]], 1, features)
-const chart = new RadarChart("div#radarchart", test())
+const chart = new RadarChart("div#radarchart", onClickTest)
 chart.setFeatures(["acousticness", "danceability", "energy",
 	 "instrumentalness", "liveness", "valence", "speechiness"])
 chart.init()
-chart.update([songData[0]])
+chart.update([songData[10]])
+
+function getRandomData() {
+	let number = Math.ceil(Math.random() * 1000)
+	chart.update([songData[number]])
+}
+
+document.getElementById("testbutton").addEventListener("click", getRandomData);
