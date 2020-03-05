@@ -70,6 +70,16 @@ export default class BarChart {
 
 # Meeting notes
 
+## InfoVis Meeting 05-3
+We discussed our presentation and demo. 
+
+### Feedback
+* We are well structured team
+* He likes our progress
+* Artclouds shared
+* Meet next week at wednesday 9.30 (put on canvas)
+* 
+
 ## InfoVis Meeting 26-2
 
 ### Ideas:
