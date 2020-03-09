@@ -1,5 +1,6 @@
 {
     "Blues":{
+        "size":3,
         "year":1969.3333333333,
         "popularity":38.3333333333,
         "duration":221341.6666666667,
@@ -11,10 +12,10 @@
         "loudness":-9.111,
         "speechiness":0.0554666667,
         "tempo":104.8203333333,
-        "valence":0.6196666667,
-        "size":3
+        "valence":0.6196666667
     },
     "Chanson":{
+        "size":11,
         "year":1966.6363636364,
         "popularity":45.0909090909,
         "duration":195842.0909090909,
@@ -26,10 +27,10 @@
         "loudness":-10.7590909091,
         "speechiness":0.0430636364,
         "tempo":113.1314545455,
-        "valence":0.5065454545,
-        "size":11
+        "valence":0.5065454545
     },
     "Classic rock":{
+        "size":489,
         "year":1972.9979550102,
         "popularity":55.9529652352,
         "duration":243444.9550102249,
@@ -41,10 +42,10 @@
         "loudness":-10.1983006135,
         "speechiness":0.0481848671,
         "tempo":121.1073128834,
-        "valence":0.5926719836,
-        "size":489
+        "valence":0.5926719836
     },
     "Country":{
+        "size":5,
         "year":1973.4,
         "popularity":53.6,
         "duration":182439.8,
@@ -56,10 +57,10 @@
         "loudness":-11.2028,
         "speechiness":0.06754,
         "tempo":110.7814,
-        "valence":0.6886,
-        "size":5
+        "valence":0.6886
     },
     "Disco":{
+        "size":22,
         "year":1980.5,
         "popularity":47.9090909091,
         "duration":275237.6363636364,
@@ -71,10 +72,10 @@
         "loudness":-9.2903181818,
         "speechiness":0.0633272727,
         "tempo":118.4798636364,
-        "valence":0.7455,
-        "size":22
+        "valence":0.7455
     },
     "Dutch rock":{
+        "size":118,
         "year":1982.0593220339,
         "popularity":28.1355932203,
         "duration":237274.2796610169,
@@ -86,10 +87,10 @@
         "loudness":-10.8281355932,
         "speechiness":0.0559254237,
         "tempo":115.0689915254,
-        "valence":0.5132830508,
-        "size":118
+        "valence":0.5132830508
     },
     "Folk":{
+        "size":16,
         "year":1967.5,
         "popularity":34.3125,
         "duration":208656.375,
@@ -101,10 +102,10 @@
         "loudness":-10.6575,
         "speechiness":0.0541,
         "tempo":119.67925,
-        "valence":0.5531875,
-        "size":16
+        "valence":0.5531875
     },
     "House":{
+        "size":1,
         "year":1978.0,
         "popularity":6.0,
         "duration":199863.0,
@@ -116,10 +117,10 @@
         "loudness":-8.546,
         "speechiness":0.0349,
         "tempo":129.983,
-        "valence":0.298,
-        "size":1
+        "valence":0.298
     },
     "Jazz":{
+        "size":22,
         "year":1966.7272727273,
         "popularity":43.5,
         "duration":219701.0454545454,
@@ -131,10 +132,10 @@
         "loudness":-13.3711363636,
         "speechiness":0.0474727273,
         "tempo":114.5203636364,
-        "valence":0.50185,
-        "size":22
+        "valence":0.50185
     },
     "Karaoke":{
+        "size":17,
         "year":1972.2941176471,
         "popularity":1.7058823529,
         "duration":203753.5294117647,
@@ -146,10 +147,10 @@
         "loudness":-12.6736470588,
         "speechiness":0.0397294118,
         "tempo":127.0165294118,
-        "valence":0.5411764706,
-        "size":17
+        "valence":0.5411764706
     },
     "Nederpop":{
+        "size":63,
         "year":1971.4920634921,
         "popularity":23.5873015873,
         "duration":212465.2063492064,
@@ -161,10 +162,10 @@
         "loudness":-9.5379206349,
         "speechiness":0.0424730159,
         "tempo":120.7003809524,
-        "valence":0.6158888889,
-        "size":63
+        "valence":0.6158888889
     },
     "Other":{
+        "size":355,
         "year":1976.0591549296,
         "popularity":32.6281690141,
         "duration":226395.0591549296,
@@ -176,10 +177,10 @@
         "loudness":-10.5701915493,
         "speechiness":0.0500219718,
         "tempo":117.565656338,
-        "valence":0.590515493,
-        "size":355
+        "valence":0.590515493
     },
     "Pop":{
+        "size":167,
         "year":1978.3293413174,
         "popularity":48.7664670659,
         "duration":243564.9520958084,
@@ -191,10 +192,10 @@
         "loudness":-9.6869820359,
         "speechiness":0.0488221557,
         "tempo":119.3987305389,
-        "valence":0.5870371257,
-        "size":167
+        "valence":0.5870371257
     },
     "Reggae":{
+        "size":6,
         "year":1984.0,
         "popularity":54.1666666667,
         "duration":226957.0,
@@ -206,10 +207,10 @@
         "loudness":-11.297,
         "speechiness":0.0529166667,
         "tempo":120.6936666667,
-        "valence":0.774,
-        "size":6
+        "valence":0.774
     },
     "Rock":{
+        "size":187,
         "year":1977.7807486631,
         "popularity":46.0320855615,
         "duration":246547.1016042781,
@@ -221,10 +222,10 @@
         "loudness":-10.4814385027,
         "speechiness":0.0486187166,
         "tempo":116.9419197861,
-        "valence":0.5750737968,
-        "size":187
+        "valence":0.5750737968
     },
     "Rock-and-roll":{
+        "size":121,
         "year":1963.4297520661,
         "popularity":45.3884297521,
         "duration":157574.8347107438,
@@ -236,10 +237,10 @@
         "loudness":-9.6819338843,
         "speechiness":0.0499578512,
         "tempo":119.9358429752,
-        "valence":0.7167355372,
-        "size":121
+        "valence":0.7167355372
     },
     "Singer-songwriter":{
+        "size":4,
         "year":1971.75,
         "popularity":24.5,
         "duration":182283.25,
@@ -251,10 +252,10 @@
         "loudness":-16.3515,
         "speechiness":0.035625,
         "tempo":108.6625,
-        "valence":0.38425,
-        "size":4
+        "valence":0.38425
     },
     "Soft rock":{
+        "size":260,
         "year":1979.8653846154,
         "popularity":54.4038461538,
         "duration":241601.9115384615,
@@ -266,10 +267,10 @@
         "loudness":-10.4653153846,
         "speechiness":0.0390834615,
         "tempo":118.3937653846,
-        "valence":0.5561226923,
-        "size":260
+        "valence":0.5561226923
     },
     "Soul":{
+        "size":93,
         "year":1973.935483871,
         "popularity":51.6451612903,
         "duration":240810.4408602151,
@@ -281,7 +282,6 @@
         "loudness":-10.597483871,
         "speechiness":0.0544365591,
         "tempo":111.8930215054,
-        "valence":0.6825053763,
-        "size":93
+        "valence":0.6825053763
     }
 }
