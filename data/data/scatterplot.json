@@ -317,7 +317,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Hip-hop",
@@ -332,7 +333,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Metal",
@@ -347,7 +349,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Rap",
@@ -362,7 +365,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Techno",
@@ -377,7 +381,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2000": [
@@ -714,7 +719,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Metal",
@@ -729,7 +735,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Rap",
@@ -744,7 +751,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Techno",
@@ -759,7 +767,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2001": [
@@ -1096,7 +1105,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Metal",
@@ -1111,7 +1121,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Rap",
@@ -1126,7 +1137,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Techno",
@@ -1141,7 +1153,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2002": [
@@ -1478,7 +1491,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Metal",
@@ -1493,7 +1507,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Rap",
@@ -1508,7 +1523,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Techno",
@@ -1523,7 +1539,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2003": [
@@ -1860,7 +1877,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Metal",
@@ -1875,7 +1893,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Rap",
@@ -1890,7 +1909,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Techno",
@@ -1905,7 +1925,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2004": [
@@ -2242,7 +2263,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Metal",
@@ -2257,7 +2279,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Rap",
@@ -2272,7 +2295,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Techno",
@@ -2287,7 +2311,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2005": [
@@ -2656,7 +2681,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Techno",
@@ -2671,7 +2697,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2006": [
@@ -3056,7 +3083,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2007": [
@@ -3441,7 +3469,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2008": [
@@ -3810,7 +3839,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Techno",
@@ -3825,7 +3855,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2009": [
@@ -4596,7 +4627,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2011": [
@@ -7297,7 +7329,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2018": [
@@ -7682,7 +7715,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ],
     "2019": [
@@ -8067,7 +8101,8 @@
             "loudness": 0,
             "speechiness": 0,
             "tempo": 0,
-            "valence": 0
+            "valence": 0,
+            "size": 0
         }
     ]
 }
