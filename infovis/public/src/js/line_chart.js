@@ -16,6 +16,16 @@ export default class LineChart {
         this.bisectDate = d3.bisector(d => d.index).left,
         this.formatValue = d3.format(",.2f");
 
+        this.colorScale = {
+            "valence": "#e91e63",
+            "speechiness": "#673ab7",
+            "liveness": "#795548",
+            "instrumentalness": "#009688",
+            "energy": "#cddc39",
+            "danceability": "#ffc107",
+            "acousticness": "#ff5722",
+        };
+
         this.chart = d3
             .select(this.selector)
             .append("svg")
@@ -66,35 +76,6 @@ export default class LineChart {
         // overlay has to be drawn on top of the visualistation. 
         // Remove it here, replace it at the end of the update function.
         this.chart.selectAll(".overlay").remove();
-
-        let newData = {}
-        Object.keys(data).forEach(year => {
-            Object.keys(data[year]).forEach(key => {
-                if (newData[key] === undefined) {
-                    newData[key] = {
-                        key: key,
-                        data: []
-                    }
-                }
-                newData[key]["data"].push({
-                    year: year,
-                    data: data[year][key]
-                })
-            })
-        })
-
-        newData = {
-            "acousticness": newData.acousticness,
-            "danceability": newData.danceability,
-            "energy": newData.energy,
-            "instrumentalness": newData.instrumentalness,
-            "liveness": newData.liveness,   
-            "speechiness": newData.speechiness,
-            "valence": newData.valence
-        }
-
-        newData = Object.values(newData)
-
         // update x- and y-axis
         this.x = d3
             .scaleTime()
@@ -114,13 +95,17 @@ export default class LineChart {
 
         const lines = this.chart
             .selectAll(".line")
-            .data(Object.values(newData));
+            .data(Object.values(data));
 
         lines
             .enter()
             .append("path")
+            .merge(lines)
             .attr("class", "line")
-            .style("stroke", "#000")
+            .style("stroke", d => {
+                console.log(d)
+                return this.colorScale[d.key];
+            })
             .style("fill", "none")
             .style("stroke-width", 2)
             .transition().duration(750)
@@ -134,7 +119,8 @@ export default class LineChart {
             .attr("height", this.height)
             .attr("opacity", 0)
 
-        this.tooltip(this._getAudioFeatures(newData))
+        this.tooltip(this._getAudioFeatures(data))
+        lines.exit().remove()
     }
 
     tooltip(audioFeatures) {
