@@ -10,22 +10,17 @@
   height: auto;
 }
 
+
 .container .btn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: rgba(70, 43, 43, 0.589);
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
-  border-radius: 5px;
   text-align: center;
 }
 
-.container .btn:hover {
-  background-color: black;
-}
+.container .btn:hover .musicbutton {fill:rgba(52, 52, 52, 0.850)};
