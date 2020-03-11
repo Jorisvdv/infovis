@@ -97,6 +97,22 @@
             "size": 118
         },
         {
+            "genre": "Electronica/dance",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Folk",
             "release_year": 1967.5,
             "popularity": 34.3125,
@@ -111,6 +127,22 @@
             "tempo": 119.67925,
             "valence": 0.5531875,
             "size": 16
+        },
+        {
+            "genre": "Hip-hop",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "House",
@@ -161,6 +193,22 @@
             "size": 17
         },
         {
+            "genre": "Metal",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Nederpop",
             "release_year": 1971.4920634920634,
             "popularity": 23.58730158730159,
@@ -207,6 +255,22 @@
             "tempo": 119.39873053892218,
             "valence": 0.587037125748503,
             "size": 167
+        },
+        {
+            "genre": "Rap",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Reggae",
@@ -303,70 +367,6 @@
             "tempo": 111.89302150537635,
             "valence": 0.682505376344086,
             "size": 93
-        },
-        {
-            "genre": "Electronica/dance",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Hip-hop",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Metal",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Rap",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         },
         {
             "genre": "Techno",
@@ -515,6 +515,22 @@
             "size": 13
         },
         {
+            "genre": "Hip-hop",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "House",
             "release_year": 1978.0,
             "popularity": 6.0,
@@ -563,6 +579,22 @@
             "size": 14
         },
         {
+            "genre": "Metal",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Nederpop",
             "release_year": 1971.0576923076924,
             "popularity": 23.923076923076923,
@@ -609,6 +641,22 @@
             "tempo": 120.74236879432625,
             "valence": 0.6064340425531912,
             "size": 141
+        },
+        {
+            "genre": "Rap",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Reggae",
@@ -705,54 +753,6 @@
             "tempo": 115.8528939393939,
             "valence": 0.7151363636363638,
             "size": 66
-        },
-        {
-            "genre": "Hip-hop",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Metal",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Rap",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         },
         {
             "genre": "Techno",
@@ -901,6 +901,22 @@
             "size": 10
         },
         {
+            "genre": "Hip-hop",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "House",
             "release_year": 1978.0,
             "popularity": 6.0,
@@ -949,6 +965,22 @@
             "size": 16
         },
         {
+            "genre": "Metal",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Nederpop",
             "release_year": 1971.1346153846155,
             "popularity": 23.673076923076923,
@@ -995,6 +1027,22 @@
             "tempo": 122.80685064935065,
             "valence": 0.5669558441558441,
             "size": 154
+        },
+        {
+            "genre": "Rap",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Reggae",
@@ -1091,54 +1139,6 @@
             "tempo": 112.17741428571432,
             "valence": 0.6803285714285718,
             "size": 70
-        },
-        {
-            "genre": "Hip-hop",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Metal",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Rap",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         },
         {
             "genre": "Techno",
@@ -1287,6 +1287,22 @@
             "size": 11
         },
         {
+            "genre": "Hip-hop",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "House",
             "release_year": 1978.0,
             "popularity": 6.0,
@@ -1335,6 +1351,22 @@
             "size": 12
         },
         {
+            "genre": "Metal",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Nederpop",
             "release_year": 1970.6964285714287,
             "popularity": 23.660714285714285,
@@ -1381,6 +1413,22 @@
             "tempo": 121.25865161290328,
             "valence": 0.5595883870967744,
             "size": 155
+        },
+        {
+            "genre": "Rap",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Reggae",
@@ -1477,54 +1525,6 @@
             "tempo": 113.05485714285717,
             "valence": 0.6719206349206354,
             "size": 63
-        },
-        {
-            "genre": "Hip-hop",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Metal",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Rap",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         },
         {
             "genre": "Techno",
@@ -1673,6 +1673,22 @@
             "size": 12
         },
         {
+            "genre": "Hip-hop",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "House",
             "release_year": 1978.0,
             "popularity": 6.0,
@@ -1721,6 +1737,22 @@
             "size": 16
         },
         {
+            "genre": "Metal",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Nederpop",
             "release_year": 1971.290909090909,
             "popularity": 23.545454545454547,
@@ -1767,6 +1799,22 @@
             "tempo": 121.28128767123287,
             "valence": 0.5349123287671235,
             "size": 146
+        },
+        {
+            "genre": "Rap",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Reggae",
@@ -1863,54 +1911,6 @@
             "tempo": 114.53859016393444,
             "valence": 0.6801475409836069,
             "size": 61
-        },
-        {
-            "genre": "Hip-hop",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Metal",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Rap",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         },
         {
             "genre": "Techno",
@@ -2059,6 +2059,22 @@
             "size": 13
         },
         {
+            "genre": "Hip-hop",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "House",
             "release_year": 1978.0,
             "popularity": 6.0,
@@ -2107,6 +2123,22 @@
             "size": 14
         },
         {
+            "genre": "Metal",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Nederpop",
             "release_year": 1971.7818181818182,
             "popularity": 23.145454545454545,
@@ -2153,6 +2185,22 @@
             "tempo": 121.23457894736842,
             "valence": 0.5323960526315791,
             "size": 152
+        },
+        {
+            "genre": "Rap",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
         },
         {
             "genre": "Reggae",
@@ -2249,54 +2297,6 @@
             "tempo": 114.24818032786888,
             "valence": 0.687737704918033,
             "size": 61
-        },
-        {
-            "genre": "Hip-hop",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Metal",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
-        },
-        {
-            "genre": "Rap",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         },
         {
             "genre": "Techno",
@@ -2573,6 +2573,22 @@
             "size": 159
         },
         {
+            "genre": "Rap",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Reggae",
             "release_year": 1985.142857142857,
             "popularity": 56.0,
@@ -2667,22 +2683,6 @@
             "tempo": 114.4941052631579,
             "valence": 0.667921052631579,
             "size": 57
-        },
-        {
-            "genre": "Rap",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         },
         {
             "genre": "Techno",
@@ -3731,6 +3731,22 @@
             "size": 159
         },
         {
+            "genre": "Rap",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Reggae",
             "release_year": 1985.142857142857,
             "popularity": 56.0,
@@ -3825,22 +3841,6 @@
             "tempo": 113.43545161290324,
             "valence": 0.6309758064516129,
             "size": 62
-        },
-        {
-            "genre": "Rap",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         },
         {
             "genre": "Techno",
@@ -6949,6 +6949,22 @@
     ],
     "2017": [
         {
+            "genre": "Blues",
+            "release_year": 0,
+            "popularity": 0,
+            "duration": 0,
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+            "size": 0
+        },
+        {
             "genre": "Chanson",
             "release_year": 1970.0,
             "popularity": 54.25,
@@ -7315,7 +7331,9 @@
             "tempo": 143.36557142857143,
             "valence": 0.3777142857142857,
             "size": 7
-        },
+        }
+    ],
+    "2018": [
         {
             "genre": "Blues",
             "release_year": 0,
@@ -7331,9 +7349,7 @@
             "tempo": 0,
             "valence": 0,
             "size": 0
-        }
-    ],
-    "2018": [
+        },
         {
             "genre": "Chanson",
             "release_year": 1970.0,
@@ -7701,7 +7717,9 @@
             "tempo": 150.25066666666666,
             "valence": 0.38188888888888894,
             "size": 9
-        },
+        }
+    ],
+    "2019": [
         {
             "genre": "Blues",
             "release_year": 0,
@@ -7717,9 +7735,7 @@
             "tempo": 0,
             "valence": 0,
             "size": 0
-        }
-    ],
-    "2019": [
+        },
         {
             "genre": "Chanson",
             "release_year": 1970.0,
@@ -8087,22 +8103,6 @@
             "tempo": 148.2292,
             "valence": 0.37570000000000003,
             "size": 10
-        },
-        {
-            "genre": "Blues",
-            "release_year": 0,
-            "popularity": 0,
-            "duration": 0,
-            "acousticness": 0,
-            "danceability": 0,
-            "energy": 0,
-            "instrumentalness": 0,
-            "liveness": 0,
-            "loudness": 0,
-            "speechiness": 0,
-            "tempo": 0,
-            "valence": 0,
-            "size": 0
         }
     ]
 }
