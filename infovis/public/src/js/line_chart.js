@@ -20,7 +20,7 @@ export default class LineChart {
             .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")
-            .attr("transform", `translate(${this.margin.top}, ${this.margin.left})`)
+            .attr("transform", `translate(${this.margin.left}, ${this.margin.top})`)
 
 
         this.line = d3.line()
@@ -33,13 +33,12 @@ export default class LineChart {
         this.chart
             .append("g")
             .attr("class", "x-axis")
-            .attr("transform", `translate(${this.margin.left},${this.height-this.margin.top-this.margin.bottom})`);
+            .attr("transform", `translate(0,${this.height-this.margin.top-this.margin.bottom})`);
 
         // Y Axis
         this.chart
             .append("g")
             .attr("class", "y-axis")
-            .attr("transform", `translate(${this.margin.left},0)`);
     }
 
     update(data) {
