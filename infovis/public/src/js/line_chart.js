@@ -13,6 +13,8 @@ export default class LineChart {
         this.width = 850;
         this.height = 410;
         this.colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+        this.bisectDate = d3.bisector(d => d.index).left,
+        this.formatValue = d3.format(",.2f");
 
         this.chart = d3
             .select(this.selector)
@@ -21,7 +23,6 @@ export default class LineChart {
             .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")
             .attr("transform", `translate(${this.margin.left}, ${this.margin.top})`)
-
 
         this.line = d3.line()
             .x(d => {
@@ -39,9 +40,33 @@ export default class LineChart {
         this.chart
             .append("g")
             .attr("class", "y-axis")
+    
+        // focus for tooltip
+        this.focus = this.chart.append("g")
+            .attr("id", "tooltip-focus")
+            .attr("class", "focus")
+            .style("display", "none");
+
+        this.focus.append("line").attr("class", "lineHover")
+            .style("stroke", "#999")
+            .attr("stroke-width", 1)
+            .style("shape-rendering", "crispEdges")
+            .style("opacity", 0.5)
+            .attr("y1", -this.height)
+            .attr("y2", 0);
+
+        this.focus.append("text").attr("class", "lineHoverDate")
+            .attr("text-anchor", "middle")
+            .attr("font-size", 12);
+
     }
 
     update(data) {
+
+        // overlay has to be drawn on top of the visualistation. 
+        // Remove it here, replace it at the end of the update function.
+        this.chart.selectAll(".overlay").remove();
+
         let newData = {}
         Object.keys(data).forEach(year => {
             Object.keys(data[year]).forEach(key => {
@@ -69,7 +94,7 @@ export default class LineChart {
         }
 
         newData = Object.values(newData)
-        console.log(newData)
+
         // update x- and y-axis
         this.x = d3
             .scaleTime()
@@ -99,138 +124,84 @@ export default class LineChart {
             .style("fill", "none")
             .style("stroke-width", 2)
             .transition().duration(750)
-            .attr("d", d => this.line(d.data))
+            .attr("d", d => this.line(d.data))      
+
+        // Put in the overlay for tooltip
+        this.chart.append("rect")
+            .attr("class", "overlay")
+            .attr("id", "tooltip-overlay")
+            .attr("width", this.width + this.margin.right)
+            .attr("height", this.height)
+            .attr("opacity", 0)
+
+        this.tooltip(this._getAudioFeatures(newData))
+    }
+
+    tooltip(audioFeatures) {
+        
+        const labels = this.focus.selectAll(".lineHoverText")
+            .data(audioFeatures)
+        
+        const circles = this.focus.selectAll(".hoverCircle")
+            .data(audioFeatures)
+
+        labels.enter().append("text")
+            .attr("class", "lineHoverText")
+            .style("fill", d => this.colorScale(d))
+            .attr("text-anchor", "start")
+            .attr("font", 12)
+            .attr("dy", (_, i) => 1 + i * 2 + "em")
+            .merge(labels)
+
+        circles.enter().append("circle")
+            .attr("class", "hoverCircle")
+            .style("fill", d => this.colorScale(d))
+            .attr("r", 2.5)
+            .merge(circles);
+
+        this.chart.select("#tooltip-overlay")
+            .on("mouseover", () => {
+                this.focus.style("display", null);
+            })
+            .on("mouseout", () => {
+                this.focus.style("display", "none");
+            })
+            .on("mousemove", () => {
+                // get data of the closest year to the corresponding x value of mouse
+                const x0 = this.x(event.clientX),
+                       i = this.bisectDate(data, x0, 1),
+                      d0 = data[i - 1],
+                      d1 = data[i],
+                       d = x0 - d0.index > d1.index - x0 ? d1 : d0;
+
+                this.focus.select(".lineHover")
+                .attr("transform", "translate(" + this.x(d.index) + "," + this.height + ")");
+
+                this.focus.select(".lineHoverDate")
+                .attr("transform",
+                    "translate(" + this.x(d.index) + "," + (this.height + this.margin.bottom) + ")")
+                .text(d.index);
+
+                this.focus.selectAll(".hoverCircle")
+                .attr("cy", e => this.y(d[e]))
+                .attr("cx", this.x(d.index));
+
+                this.focus.selectAll(".lineHoverText")
+                .attr("transform",
+                    "translate(" + this.x(d.index) + "," + this.height / 2.5 + ")")
+                .text(e => e + " " + this.formatValue(d[e]));
+
+                this.x(d.index) > (this.width - this.width / 4)
+                ? this.focus.selectAll("text.lineHoverText")
+                    .attr("text-anchor", "end")
+                    .attr("dx", -10)
+                : this.focus.selectAll("text.lineHoverText")
+                    .attr("text-anchor", "start")
+                    .attr("dx", 10)
+            });
+    }
+
+    _getAudioFeatures(data) {
+        return data.map(d => d.key)
     }
 }
-
-// var bisectDate = d3.bisector(d => d.index).left,
-//     formatValue = d3.format(",.2f");
-//
-// var focus = svg.append("g")
-//     .attr("class", "focus")
-//     .style("display", "none");
-//
-// focus.append("line").attr("class", "lineHover")
-//     .style("stroke", "#999")
-//     .attr("stroke-width", 1)
-//     .style("shape-rendering", "crispEdges")
-//     .style("opacity", 0.5)
-//     .attr("y1", -height)
-//     .attr("y2", 0);
-//
-// focus.append("text").attr("class", "lineHoverDate")
-//     .attr("text-anchor", "middle")
-//     .attr("font-size", 12);
-//
-// var overlay = svg.append("rect")
-//     .attr("class", "overlay")
-//     .attr("x", margin.left)
-//     .attr("width", width - margin.right - margin.left)
-//     .attr("height", height)
-//
-// update(["danceability", "energy", "speechiness", "valence"], 0);
-
-function update(audio_features, speed) {
-
-    var features = audio_features.map(function (id) {
-        return {
-            id: id,
-            values: data.map(d => {
-                return {year: +d.index, feature_value: +d[id]}
-            })
-        };
-    });
-
-    var feature = svg.selectAll(".features")
-        .data(features);
-
-    feature.exit().remove();
-
-    feature.enter().insert("g", ".focus").append("path")
-        .attr("class", "line features")
-        .style("stroke", d => z(d.id))
-        .merge(feature)
-        .transition().duration(speed)
-        .attr("d", d => line(d.values))
-
-    // tooltip(audio_features);
-}
-
-//
-// function tooltip(audio_features) {
-//
-//     var labels = focus.selectAll(".lineHoverText")
-//         .data(audio_features)
-//
-//     labels.enter().append("text")
-//         .attr("class", "lineHoverText")
-//         .style("fill", d => z(d))
-//         .attr("text-anchor", "start")
-//         .attr("font-size", 12)
-//         .attr("dy", (_, i) => 1 + i * 2 + "em")
-//         .merge(labels);
-//
-//     var circles = focus.selectAll(".hoverCircle")
-//         .data(audio_features)
-//
-//     circles.enter().append("circle")
-//         .attr("class", "hoverCircle")
-//         .style("fill", d => z(d))
-//         .attr("r", 2.5)
-//         .merge(circles);
-//
-//     svg.selectAll(".overlay")
-//         .on("mouseover", function () {
-//             focus.style("display", null);
-//         })
-//         .on("mouseout", function () {
-//             focus.style("display", "none");
-//         })
-//         .on("mousemove", mousemove);
-//
-//     function mousemove() {
-//
-//         // get data of the closest year to the corresponding x value of mouse
-//         var x0 = x.invert(d3.mouse(this)[0]),
-//             i = bisectDate(data, x0, 1),
-//             d0 = data[i - 1],
-//             d1 = data[i],
-//             d = x0 - d0.index > d1.index - x0 ? d1 : d0;
-//
-//         focus.select(".lineHover")
-//             .attr("transform", "translate(" + x(d.index) + "," + height + ")");
-//
-//         focus.select(".lineHoverDate")
-//             .attr("transform",
-//                 "translate(" + x(d.index) + "," + (height + margin.bottom) + ")")
-//             .text(d.index);
-//         console.log(d.index)
-//
-//         focus.selectAll(".hoverCircle")
-//             .attr("cy", e => y(d[e]))
-//             .attr("cx", x(d.index));
-//
-//         focus.selectAll(".lineHoverText")
-//             .attr("transform",
-//                 "translate(" + x(d.index) + "," + height / 2.5 + ")")
-//             .text(e => e + " " + formatValue(d[e]));
-//
-//         x(d.index) > (width - width / 4)
-//             ? focus.selectAll("text.lineHoverText")
-//                 .attr("text-anchor", "end")
-//                 .attr("dx", -10)
-//             : focus.selectAll("text.lineHoverText")
-//                 .attr("text-anchor", "start")
-//                 .attr("dx", 10)
-//     }
-// }
-//
-// var selectBox = d3.selectAll(".audioFeature")
-//     .on("change", function () {
-//         var checkedBoxes = Array.from(document.querySelectorAll('input[name=audioFeature]:checked'));
-//         let checkedFeatures = []
-//         checkedBoxes.forEach(function (entry) {
-//             checkedFeatures.push(entry.value)
-//         });
-//         update(checkedFeatures, 750);
-//     })
