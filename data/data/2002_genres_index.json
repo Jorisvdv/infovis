@@ -1,7 +1,7 @@
 {
     "Blues":{
         "size":2,
-        "year":1971.5,
+        "release_year":1971.5,
         "popularity":37.5,
         "duration":249679.5,
         "acousticness":0.2878,
@@ -16,7 +16,7 @@
     },
     "Chanson":{
         "size":13,
-        "year":1967.7692307692,
+        "release_year":1967.7692307692,
         "popularity":42.5384615385,
         "duration":196067.3846153846,
         "acousticness":0.6159230769,
@@ -31,7 +31,7 @@
     },
     "Classic rock":{
         "size":598,
-        "year":1973.2642140468,
+        "release_year":1973.2642140468,
         "popularity":55.2859531773,
         "duration":246417.8344481605,
         "acousticness":0.3225158833,
@@ -46,7 +46,7 @@
     },
     "Country":{
         "size":5,
-        "year":1973.4,
+        "release_year":1973.4,
         "popularity":53.6,
         "duration":182439.8,
         "acousticness":0.7074,
@@ -61,7 +61,7 @@
     },
     "Disco":{
         "size":13,
-        "year":1980.5384615385,
+        "release_year":1980.5384615385,
         "popularity":48.1538461538,
         "duration":293140.7692307692,
         "acousticness":0.1530336154,
@@ -76,7 +76,7 @@
     },
     "Dutch rock":{
         "size":150,
-        "year":1981.96,
+        "release_year":1981.96,
         "popularity":28.0666666667,
         "duration":238691.7333333333,
         "acousticness":0.37567674,
@@ -91,7 +91,7 @@
     },
     "Electronica\/dance":{
         "size":1,
-        "year":1979.0,
+        "release_year":1979.0,
         "popularity":20.0,
         "duration":93373.0,
         "acousticness":0.000013,
@@ -106,7 +106,7 @@
     },
     "Folk":{
         "size":11,
-        "year":1966.1818181818,
+        "release_year":1966.1818181818,
         "popularity":37.1818181818,
         "duration":208895.4545454546,
         "acousticness":0.6168645455,
@@ -121,7 +121,7 @@
     },
     "House":{
         "size":1,
-        "year":1978.0,
+        "release_year":1978.0,
         "popularity":6.0,
         "duration":199863.0,
         "acousticness":0.00705,
@@ -136,7 +136,7 @@
     },
     "Jazz":{
         "size":10,
-        "year":1965.9,
+        "release_year":1965.9,
         "popularity":51.2,
         "duration":231835.6,
         "acousticness":0.62917,
@@ -151,7 +151,7 @@
     },
     "Karaoke":{
         "size":12,
-        "year":1973.25,
+        "release_year":1973.25,
         "popularity":2.0,
         "duration":208306.8333333333,
         "acousticness":0.3103233333,
@@ -166,7 +166,7 @@
     },
     "Nederpop":{
         "size":56,
-        "year":1970.6964285714,
+        "release_year":1970.6964285714,
         "popularity":23.6607142857,
         "duration":211535.3571428571,
         "acousticness":0.2814273643,
@@ -181,7 +181,7 @@
     },
     "Other":{
         "size":291,
-        "year":1976.2302405498,
+        "release_year":1976.2302405498,
         "popularity":32.5979381443,
         "duration":230265.0515463917,
         "acousticness":0.3921647945,
@@ -196,7 +196,7 @@
     },
     "Pop":{
         "size":155,
-        "year":1980.2,
+        "release_year":1980.2,
         "popularity":50.9419354839,
         "duration":251178.264516129,
         "acousticness":0.381710129,
@@ -211,7 +211,7 @@
     },
     "Reggae":{
         "size":7,
-        "year":1985.1428571429,
+        "release_year":1985.1428571429,
         "popularity":56.0,
         "duration":260043.5714285714,
         "acousticness":0.1172242857,
@@ -226,7 +226,7 @@
     },
     "Rock":{
         "size":235,
-        "year":1980.6085106383,
+        "release_year":1980.6085106383,
         "popularity":50.8978723404,
         "duration":260495.9234042553,
         "acousticness":0.3069564311,
@@ -241,7 +241,7 @@
     },
     "Rock-and-roll":{
         "size":81,
-        "year":1963.7777777778,
+        "release_year":1963.7777777778,
         "popularity":47.3456790123,
         "duration":162928.2716049383,
         "acousticness":0.5036064198,
@@ -256,7 +256,7 @@
     },
     "Singer-songwriter":{
         "size":2,
-        "year":1976.0,
+        "release_year":1976.0,
         "popularity":27.5,
         "duration":200600.0,
         "acousticness":0.6845,
@@ -271,7 +271,7 @@
     },
     "Soft rock":{
         "size":254,
-        "year":1980.0826771654,
+        "release_year":1980.0826771654,
         "popularity":55.1811023622,
         "duration":246781.4645669291,
         "acousticness":0.351233622,
@@ -286,7 +286,7 @@
     },
     "Soul":{
         "size":63,
-        "year":1973.5714285714,
+        "release_year":1973.5714285714,
         "popularity":56.0158730159,
         "duration":233183.3809523809,
         "acousticness":0.3505269841,
