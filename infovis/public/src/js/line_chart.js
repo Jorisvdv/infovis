@@ -14,13 +14,23 @@ export default class LineChart {
         this.height = 410;
         this.colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
+        this.colorScale = {
+            "valence": "#e91e63",
+            "speechiness": "#673ab7",
+            "liveness": "#795548",
+            "instrumentalness": "#009688",
+            "energy": "#cddc39",
+            "danceability": "#ffc107",
+            "acousticness": "#ff5722",
+        };
+
         this.chart = d3
             .select(this.selector)
             .append("svg")
             .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")
-            .attr("transform", `translate(${this.margin.top}, ${this.margin.left})`)
+            .attr("transform", `translate(${this.margin.left}, ${this.margin.top})`)
 
 
         this.line = d3.line()
@@ -33,45 +43,15 @@ export default class LineChart {
         this.chart
             .append("g")
             .attr("class", "x-axis")
-            .attr("transform", `translate(${this.margin.left},${this.height-this.margin.top-this.margin.bottom})`);
+            .attr("transform", `translate(0,${this.height-this.margin.top-this.margin.bottom})`);
 
         // Y Axis
         this.chart
             .append("g")
             .attr("class", "y-axis")
-            .attr("transform", `translate(${this.margin.left},0)`);
     }
 
     update(data) {
-        let newData = {}
-        Object.keys(data).forEach(year => {
-            Object.keys(data[year]).forEach(key => {
-                if (newData[key] === undefined) {
-                    newData[key] = {
-                        key: key,
-                        data: []
-                    }
-                }
-                newData[key]["data"].push({
-                    year: year,
-                    data: data[year][key]
-                })
-            })
-        })
-
-        newData = {
-            "acousticness": newData.acousticness,
-            "danceability": newData.danceability,
-            "energy": newData.energy,
-            "instrumentalness": newData.instrumentalness,
-            "liveness": newData.liveness,   
-            "speechiness": newData.speechiness,
-            "valence": newData.valence
-        }
-
-        newData = Object.values(newData)
-        console.log(newData)
-        // update x- and y-axis
         this.x = d3
             .scaleTime()
             .domain([new Date("1999"), new Date("2019")])
@@ -90,17 +70,23 @@ export default class LineChart {
 
         const lines = this.chart
             .selectAll(".line")
-            .data(Object.values(newData));
+            .data(Object.values(data));
 
         lines
             .enter()
             .append("path")
+            .merge(lines)
             .attr("class", "line")
-            .style("stroke", "#000")
+            .style("stroke", d => {
+                console.log(d)
+                return this.colorScale[d.key];
+            })
             .style("fill", "none")
             .style("stroke-width", 2)
-            .transition().duration(750)
+            // .transition().duration(750)
             .attr("d", d => this.line(d.data))
+
+        lines.exit().remove()
     }
 }
 
