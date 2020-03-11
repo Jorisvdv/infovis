@@ -5,41 +5,7 @@
     <title>Plot 2000</title>
 </head>
 <body>
-<style type="text/css">
-    .line{
-        fill: none;
-        stroke: #ffab00;
-        stroke-width:3;
-    }
-
-    .overlay{
-        fill: none;
-        pointer-events: all;
-    }
-
-    .dot{
-        fill: #ffab00;
-        stroke: #fff;
-    }
-    .focus circle {
-        fill:none;
-        stroke: steelblue;
-    }
-
-</style>
-
-<body>
-<script src="https://d3js.org/d3.v5.min.js"></script>
+<div id="line-chart"></div>
 <script src="js/index.js"></script>
-
-<input id="danceability" type="checkbox" name="audioFeature" class="audioFeature" value="danceability" checked> Danceability
-<input id="energy" type="checkbox" name="audioFeature" class="audioFeature" value="energy" checked> Energy
-<input id="speechiness" type="checkbox" name="audioFeature" class="audioFeature" value="speechiness" checked> Speechiness
-<input id="valence" type="checkbox" name="audioFeature" class="audioFeature" value="valence" checked> Valence
-<br>
-<svg id="linechart" width="850" height="410"></svg>
-
-<script src="js/line_chart.js"></script>
-
 </body>
 </html>
