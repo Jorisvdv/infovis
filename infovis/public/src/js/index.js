@@ -1,6 +1,6 @@
 import * as d3 from "d3"
 import songData from "./../data/song_data_20200304.json"
-import genreData from "./../data/scatterplot.json"
+import genreData from "./../data/scatterplot2.json"
 import RadarChart from "./radarChart"
 import ScatterPlot from "./scatterPlot"
 
