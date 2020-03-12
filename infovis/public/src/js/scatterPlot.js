@@ -21,24 +21,30 @@ export default class ScatterPlot {
             .attr("transform",
                   "translate(" + this.margin.left + "," + this.margin.top + ")");
 
-        // this.xScale = d3.scaleLinear()
-        // this.yScale = d3.scaleLinear()
-        // this.xAxis = d3.axisBottom(this.xScale)
-        // this.yAxis = d3.axisLeft(this.yScale)
+        // Add text on the X-axis and Y-axis
+        this.chart.append("text")
+          .attr("class", "xtext")             
+          .attr("transform",
+                "translate(" + (this.width/2) + " ," + 
+                (this.height + this.margin.top + 20) + ")")
+          .style("text-anchor", "middle")
+          .text("x");
 
-        // this.chart.append("g")
-        //     .attr("class", "x axis")
-        //     .attr("transform", "translate(0," + this.height + ")")
-        //     .call(this.xAxis)
+        this.chart.append("text")
+          .attr("class", "ytext") 
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0 - this.margin.left)
+          .attr("x",0 - (this.height / 2))
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+          .text("y"); 
 
-        // this.chart.append("g")
-        //     .attr("class", "y axis")
-        //     .call(this.yAxis)
-
+        // Initial axis drawing
          this.x = d3.scaleLinear()
             .domain([0, 1]) // Min and max value data.
             .range([ 0, this.width ]);
-        this.xAxis = this.chart.append("g")
+         this.xAxis = this.chart.append("g")
+            .attr("class", "x axis")
             .attr("transform", "translate(0," + this.height + ")")
             .transition().duration(1000)
             .call(d3.axisBottom(this.x));
@@ -48,7 +54,8 @@ export default class ScatterPlot {
             .domain([0, 1])
             .range([ this.height, 0]);
          this.yAxis = this.chart.append("g")
-             .transition().duration(1000)
+            .attr("class", "y axis")
+            .transition().duration(1000)
             .call(d3.axisLeft(this.y));
     }
 
@@ -89,60 +96,90 @@ export default class ScatterPlot {
         this.addDropdown(genreStats, dropdownChange, "yFeature")
     }
 
+    roundToOne(value) {
+        if (value < 1) return 1
+        return value * 1.2
+    }
+
+    roundToZero(value) {
+        if (value > 0) return 0
+        return value
+    }
+
     update(data, year, xFeature, yFeature) {
 
-        // Set dropdown values for year, x and y.
-
-        // On select, update plot
+        // Source Updating axis
+        // https://bl.ocks.org/shimizu/914c769f05f1b2e1d09428c7eedd7f8a
+        // 
 
         this.yearData = data[year] 
         this.data = data
 
         let xValue = this.valuesToList(xFeature)
         let yValue = this.valuesToList(yFeature)
-        let xMin = d3.min(xValue)
-        let yMin = d3.min(yValue)
-        let xMax = d3.max(xValue)
-        let yMax = d3.max(yValue)
+        let xMin = this.roundToZero(d3.min(xValue))
+        let yMin = this.roundToZero(d3.min(yValue))
+        let xMax = this.roundToOne(d3.max(xValue))
+        let yMax = this.roundToOne(d3.max(yValue))
+        this.xFeature = xFeature
+        this.yFeature = yFeature
 
-         // Add X axis
-        // this.xScale
-        //     .domain([xMin, xMax]) // Min and max value data.
-        //     .range([ 0, this.width ]);
+        // Setting both axis
+        // Can't have its own function :/
+        let xScale = d3.scaleLinear()
+        let yScale = d3.scaleLinear()
+            
+        let xAxisCall = d3.axisBottom()
+        let yAxisCall = d3.axisLeft()
 
-        let x = d3.scaleLinear()
-            .domain([xMin, xMax]) // Min and max value data.
-            .range([ 0, this.width ]);
-        this.xAxis.call(x)
-          // Add Y axis
-        // this.yScale
-        //     .domain([yMin, yMax])
-        //     .range([ this.height, 0]);
+        // Setting
+        xScale.domain([xMin, xMax]).range([ 0, this.width ]);
+        yScale.domain([yMin, yMax]).range([ this.height, 0]);
+        xAxisCall.scale(xScale)
+        yAxisCall.scale(yScale) 
 
-        // this.xAxis.scale(this.xScale)
-        // this.yAxis.scale(this.yScale)
+        // Drawing
+        let t = d3.transition()
+            .duration(500)
+        
+        let x = this.chart.selectAll(".x")
+            .data(["dummy"])
+            
+        let newX = x.enter().append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate("+[this.margin.left, this.height-this.margin.top]+")")
 
+        // Update text on the X-axis and Y-axis
+        this.chart.selectAll(".xtext").text(xFeature)
+        this.chart.selectAll(".ytext").text(yFeature)
 
-         let y = d3.scaleLinear()
-            .domain([yMin, yMax])
-            .range([ this.height, 0]);
-         this.yAxis.call(y)
+        x.merge(newX).transition(t).call(xAxisCall)
 
-         // Get all the paths:
+        let y = this.chart.selectAll(".y")
+            .data(["dummy"])
+            
+        let newY = y.enter().append("g")
+            .attr("class", "y axis")
+            .attr("transform", "translate("+[this.margin.left, this.margin.top]+")")
+
+        y.merge(newY).transition(t).call(yAxisCall)
+        ////////////////////////////////////
+
+        // Selecting and updating the data.
         const dots = this.chart.selectAll('circle').data(this.yearData);
 
         // Add all paths to svg
         dots.enter()
           .append("circle")
-          .attr("cx", function (d) { return x(d[xFeature]); } )
-          .attr("cy", function (d) { return y(d[yFeature]); } )
+          .attr("cx", function (d) { return xScale(d[xFeature]); } )
+          .attr("cy", function (d) { return yScale(d[yFeature]); } )
           .on("mouseover", function(d) { return console.log(d)})
 
             // Causes the new data to merge with the old data
             .merge(dots)
             .transition().duration(1000)
-              .attr("cx", function (d) { return x(d[xFeature]); } )
-              .attr("cy", function (d) { return y(d[yFeature]); } )
+              .attr("cx", function (d) { return xScale(d[xFeature]); } )
+              .attr("cy", function (d) { return yScale(d[yFeature]); } )
               .attr("r", function (d) { if (d.size === 0 ) {return 0} else {return Math.log(d.size) ** 1.5;}})
               .style("fill", function (d) { return colors[d.genre] } )
               .attr("opacity", 0.5)

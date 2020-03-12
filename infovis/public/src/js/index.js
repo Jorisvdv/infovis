@@ -1,6 +1,6 @@
 import * as d3 from "d3"
 import songData from "./../data/song_data_20200304.json"
-import genreData from "./../data/scatterplot2.json"
+import genreData from "./../data/scatterplot.json"
 import RadarChart from "./radarChart"
 import ScatterPlot from "./scatterPlot"
 
@@ -19,8 +19,6 @@ chart.update([songData[10]])
 
 var scatter = new ScatterPlot("div#scatterplot", onClickTest)
 scatter.init()
-console.log(scatter.width)
-scatter.update(genreData, 1999, "acousticness", "danceability")
 
 function dropdownUpdate() {
 	let year = d3.select("#year").property('value')
@@ -31,6 +29,9 @@ function dropdownUpdate() {
 }
 
 scatter.addDropdowns(genreData, dropdownUpdate)
+scatter.update(genreData, 1999, 
+	d3.select("#xFeature").property('value'),
+	d3.select("#yFeature").property('value'))
 
 function getRandomData() {
 	let number = Math.ceil(Math.random() * 1000)
