@@ -16,8 +16,11 @@ Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).for
     element.children[0].addEventListener("click", updateLineChart)
 })
 
+const onClick = (year) => {
+    console.log(year);
+}
 
-const lineChart = new LineChart("#line-chart", null);
+const lineChart = new LineChart("#line-chart", onClick);
 lineChart.init()
 updateLineChart()
 

@@ -150,12 +150,12 @@ function tooltip(audio_features) {
     }
 }
 
-var selectBox = d3.selectAll(".audioFeature")
-    .on("change", function() {
-        var checkedBoxes = Array.from(document.querySelectorAll('input[name=audioFeature]:checked'));
-        let checkedFeatures = []
-        checkedBoxes.forEach(function(entry) {
-            checkedFeatures.push(entry.value)
-        });
-        update(checkedFeatures, 750);
-    })
+// var selectBox = d3.selectAll(".audioFeature")
+//     .on("change", function() {
+//         var checkedBoxes = Array.from(document.querySelectorAll('input[name=audioFeature]:checked'));
+//         let checkedFeatures = []
+//         checkedBoxes.forEach(function(entry) {
+//             checkedFeatures.push(entry.value)
+//         });
+//         update(checkedFeatures, 750);
+//     })
