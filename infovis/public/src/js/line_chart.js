@@ -155,7 +155,7 @@ export default class LineChart {
             .on("mousemove", () => {
                 // get data of the closest year to the corresponding x value of mouse
                 const years = this._getYears(data)
-                const selectedYear = this._getMouseOverYear(years)
+                const selectedYear = this._getClosestYearToMouse(years)
                 const dataOfYear = this._getDataOfYear(data, selectedYear)
 
                 this.focus.select(".lineHover")
@@ -187,7 +187,7 @@ export default class LineChart {
             })
             .on("click", () => {
                 const years = this._getYears(data)
-                console.log(this._getMouseOverYear(years).getFullYear().toString())
+                console.log(this._getClosestYearToMouse(years).getFullYear().toString())
             });
     }
 
@@ -199,12 +199,12 @@ export default class LineChart {
         return data[0].data.map(d => new Date(d.year))
     }
 
-    _getMouseOverYear(years) {
+    _getClosestYearToMouse(years) {
         const mouseOverDate = this.x.invert(d3.mouse(this.chart.select("#tooltip-overlay").node())[0]);
         const             i = d3.bisectLeft(years, mouseOverDate);
         const      yearLeft = years[i - 1];
         const     yearRight = years[i];
-        
+
         return mouseOverDate - yearLeft < yearRight - mouseOverDate ? yearLeft : yearRight;
     }
 
