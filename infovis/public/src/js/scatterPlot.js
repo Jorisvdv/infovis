@@ -5,6 +5,7 @@ export default class ScatterPlot {
     constructor(selector, onClick) {
         this.selector = selector;
         this.onClick = onClick;
+        console.log(onClick)
     }
     
     init() {
@@ -174,7 +175,8 @@ export default class ScatterPlot {
           .append("circle")
           .attr("cx", function (d) { return xScale(d[xFeature]); } )
           .attr("cy", function (d) { return yScale(d[yFeature]); } )
-          .on("mouseover", function(d) { return console.log(d)})
+          .on("click", (d) => {
+              console.log(this.onClick); this.onClick(d["genre"])})
 
             // Causes the new data to merge with the old data
             .merge(dots)

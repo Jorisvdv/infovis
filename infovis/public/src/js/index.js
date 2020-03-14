@@ -7,24 +7,29 @@ import SeatingChart from "./seatingChart";
 import seatingData from "../../../../data/song_data_20200304.json"
 
 import "../style.css"
+
+let _year = "1999"
+let _genre = "Rock"
 // scatter plot
-const scatterOnClick = () => {
-    console.log("scatter")
+const scatterOnClick = (genre) => {
+    _genre = genre;
+    seatingChart.update(_year, genre)
 }
 
 const scatter = new ScatterPlot("div#scatterplot", scatterOnClick)
 scatter.init()
 scatter.addDropdowns(genreData)
-scatter.update(genreData["1999"])
+scatter.update(genreData[_year])
 
 
 // Radar Chart
+
 
 const radarOnClick = () => {
     console.log("radr")
 }
 
-const chart = new RadarChart(
+const radarChart = new RadarChart(
     "div#radarchart",
     radarOnClick,
     [
@@ -37,7 +42,7 @@ const chart = new RadarChart(
         "speechiness"
     ]
 )
-chart.init()
+radarChart.init()
 
 // Line chart
 // only show the features selected
@@ -55,8 +60,10 @@ Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).for
 })
 
 const onClick = (year) => {
+    _year = year;
     const data = genreData[year]
     scatter.update(data)
+    seatingChart.update(_year, _genre)
 }
 
 const lineChart = new LineChart("#line-chart", onClick);
@@ -64,5 +71,11 @@ lineChart.init()
 updateLineChart()
 
 // seating chart
-const seatingChart = new SeatingChart("seating-chart", () => console.log("yeet"), seatingData)
+const seatingChartOnclick = (entry) => {
+    console.log(entry)
+    radarChart.update([entry])
+}
+const seatingChart = new SeatingChart("seating-chart", seatingChartOnclick, seatingData)
 seatingChart.init()
+
+seatingChart.update(_year, "Rock")
