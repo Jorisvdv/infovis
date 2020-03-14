@@ -1,5 +1,6 @@
 import * as d3 from "d3"
 import colors from "./../data/scattercolors.json"
+import axis from "./../data/axisMapping.json"
 
 export default class ScatterPlot {
     constructor(selector, onClick) {
@@ -37,26 +38,45 @@ export default class ScatterPlot {
           .attr("x",0 - (this.height / 2))
           .attr("dy", "1em")
           .style("text-anchor", "middle")
-          .text("y"); 
+          .text("y");
+
+        // Add year text
+        this.chart.append("text")
+          .attr("class", "yearText")
+          .attr("y", 40)
+          .attr("x", 280)
+          .style("font-size", "30px")
+          .text("2000")
 
         // Initial axis drawing
-         this.x = d3.scaleLinear()
+        this.x = d3.scaleLinear()
             .domain([0, 1]) // Min and max value data.
             .range([ 0, this.width ]);
-         this.xAxis = this.chart.append("g")
+        this.xAxis = this.chart.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + this.height + ")")
             .transition().duration(1000)
             .call(d3.axisBottom(this.x));
 
           // Add Y axis
-         this.y = d3.scaleLinear()
+        this.y = d3.scaleLinear()
             .domain([0, 1])
             .range([ this.height, 0]);
-         this.yAxis = this.chart.append("g")
+        this.yAxis = this.chart.append("g")
             .attr("class", "y axis")
             .transition().duration(1000)
             .call(d3.axisLeft(this.y));
+
+
+            // Tooltip
+        let tooltip = d3.select(this.selector).append("div")
+            .attr("class", "tooltip")
+            .style("position", "absolute")
+            .style("background-color", "rgba(0, 0, 0, 0.7)")
+            .style("color", "white")
+            .style("padding", "5px")
+            .style("font", "sans-serif")
+            .style("opacity", 0);
     }
 
     valuesToList(feature) {
@@ -70,12 +90,18 @@ export default class ScatterPlot {
         let newDropdown = d3.select(this.selector)
             .insert("select", "svg")
             .attr("id", id)
-            .on("change", dropdownChange,);
+            .on("change", dropdownChange);
 
         newDropdown.selectAll("option")
         .data(data)
         .enter().append("option")
         .attr("value", function (d) { return d; })
+        .property("selected", function(d){ 
+            if (id === "xFeature") {
+                return d === "energy"
+            } else if (id === "yFeature") {
+                return d === "danceability"
+            }})
         .text(function (d) {
             return d[0].toUpperCase() + d.slice(1,d.length); // capitalize 1st letter
         });
@@ -96,16 +122,6 @@ export default class ScatterPlot {
         this.addDropdown(genreStats, dropdownChange, "yFeature")
     }
 
-    roundToOne(value) {
-        if (value < 1) return 1
-        return value * 1.2
-    }
-
-    roundToZero(value) {
-        if (value > 0) return 0
-        return value
-    }
-
     update(data, year, xFeature, yFeature) {
 
         // Source Updating axis
@@ -113,14 +129,13 @@ export default class ScatterPlot {
         // 
 
         this.yearData = data[year] 
-        this.data = data
 
         let xValue = this.valuesToList(xFeature)
         let yValue = this.valuesToList(yFeature)
-        let xMin = this.roundToZero(d3.min(xValue))
-        let yMin = this.roundToZero(d3.min(yValue))
-        let xMax = this.roundToOne(d3.max(xValue))
-        let yMax = this.roundToOne(d3.max(yValue))
+        let xMin = axis[xFeature]["low"]
+        let yMin = axis[yFeature]["low"]
+        let xMax = axis[xFeature]["high"]
+        let yMax = axis[yFeature]["high"]
         this.xFeature = xFeature
         this.yFeature = yFeature
 
@@ -152,6 +167,7 @@ export default class ScatterPlot {
         // Update text on the X-axis and Y-axis
         this.chart.selectAll(".xtext").text(xFeature)
         this.chart.selectAll(".ytext").text(yFeature)
+        this.chart.selectAll(".yearText").text(year).style("opacity", 0.7)
 
         x.merge(newX).transition(t).call(xAxisCall)
 
@@ -173,7 +189,43 @@ export default class ScatterPlot {
           .append("circle")
           .attr("cx", function (d) { return xScale(d[xFeature]); } )
           .attr("cy", function (d) { return yScale(d[yFeature]); } )
-          .on("mouseover", function(d) { return console.log(d)})
+          .on("mouseover", function(d) { 
+            // Retrieve values.
+            let tooltip = d3.select(".tooltip")
+            let xFeature = d3.select(".xtext").text();
+            let yFeature = d3.select(".ytext").text();
+
+            d3.select(this)
+                .style("stroke", "black")
+                .style("stroke-width", "3px");
+
+            // Capitalize first letter
+            let xFeatureText = xFeature.substring(0, 1).toUpperCase() + xFeature.substring(1, xFeature.length)
+            let yFeatureText = yFeature.substring(0, 1).toUpperCase() + yFeature.substring(1, yFeature.length)
+
+            // Build tooltip
+            var html  = "Genre: " + d.genre + "<br/>" +
+                        xFeatureText + ": " + Math.round((d[xFeature] + Number.EPSILON) * 100) / 100 + "<br/>" +
+                        yFeatureText + ": " + Math.round((d[yFeature] + Number.EPSILON) * 100) / 100;
+
+            tooltip.html(html)
+                .style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY - 28) + "px")
+            .transition()
+                .duration(200) // ms
+                .style("opacity", .9)
+                .style("display", "initial")     
+            })
+           .on("mouseout", function(d) { 
+                d3.select(this)
+                .style("stroke", "none");
+
+                let tooltip = d3.select(".tooltip")      
+                tooltip.transition()        
+                .duration(500)      
+                .style("opacity", 0)
+                .style("display", "none");   
+            })
 
             // Causes the new data to merge with the old data
             .merge(dots)

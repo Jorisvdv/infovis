@@ -10,7 +10,7 @@ function update_song(trackobject, year){
     document.getElementById("titlesong").innerHTML = trackobject["title"];
     document.getElementById("artistsong").innerHTML = trackobject["artist"];
     document.getElementById("release_year").innerHTML = trackobject.release_year;
-    document.getElementById("top_year").innerHTML = [year]
+    document.getElementById("top_year").innerHTML = [year];
     document.getElementById("chart_position").innerHTML = trackobject[year];
     document.getElementById("genre").innerHTML = trackobject.genre;
     document.getElementById("duration").innerHTML = (Math.floor((trackobject.duration/1000)/60)+":"+Math.round(trackobject.duration/1000%60));
@@ -20,16 +20,21 @@ function update_song(trackobject, year){
     // Add audio preview
     // Check if preview url is truthy
     if (trackobject.preview_url){
-        document.getElementById("audiolink").src= trackobject.preview_url;
+        console.log("Has audio link: ", trackobject.preview_url);
+        // document.getElementById("audiolink").src =trackobject.preview_url;
+        x.src=trackobject.preview_url;
         // Show play button if audio link
         document.getElementsByClassName("btn")[0].style.display = 'initial';
+        //load in audio file
+         x.load()
         
     } else {
-        console.log("No audio link")
+        console.log("No audio link");
         document.getElementById("audiolink").src= "";
         // Hide play button if no audio link
         document.getElementsByClassName("btn")[0].style.display = "none"
     }
+    //load in audio file
 }
 
 
