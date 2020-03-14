@@ -2,15 +2,17 @@
 <html>
 <head>
 
-<link rel="stylesheet" type="text/css" href="example_play_audio.css">
+    <link rel="stylesheet" type="text/css" href="track_data.css">
+
 </head>
 <body>
 
+<!-- Audio preview, link adjusted when updated by js -->
 <audio id="myAudio" onended="endAudio()">
   <source id="audiolink" src="" type="audio/mpeg">
 </audio>
 
-
+<!-- Track data, to do: adjust to styling -->
 <h1>Year:   <span id="top_year"></span></h1>
 <h2>Title: <span id="titlesong"></span></h2>
 <p>Artist: <span id="artistsong"></span></p>
@@ -24,7 +26,7 @@
     <img id="albumlink" src="" alt="Albumart" style="width:100%">
 
     <button class="btn js-button" onclick="playAudio()" type="button">
-        <svg class="musicbutton" width="100%" height="100%" viewBox="0 0 32 32" fill="rgba(52, 52, 52, 0.3)">
+        <svg class="musicbutton" width="100%" height="100%" viewBox="0 0 32 32" fill="rgba(221, 221, 221, 0.4)">
             <defs>
                 <path class="musicbutton" id="pause-icon" data-state="playing" d="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" />
                 <path class="musicbutton" id="play-icon"  data-state="paused"  d="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28" />
@@ -35,10 +37,10 @@
 </div>
 
 
-
-
+<!-- D3 needed for animation play button -->
 <script src="https://d3js.org/d3.v3.min.js"></script>
-<script language="JavaScript" src="example_play_audio.js" defer=true></script>
+<!-- Script to update track data -->
+<script language="JavaScript" src="track_data.js" defer=true></script>
 
 </body>
 </html>

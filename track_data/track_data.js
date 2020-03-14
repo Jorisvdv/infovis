@@ -4,42 +4,49 @@ let playing = false;
 
 
 function update_song(trackobject, year){
-// Update song data
+    // Update song data
 
-document.getElementById("titlesong").innerHTML = trackobject["title"];
-document.getElementById("artistsong").innerHTML = trackobject["artist"];
-document.getElementById("release_year").innerHTML = trackobject.release_year;
-document.getElementById("top_year").innerHTML = [year]
-document.getElementById("chart_position").innerHTML = trackobject[year];
-document.getElementById("genre").innerHTML = trackobject.genre;
-document.getElementById("duration").innerHTML = (Math.floor((trackobject.duration/1000)/60)+":"+Math.round(trackobject.duration/1000%60));
+    // Adjust all HTML elements that display track data
+    document.getElementById("titlesong").innerHTML = trackobject["title"];
+    document.getElementById("artistsong").innerHTML = trackobject["artist"];
+    document.getElementById("release_year").innerHTML = trackobject.release_year;
+    document.getElementById("top_year").innerHTML = [year]
+    document.getElementById("chart_position").innerHTML = trackobject[year];
+    document.getElementById("genre").innerHTML = trackobject.genre;
+    document.getElementById("duration").innerHTML = (Math.floor((trackobject.duration/1000)/60)+":"+Math.round(trackobject.duration/1000%60));
+    // Adjust image source to album art of track.
+    document.getElementById("albumlink").src= trackobject.image_640;
 
-
-document.getElementById("albumlink").src= trackobject.image_640;
-// Check if preview url is truthy
-if (trackobject.preview_url){
-    document.getElementById("audiolink").src= trackobject.preview_url;
-    // Show play button if no audio link
-    document.getElementsByClassName("btn").display = "block";
-} else {
-    document.getElementById("audiolink").src= "";
-    // Hide play button if no audio link
-    document.getElementsByClassName("btn").display = "none";
+    // Add audio preview
+    // Check if preview url is truthy
+    if (trackobject.preview_url){
+        document.getElementById("audiolink").src= trackobject.preview_url;
+        // Show play button if audio link
+        document.getElementsByClassName("btn")[0].style.display = 'initial';
+        
+    } else {
+        console.log("No audio link")
+        document.getElementById("audiolink").src= "";
+        // Hide play button if no audio link
+        document.getElementsByClassName("btn")[0].style.display = "none"
+    }
 }
-}
+
+
 function playAudio() {
-if (!playing){
-  x.play();
-  playing = true;
-  }
+// Function to control audio playback
+    if (!playing){
+    x.play();
+    playing = true;
+    }
 
-else if (playing){
-	x.pause();
-    playing = false;
-};
+    else if (playing){
+        x.pause();
+        playing = false;
+    };
 }
 
-
+// Control animation of play button
 /* global d3, document */
 var playButton = {
   el: document.querySelector(".js-button"),
@@ -98,18 +105,10 @@ function endAudio(){
     playButton.goToNextState();
 }
 
+// Initialize play button of website load.
 playButton.init();
 
-
-
-// Hardcoded values
-// Billie Jean,Michael Jackson,1983,5ChkMS8OtdzJeqyybCc9R5,173,422,310,313,315,222,239,260,370,266,27,64,96,83,132,128,126,123,113,82,130,spotify:artist:3fMbdgg4jU18AjLCKBhRSm,spotify:album:1C2h7mLntPSeVYciMRTF4a,https://i.scdn.co/image/ab67616d0000b2734121faee8df82c526cbab2be,https://i.scdn.co/image/ab67616d000048514121faee8df82c526cbab2be,80,293826,https://p.scdn.co/mp3-preview/f504e6b8e037771318656394f532dede4f9bcaea?cid=1a316693f32b4bd4acee870703d5338b,0.0236,0.92,0.654,0.0158,0.0359,-3.051,0.0401,117.046,0.847,Pop
-// let micheal_jackson = {
-//     title : "Billie Jean", artist : "Michael Jackson", release_year : 1983, top_year : "1999",
-//     chart_position : 173, genre : "Pop", duration : 293826, 
-//     albumlink : "https://i.scdn.co/image/ab67616d0000b2734121faee8df82c526cbab2be",
-//     audiolink : "https://p.scdn.co/mp3-preview/f504e6b8e037771318656394f532dede4f9bcaea?cid=1a316693f32b4bd4acee870703d5338b"};
-
+// Hardcoded test track data
 let micheal_jackson = {
     "title":"Billie Jean",
     "artist":"Michael Jackson",
@@ -155,5 +154,5 @@ let micheal_jackson = {
     "genre":"Pop"
 }
 
-//  Test hardcoded value
+//  Test hardcoded value, pass track object and selected year to update values.
 update_song(micheal_jackson, "1999")
