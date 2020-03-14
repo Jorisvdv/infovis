@@ -96,6 +96,12 @@ export default class ScatterPlot {
         .data(data)
         .enter().append("option")
         .attr("value", function (d) { return d; })
+        .property("selected", function(d){ 
+            if (id === "xFeature") {
+                return d === "energy"
+            } else if (id === "yFeature") {
+                return d === "danceability"
+            }})
         .text(function (d) {
             return d[0].toUpperCase() + d.slice(1,d.length); // capitalize 1st letter
         });
