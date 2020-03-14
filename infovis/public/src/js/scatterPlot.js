@@ -43,8 +43,8 @@ export default class ScatterPlot {
         // Add year text
         this.chart.append("text")
           .attr("class", "yearText")
-          .attr("y", 40)
-          .attr("x", 280)
+          .attr("y", 35)
+          .attr("x", 265)
           .style("font-size", "30px")
           .text("2000")
 
@@ -122,6 +122,16 @@ export default class ScatterPlot {
         this.addDropdown(genreStats, dropdownChange, "yFeature")
     }
 
+    make_x_gridlines(x) {        
+        return d3.axisBottom(x)
+            .ticks()
+    }
+
+    make_y_gridlines(y) {        
+        return d3.axisLeft(y)
+            .ticks()
+    }
+
     update(data, year, xFeature, yFeature) {
 
         // Source Updating axis
@@ -151,7 +161,26 @@ export default class ScatterPlot {
         xScale.domain([xMin, xMax]).range([ 0, this.width ]);
         yScale.domain([yMin, yMax]).range([ this.height, 0]);
         xAxisCall.scale(xScale)
-        yAxisCall.scale(yScale) 
+        yAxisCall.scale(yScale)
+
+        // add the Y gridlines
+        this.chart.append("g")           
+            .attr("class", "grid")
+            .attr("opacity", 0.05)
+            .call(this.make_y_gridlines(yScale)
+                .tickSize(-this.width)
+                .tickFormat("")
+            )
+
+        // add the X gridlines
+        this.chart.append("g")           
+            .attr("class", "grid")
+            .attr("opacity", 0.05)
+            .attr("transform", "translate(0," + this.height + ")")
+            .call(this.make_x_gridlines(xScale)
+                .tickSize(-this.height)
+                .tickFormat("")
+            )
 
         // Drawing
         let t = d3.transition()
@@ -167,7 +196,7 @@ export default class ScatterPlot {
         // Update text on the X-axis and Y-axis
         this.chart.selectAll(".xtext").text(xFeature)
         this.chart.selectAll(".ytext").text(yFeature)
-        this.chart.selectAll(".yearText").text(year).style("opacity", 0.7)
+        this.chart.selectAll(".yearText").text(year).style("opacity", 0.3)
 
         x.merge(newX).transition(t).call(xAxisCall)
 
