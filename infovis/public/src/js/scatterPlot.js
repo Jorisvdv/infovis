@@ -61,16 +61,16 @@ export default class ScatterPlot {
 
     valuesToList(feature) {
         let result = [];
-        for (let i=0; i < this.yearData.length; i++)
-            result.push(this.yearData[i][feature])
+        for (let i=0; i < this.data.length; i++)
+            result.push(this.data[i][feature])
         return result
     }
 
-    addDropdown(data, dropdownChange, id) {
+    addDropdown(data, id) {
         let newDropdown = d3.select(this.selector)
             .insert("select", "svg")
             .attr("id", id)
-            .on("change", dropdownChange,);
+            .on("change", () => this.update(this.data));
 
         newDropdown.selectAll("option")
         .data(data)
@@ -82,18 +82,17 @@ export default class ScatterPlot {
     }
     //https://bl.ocks.org/shimizu/914c769f05f1b2e1d09428c7eedd7f8a
 
-    addDropdowns(data, dropdownChange) {
+    addDropdowns(data) {
         // Year
-        this.addDropdown(Object.keys(data), dropdownChange, "year")
 
         let year = Object.keys(data)[0]
         let genreStats = Object.keys(data[year][0])
 
         // X axis
-        this.addDropdown(genreStats, dropdownChange, "xFeature")
+        this.addDropdown(genreStats, "xFeature")
 
         // Y axis
-        this.addDropdown(genreStats, dropdownChange, "yFeature")
+        this.addDropdown(genreStats, "yFeature")
     }
 
     roundToOne(value) {
@@ -106,14 +105,16 @@ export default class ScatterPlot {
         return value
     }
 
-    update(data, year, xFeature, yFeature) {
+    update(data) {
 
         // Source Updating axis
         // https://bl.ocks.org/shimizu/914c769f05f1b2e1d09428c7eedd7f8a
         // 
 
-        this.yearData = data[year] 
         this.data = data
+
+        const xFeature = d3.select("#xFeature").property('value')
+        const yFeature = d3.select("#yFeature").property('value')
 
         let xValue = this.valuesToList(xFeature)
         let yValue = this.valuesToList(yFeature)
@@ -166,7 +167,7 @@ export default class ScatterPlot {
         ////////////////////////////////////
 
         // Selecting and updating the data.
-        const dots = this.chart.selectAll('circle').data(this.yearData);
+        const dots = this.chart.selectAll('circle').data(this.data);
 
         // Add all paths to svg
         dots.enter()
