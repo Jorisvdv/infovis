@@ -24,14 +24,61 @@ pip install -r requirements.txt  # Install python dependencies
 
 # Developing
 
-To work on the projects you need to run two commands. The javascript is bundled by parcel, it rebundles files on chance.
-These static files are served by Flask.
+To work on the projects you need to run two commands. The javascript is bundled by parcel, it rebundles files on change serves them.
 
 ```shell script
 npm start  # this starts parcel which transpiles and serves the javascript files
 ```
 
+## Chart Development
+
+Each chart/visualization should be in its own javascript file next to `index.js`, for example `barChart.js`.
+
+The chart should be a class. Yes, javascript has classes! Read about them [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
+
+The constructor should have the following signature:
+
+`constructor(selector, onClick)`
+
+The selector will be used by D3 to initialize the chart. 
+
+The onClick is a function that should be called when you click on a chart. 
+
+Next, each chart should have an `init()` function that should build the chart but without data.
+
+Next, each chart should have an `update(data)` function. This will update the chart with data. 
+
+An example class is shown here.
+
+```javascript
+export default class BarChart {
+    constructor(selector, onClick) {
+        this.selector = selector;
+        this.onClick = onClick;
+    }
+    
+    init() {
+        // init the chart here
+        this.chart = chart // Save the chart svg here
+    }
+
+    update(data) {
+        // update the chart
+    }   
+}
+```
+
 # Meeting notes
+
+## InfoVis Meeting 05-3
+We discussed our presentation and demo. 
+
+### Feedback
+* We are well structured team
+* He likes our progress
+* Artclouds shared
+* Meet next week at wednesday 9.30 (put on canvas)
+* 
 
 ## InfoVis Meeting 26-2
 
@@ -50,18 +97,18 @@ npm start  # this starts parcel which transpiles and serves the javascript files
 - [ ] Next week: functional prototype
 
 ### Taakverdeling
-- [ ] Verwerken ideeën in design (Rens)
-- [ ] Radar chart (Sander)
-- [ ] Componenten combineren (Stijn)
+- [x] Verwerken ideeën in design (Rens)
+- [x] Radar chart (Sander)
+- [x] Componenten combineren (Stijn)
 	* Spec voor elk component
 	* Elke chart een functie init+updaten
-- [ ] Data prepareren (Joris + Joey)
+- [x] Data prepareren (Joris + Joey)
 	* FEATURES + links albumart + genre + lengte
 	* link liedjes (30 sec preview)
 	* Unit value normalisatie
 - [ ] Timeline (Guido + Stijn)
 	* Afspelen
-- [ ] Flask uit python envoirment + presentatie (Stijn)
+- [x] Flask uit python envoirment + presentatie (Stijn)
 
 ### Timeline
 * 5-3: 50% componenten
@@ -112,7 +159,7 @@ Our goal for next week 20-02 will be:
 	* Expecting custom components for the final end product
 - [x] Think of a Name. 
 Plot2000
-- [ ] Plot out most interesting parts of the dataset.
+- [x] Plot out most interesting parts of the dataset.
 
 ### Ideas
 * Circular design

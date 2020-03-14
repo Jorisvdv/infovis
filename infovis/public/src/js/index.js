@@ -3,9 +3,9 @@ import songData from "./../data/song_data_20200304.json"
 import genreData from "./../data/scatterplot.json"
 import RadarChart from "./radarChart"
 import ScatterPlot from "./scatterPlot"
+import LineChart from "./line_chart";
 
-const features = ["acousticness", "danceability", "energy",
-	 "instrumentalness", "liveness", "valence", "speechiness"];
+import lineChartData from "../../../../data/data/lineplot_object"
 
 function onClickTest() {
 	return
@@ -24,7 +24,6 @@ function dropdownUpdate() {
 	let year = d3.select("#year").property('value')
 	let xFeature = d3.select("#xFeature").property('value')
 	let yFeature = d3.select("#yFeature").property('value')
-	console.log(year, xFeature, yFeature)
 	scatter.update(genreData, year, xFeature, yFeature)
 }
 
@@ -33,9 +32,28 @@ scatter.update(genreData, 1999,
 	d3.select("#xFeature").property('value'),
 	d3.select("#yFeature").property('value'))
 
-function getRandomData() {
-	let number = Math.ceil(Math.random() * 1000)
-	chart.update([songData[number]])
+
+
+
+// only show the features selected
+function updateLineChart() {
+    const data = Array.from(lineChartData).filter(item => {
+        const checkbox = document.getElementById(item.key)
+        return checkbox ? checkbox.checked : false;
+    })
+
+    lineChart.update(data)
 }
 
-document.getElementById("testbutton").addEventListener("click", getRandomData);
+Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).forEach(element => {
+    element.children[0].addEventListener("click", updateLineChart)
+})
+
+const onClick = (year) => {
+    console.log(year);
+}
+
+const lineChart = new LineChart("#line-chart", onClick);
+lineChart.init()
+updateLineChart()
+
