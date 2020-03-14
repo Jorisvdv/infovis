@@ -1,0 +1,12 @@
+{"Rock": "rgb(160,227,183)", "Classic rock": "rgb(44,78,47)", 
+    "Soft rock":"rgb(186,227,66)", "Pop":"rgb(21,114,156)", 
+    "Other":"rgb(157,187,230)", "Dutch rock":"rgb(82,61,110)",
+       "Nederpop":"rgb(152,88,214)", "Folk":"rgb(255,152,204)", 
+       "Rock-and-roll":"rgb(198,73,129)", "Soul":"rgb(37,128,254)",
+        "House":"rgb(32,216,253)", "Karaoke":"rgb(46,149,104)",
+       "Jazz":"rgb(71,240,163)", "Chanson":"rgb(58,166,9)", 
+       "Disco":"rgb(140,149,109)", "Reggae":"rgb(114,53,33)", 
+       "Singer-songwriter":"rgb(220,60,7)", "Blues":"rgb(227,211,175)",
+       "Country":"rgb(230,134,31)", "Electronica/dance":"rgb(97,242,45)",
+        "Hip-hop":"rgb(255,0,135)", "Metal":"rgb(243,212,38)", 
+        "Rap": "rgb(63,22,249)", "Techno": "rgb(251,87,249)"}
