@@ -7,6 +7,8 @@ import LineChart from "./line_chart";
 
 import lineChartData from "../../../../data/data/lineplot_object"
 
+import "../style.css"
+
 function onClickTest() {
 	return
 }
