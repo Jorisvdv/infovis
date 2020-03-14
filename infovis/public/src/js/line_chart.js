@@ -121,8 +121,6 @@ export default class LineChart {
     }
 
     tooltip(data) {
-        console.log(this._getYears(data))
-
         const audioFeatures = this._getAudioFeatures(data)
         
         const labels = this.focus.selectAll(".lineHoverText")
@@ -142,7 +140,7 @@ export default class LineChart {
         circles.enter().append("circle")
             .attr("class", "hoverCircle")
             .style("fill", d => this.colorScale[d.key])
-            .attr("r", 2.5)
+            .attr("r", 3)
             .merge(circles);
 
         this.chart.select("#tooltip-overlay")
@@ -169,13 +167,14 @@ export default class LineChart {
                 this.focus.selectAll(".hoverCircle")
                     .attr("cy", e => this.y(dataOfYear[e]))
                     .attr("cx", this.x(selectedYear))
-                    .style("color", e => this.colorScale[e])
+                    .style("stroke", e => this.colorScale[e])
+                    .style("fill", "none");
 
                 this.focus.selectAll(".lineHoverText")
                     .attr("transform",
                         "translate(" + this.x(selectedYear) + "," + this.height / 2.5 + ")")
-                    .text("hihi")
-                    .text(e => e + " " + this.formatValue(dataOfYear[e]));
+                    .text(e => e + " " + this.formatValue(dataOfYear[e]))
+                    .style("stroke", e => this.colorScale[e])
 
                 this.x(selectedYear) > (this.width - this.width / 4)
                     ? this.focus.selectAll("text.lineHoverText")
