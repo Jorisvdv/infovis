@@ -1,10 +1,10 @@
 import * as d3 from "d3"
 
 export default class RadarChart {
-    constructor(selector, onClick) {
+    constructor(selector, onClick, features) {
         this.selector = selector;
         this.onClick = onClick;
-        this.features=[];
+        this.features= features;
     }
     
     init() {
@@ -83,10 +83,6 @@ export default class RadarChart {
             coordinates.push(this.angleToCoordinate(angle, data_point[ft_name]));
         }
         return coordinates;
-    }
-
-    setFeatures(features) {
-        this.features = features
     }
 
     update(data) {
