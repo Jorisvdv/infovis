@@ -1,5 +1,6 @@
 import * as d3 from "d3"
 import colors from "./../data/scattercolors.json"
+import axis from "./../data/axisMapping.json"
 
 export default class ScatterPlot {
     constructor(selector, onClick) {
@@ -113,14 +114,13 @@ export default class ScatterPlot {
         // 
 
         this.yearData = data[year] 
-        this.data = data
 
         let xValue = this.valuesToList(xFeature)
         let yValue = this.valuesToList(yFeature)
-        let xMin = this.roundToZero(d3.min(xValue))
-        let yMin = this.roundToZero(d3.min(yValue))
-        let xMax = this.roundToOne(d3.max(xValue))
-        let yMax = this.roundToOne(d3.max(yValue))
+        let xMin = axis[xFeature]["low"]
+        let yMin = axis[yFeature]["low"]
+        let xMax = axis[xFeature]["high"]
+        let yMax = axis[yFeature]["high"]
         this.xFeature = xFeature
         this.yFeature = yFeature
 
