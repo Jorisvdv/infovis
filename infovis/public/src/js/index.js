@@ -19,7 +19,7 @@ const scatterOnClick = (genre) => {
 const scatter = new ScatterPlot("div#scatterplot", scatterOnClick)
 scatter.init()
 scatter.addDropdowns(genreData)
-scatter.update(genreData[_year])
+scatter.update(genreData[_year], _year)
 
 
 // Radar Chart
@@ -62,7 +62,7 @@ Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).for
 const onClick = (year) => {
     _year = year;
     const data = genreData[year]
-    scatter.update(data)
+    scatter.update(data, _year)
     seatingChart.update(_year, _genre)
 }
 
