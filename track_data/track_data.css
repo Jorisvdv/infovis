@@ -1,0 +1,27 @@
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Albumart */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Button to playback song */
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container .btn:hover .musicbutton {fill:rgba(52, 52, 52, 0.850)};
