@@ -224,9 +224,13 @@ export default class ScatterPlot {
             let xFeature = d3.select(".xtext").text();
             let yFeature = d3.select(".ytext").text();
 
+            // Everything invisible except the selected one.
+            d3.selectAll("circle").attr("opacity", 0.2)
+
             d3.select(this)
                 .style("stroke", "black")
-                .style("stroke-width", "3px");
+                .style("stroke-width", "3px")
+                .attr("opacity", 0.5);
 
             // Capitalize first letter
             let xFeatureText = xFeature.substring(0, 1).toUpperCase() + xFeature.substring(1, xFeature.length)
@@ -248,6 +252,8 @@ export default class ScatterPlot {
            .on("mouseout", function(d) { 
                 d3.select(this)
                 .style("stroke", "none");
+
+                d3.selectAll("circle").attr("opacity", 0.5)
 
                 let tooltip = d3.select(".tooltip")      
                 tooltip.transition()        
