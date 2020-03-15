@@ -130,6 +130,9 @@ export default class ScatterPlot {
         // 
 
         this.data = data
+        if (year !== undefined) {
+            this.year = year
+        }
 
         const xFeature = d3.select("#xFeature").property('value')
         const yFeature = d3.select("#yFeature").property('value')
@@ -195,7 +198,8 @@ export default class ScatterPlot {
         y.merge(newY).transition(t).call(yAxisCall)
 
         // Update year text
-        this.chart.selectAll(".yearText").text(year).style("opacity", 0.3)
+        console.log(this.chart.selectAll(".yearText"), year)
+        this.chart.selectAll(".yearText").text(this.year).style("opacity", 0.3)
         ////////////////////////////////////
 
         // Selecting and updating the data.
