@@ -5,62 +5,93 @@
     <title>Plot 2000</title>
 </head>
 <body>
-<div id="grid-container">
-    <div id="Title">
-        <h1 id="TitleText">Plot 2000</h1>
-    </div>
-    <div id="Details">
-        <div id="Genre-details"></div>
-        <div id="radarchart"></div>
-    </div>
-
-    <div id="Over-years">
-        <div id="scatterplot"></div>
-        <div id="line-chart">
-            <div class="line-chart-inputs">
-                <label>
-                    <input type="checkbox" checked="checked" id="acousticness">
-                    Acousticness
-                </label>
-                <label>
-                    <input type="checkbox" checked="checked" id="danceability">
-                    Danceability
-                </label>
-                <label>
-                    <input type="checkbox" checked="checked" id="energy">
-                    Energy
-                </label>
-                <label>
-                    <input type="checkbox" checked="checked" id="instrumentalness">
-                    Instrumentalness
-                </label>
-                <label>
-                    <input type="checkbox" checked="checked" id="liveness">
-                    Liveness
-                </label>
-                <label>
-                    <input type="checkbox" checked="checked" id="speechiness">
-                    Speechiness
-                </label>
-                <label>
-                    <input type="checkbox" checked="checked" id="valence">
-                    Valance
-                </label>
+<div class="container">
+    <div><h1 class="title">Plot 2000</h1></div>
+    <div class="content">
+        <div class="left">
+            <h2 class="left-title">Genre Properties Over The Years</h2>
+            <div class="seating-chart-title">
+                <button class="seating-chart-back">< Back to scatter plot</button>
+                <h2 class="seating-chart-genre"></h2>
+            </div>
+            <div class="charts">
+                <div class="seating-chart-container">
+                    <div class="seating-chart"></div>
+                    <div id="seating-chart-tooltip">
+                        <div class="rank">#1111</div>
+                        <div class="artist">YOLO</div>
+                        <div class="title">YEET</div>
+                        <div class="album-art">
+                            <img src="http://placekitten.com/300/300" alt="album art">
+                        </div>
+                    </div>
+                </div>
+                <div id="scatterplot"></div>
+                <div id="line-chart"></div>
+                <div class="line-chart-inputs">
+                    <label>
+                        <input type="checkbox" checked="checked" id="acousticness">
+                        Acousticness
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="danceability">
+                        Danceability
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="energy">
+                        Energy
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="instrumentalness">
+                        Instrumentalness
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="liveness">
+                        Liveness
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="speechiness">
+                        Speechiness
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="valence">
+                        Valance
+                    </label>
+                </div>
             </div>
         </div>
+        <div class="right">
+            <h2>Genre Details</h2>
+            <div class="charts">
+                <div class="genre-details">
+                    <div class="genre-detail"><span>Mean Tempo</span><span></span></div>
+                    <div class="genre-detail"><span>Times in List</span><span></span></div>
+                    <div class="genre-detail"><span>Mean release year</span><span></span></div>
+                    <div class="genre-detail"><span>Mean Length</span><span></span></div>
+                </div>
+                <div class="song-details">
+                    <img src="" class="song-details-album-art">
+                    <button class="btn js-button" onclick="playAudio()" type="button">
+                        <svg class="musicbutton" width="100%" height="100%" viewBox="0 0 32 32"
+                             fill="rgba(221, 221, 221, 0.4)">
+                            <defs>
+                                <path class="musicbutton" id="pause-icon" data-state="playing"
+                                      d="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26"/>
+                                <path class="musicbutton" id="play-icon" data-state="paused"
+                                      d="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28"/>
+                            </defs>
+                            <use xlink:href="#play-icon"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="radarchart"></div>
+            </div>
+        </div>
+        <div id="Details"></div>
     </div>
-
-
 </div>
-<div class="seating-chart"></div>
-<div id="seating-chart-tooltip">
-    <div class="rank">#1111</div>
-    <div class="artist">YOLO</div>
-    <div class="title">YEET</div>
-    <div class="album-art">
-        <img src="http://placekitten.com/300/300" alt="album art">
-    </div>
-</div>
+<audio loop autoplay id="audio">
+</audio>
 <script src="js/index.js"></script>
 </body>
 </html>

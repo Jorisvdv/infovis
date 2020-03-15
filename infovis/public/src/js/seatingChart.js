@@ -41,7 +41,7 @@ export default class SeatingChart {
         tooltip.children[2].innerHTML = entry.title
         tooltip.style.display = "flex";
         tooltip.style.position = "absolute";
-        tooltip.style.left = `${event.pageX}px`;
+        tooltip.style.left = `${event.pageX+10}px`;
         tooltip.style.top = `${event.pageY}px`;
     }
 
@@ -49,7 +49,6 @@ export default class SeatingChart {
         const tooltip = document.getElementById("seating-chart-tooltip")
         tooltip.style.display = "none"
     }
-
 
 
     update(year, genre) {
@@ -66,13 +65,15 @@ export default class SeatingChart {
         data.forEach(d => {
             const square = document.createElement("div")
             square.innerHTML = d[this.year];
-            square.className = "square"
             square.style.background = this.color(d["genre"]);
             square.style.opacity = this.genre === d["genre"] ? "1" : "0.25";
             if (this.genre === d["genre"]) {
-                square.addEventListener('mouseenter', debounce((e) => this._onHover(e, d, this.year), 250))
+                square.addEventListener('mouseenter', (e) => this._onHover(e, d, this.year))
                 square.addEventListener('mouseleave', () => this._onMouseLeave())
                 square.addEventListener("click", () => this.onClick(d))
+                square.className = "square active"
+            } else {
+                square.className = "square"
             }
             chart.appendChild(square)
         })
