@@ -10,8 +10,8 @@ export default class ScatterPlot {
     }
     
     init() {
-        this.margin = {top: 10, right: 30, bottom: 30, left: 60},
-        this.width = 460 - this.margin.left - this.margin.right,
+        this.margin = {top: 10, right: 30, bottom: 30, left: 150},
+        this.width = 550 - this.margin.left - this.margin.right,
         this.height = 400 - this.margin.top - this.margin.bottom;
 
         // append the svg object to the body of the page
@@ -23,29 +23,11 @@ export default class ScatterPlot {
             .attr("transform",
                   "translate(" + this.margin.left + "," + this.margin.top + ")");
 
-        // Add text on the X-axis and Y-axis
-        this.chart.append("text")
-          .attr("class", "xtext")             
-          .attr("transform",
-                "translate(" + (this.width/2) + " ," + 
-                (this.height + this.margin.top + 20) + ")")
-          .style("text-anchor", "middle")
-          .text("x");
-
-        this.chart.append("text")
-          .attr("class", "ytext") 
-          .attr("transform", "rotate(-90)")
-          .attr("y", 0 - this.margin.left)
-          .attr("x",0 - (this.height / 2))
-          .attr("dy", "1em")
-          .style("text-anchor", "middle")
-          .text("y");
-
         // Add year text
         this.chart.append("text")
           .attr("class", "yearText")
           .attr("y", 35)
-          .attr("x", 265)
+          .attr("x", 267)
           .style("font-size", "30px")
           .text("2000")
 
@@ -106,6 +88,7 @@ export default class ScatterPlot {
         .text(function (d) {
             return d[0].toUpperCase() + d.slice(1,d.length); // capitalize 1st letter
         });
+        return newDropdown
     }
     //https://bl.ocks.org/shimizu/914c769f05f1b2e1d09428c7eedd7f8a
 
@@ -116,10 +99,18 @@ export default class ScatterPlot {
         let genreStats = Object.keys(data[year][0])
 
         // X axis
-        this.addDropdown(genreStats, "xFeature")
+        let xDropdown = this.addDropdown(genreStats, "xFeature")
+        xDropdown
+            .style("position", "absolute")
+            .style("margin-left", (this.width + this.margin.left) / 2 + "px")
+            .style("margin-top", this.height + this.margin.bottom + "px")
 
         // Y axis
-        this.addDropdown(genreStats, "yFeature")
+        let yDropdown = this.addDropdown(genreStats, "yFeature")
+        yDropdown
+            .style("position", "absolute")
+            .style("margin-top", this.height / 2 + "px")
+            .style("margin-right", this.width + "px")
     }
     
     make_x_gridlines(x) {        
@@ -131,6 +122,7 @@ export default class ScatterPlot {
         return d3.axisLeft(y)
             .ticks()
     }
+
     update(data, year) {
 
         // Source Updating axis
@@ -165,51 +157,45 @@ export default class ScatterPlot {
         xAxisCall.scale(xScale)
         yAxisCall.scale(yScale)
 
-        // add the Y gridlines
-        this.chart.append("g")           
-            .attr("class", "grid")
-            .attr("opacity", 0.05)
-            .call(this.make_y_gridlines(yScale)
-                .tickSize(-this.width)
-                .tickFormat("")
-            )
 
-        // add the X gridlines
-        this.chart.append("g")           
-            .attr("class", "grid")
+        // Animation
+        let t = d3.transition().duration(500)
+
+        // Update Y gridlines
+        let gridlinesY = this.chart.selectAll(".gridy").data(["dummy"])
+        let newgridlinesY = this.chart.append("g")           
+            .attr("class", "gridy")
+            .attr("opacity", 0.05)
+        gridlinesY.merge(newgridlinesY).transition(t).call(this.make_y_gridlines(yScale)
+            .tickSize(-this.width)
+            .tickFormat(""))
+
+        // Update X gridlines
+        let gridlinesX = this.chart.selectAll(".gridx").data(["dummy"])
+        let newgridlinesX = this.chart.append("g")           
+            .attr("class", "gridx")
             .attr("opacity", 0.05)
             .attr("transform", "translate(0," + this.height + ")")
-            .call(this.make_x_gridlines(xScale)
-                .tickSize(-this.height)
-                .tickFormat("")
-            )
+        gridlinesX.merge(newgridlinesX).transition(t).call(this.make_x_gridlines(xScale)
+            .tickSize(-this.width)
+            .tickFormat(""))
 
-        // Drawing
-        let t = d3.transition()
-            .duration(500)
-        
-        let x = this.chart.selectAll(".x")
-            .data(["dummy"])
-            
+        // Update X axis
+        let x = this.chart.selectAll(".x").data(["dummy"])   
         let newX = x.enter().append("g")
             .attr("class", "x axis")
             .attr("transform", "translate("+[this.margin.left, this.height-this.margin.top]+")")
-
-        // Update text on the X-axis and Y-axis
-        this.chart.selectAll(".xtext").text(xFeature)
-        this.chart.selectAll(".ytext").text(yFeature)
-        this.chart.selectAll(".yearText").text(year).style("opacity", 0.3)
-
         x.merge(newX).transition(t).call(xAxisCall)
 
-        let y = this.chart.selectAll(".y")
-            .data(["dummy"])
-            
+        // Update Y axis
+        let y = this.chart.selectAll(".y").data(["dummy"])
         let newY = y.enter().append("g")
             .attr("class", "y axis")
             .attr("transform", "translate("+[this.margin.left, this.margin.top]+")")
-
         y.merge(newY).transition(t).call(yAxisCall)
+
+        // Update year text
+        this.chart.selectAll(".yearText").text(year).style("opacity", 0.3)
         ////////////////////////////////////
 
         // Selecting and updating the data.
@@ -224,8 +210,8 @@ export default class ScatterPlot {
           .on("mouseover", function(d) { 
             // Retrieve values.
             let tooltip = d3.select(".tooltip")
-            let xFeature = d3.select(".xtext").text();
-            let yFeature = d3.select(".ytext").text();
+            let xFeature = d3.select("#xFeature").node().value;
+            let yFeature = d3.select("#yFeature").node().value;
 
             // Everything invisible except the selected one.
             d3.selectAll("circle").attr("opacity", 0.2)
@@ -233,7 +219,7 @@ export default class ScatterPlot {
             d3.select(this)
                 .style("stroke", "black")
                 .style("stroke-width", "3px")
-                .attr("opacity", 0.5);
+                .attr("opacity", 0.7);
 
             // Capitalize first letter
             let xFeatureText = xFeature.substring(0, 1).toUpperCase() + xFeature.substring(1, xFeature.length)
