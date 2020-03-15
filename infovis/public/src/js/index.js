@@ -1,40 +1,50 @@
-import * as d3 from "d3"
-import songData from "./../data/song_data_20200304.json"
 import genreData from "./../data/scatterplot.json"
 import RadarChart from "./radarChart"
 import ScatterPlot from "./scatterPlot"
 import LineChart from "./line_chart";
-
 import lineChartData from "../../../../data/data/lineplot_object"
+import SeatingChart from "./seatingChart";
+import seatingData from "../../../../data/song_data_20200304.json"
 
-function onClickTest() {
-	return
+import "../style.css"
+
+let _year = "1999"
+let _genre = "Rock"
+// scatter plot
+const scatterOnClick = (genre) => {
+    _genre = genre;
+    seatingChart.update(_year, genre)
 }
 
-const chart = new RadarChart("div#radarchart", onClickTest)
-chart.setFeatures(["acousticness", "danceability", "energy",
-	 "instrumentalness", "liveness", "valence", "speechiness"])
-chart.init()
-chart.update([songData[10]])
-
-var scatter = new ScatterPlot("div#scatterplot", onClickTest)
+const scatter = new ScatterPlot("div#scatterplot", scatterOnClick)
 scatter.init()
+scatter.addDropdowns(genreData)
+scatter.update(genreData[_year], _year)
 
-function dropdownUpdate() {
-	let year = d3.select("#year").property('value')
-	let xFeature = d3.select("#xFeature").property('value')
-	let yFeature = d3.select("#yFeature").property('value')
-	scatter.update(genreData, year, xFeature, yFeature)
+
+// Radar Chart
+
+
+const radarOnClick = () => {
+    console.log("radr")
 }
 
-scatter.addDropdowns(genreData, dropdownUpdate)
-scatter.update(genreData, 1999, 
-	d3.select("#xFeature").property('value'),
-	d3.select("#yFeature").property('value'))
+const radarChart = new RadarChart(
+    "div#radarchart",
+    radarOnClick,
+    [
+        "acousticness",
+        "danceability",
+        "energy",
+        "instrumentalness",
+        "liveness",
+        "valence",
+        "speechiness"
+    ]
+)
+radarChart.init()
 
-
-
-
+// Line chart
 // only show the features selected
 function updateLineChart() {
     const data = Array.from(lineChartData).filter(item => {
@@ -50,10 +60,22 @@ Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).for
 })
 
 const onClick = (year) => {
-    console.log(year);
+    _year = year;
+    const data = genreData[year]
+    scatter.update(data, _year)
+    seatingChart.update(_year, _genre)
 }
 
 const lineChart = new LineChart("#line-chart", onClick);
 lineChart.init()
 updateLineChart()
 
+// seating chart
+const seatingChartOnclick = (entry) => {
+    console.log(entry)
+    radarChart.update([entry])
+}
+const seatingChart = new SeatingChart("seating-chart", seatingChartOnclick, seatingData)
+seatingChart.init()
+
+seatingChart.update(_year, "Rock")
