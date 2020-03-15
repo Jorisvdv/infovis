@@ -23,24 +23,6 @@ export default class ScatterPlot {
             .attr("transform",
                   "translate(" + this.margin.left + "," + this.margin.top + ")");
 
-        // Add text on the X-axis and Y-axis
-        this.chart.append("text")
-          .attr("class", "xtext")             
-          .attr("transform",
-                "translate(" + (this.width/2) + " ," + 
-                (this.height + this.margin.top + 20) + ")")
-          .style("text-anchor", "middle")
-          .text("x");
-
-        this.chart.append("text")
-          .attr("class", "ytext") 
-          .attr("transform", "rotate(-90)")
-          .attr("y", 0 - this.margin.left)
-          .attr("x",0 - (this.height / 2))
-          .attr("dy", "1em")
-          .style("text-anchor", "middle")
-          .text("y");
-
         // Add year text
         this.chart.append("text")
           .attr("class", "yearText")
@@ -212,9 +194,7 @@ export default class ScatterPlot {
             .attr("transform", "translate("+[this.margin.left, this.margin.top]+")")
         y.merge(newY).transition(t).call(yAxisCall)
 
-        // Update text on the X-axis and Y-axis
-        this.chart.selectAll(".xtext").text(xFeature)
-        this.chart.selectAll(".ytext").text(yFeature)
+        // Update year text
         this.chart.selectAll(".yearText").text(year).style("opacity", 0.3)
         ////////////////////////////////////
 
@@ -230,8 +210,8 @@ export default class ScatterPlot {
           .on("mouseover", function(d) { 
             // Retrieve values.
             let tooltip = d3.select(".tooltip")
-            let xFeature = d3.select(".xtext").text();
-            let yFeature = d3.select(".ytext").text();
+            let xFeature = d3.select("#xFeature").node().value;
+            let yFeature = d3.select("#yFeature").node().value;
 
             // Everything invisible except the selected one.
             d3.selectAll("circle").attr("opacity", 0.2)
