@@ -131,6 +131,7 @@ export default class ScatterPlot {
         return d3.axisLeft(y)
             .ticks()
     }
+
     update(data, year) {
 
         // Source Updating axis
@@ -165,51 +166,47 @@ export default class ScatterPlot {
         xAxisCall.scale(xScale)
         yAxisCall.scale(yScale)
 
-        // add the Y gridlines
-        this.chart.append("g")           
-            .attr("class", "grid")
-            .attr("opacity", 0.05)
-            .call(this.make_y_gridlines(yScale)
-                .tickSize(-this.width)
-                .tickFormat("")
-            )
 
-        // add the X gridlines
-        this.chart.append("g")           
-            .attr("class", "grid")
+        // Animation
+        let t = d3.transition().duration(500)
+
+        // Update Y gridlines
+        let gridlinesY = this.chart.selectAll(".gridy").data(["dummy"])
+        let newgridlinesY = this.chart.append("g")           
+            .attr("class", "gridy")
+            .attr("opacity", 0.05)
+        gridlinesY.merge(newgridlinesY).transition(t).call(this.make_y_gridlines(yScale)
+            .tickSize(-this.width)
+            .tickFormat(""))
+
+        // Update X gridlines
+        let gridlinesX = this.chart.selectAll(".gridx").data(["dummy"])
+        let newgridlinesX = this.chart.append("g")           
+            .attr("class", "gridx")
             .attr("opacity", 0.05)
             .attr("transform", "translate(0," + this.height + ")")
-            .call(this.make_x_gridlines(xScale)
-                .tickSize(-this.height)
-                .tickFormat("")
-            )
+        gridlinesX.merge(newgridlinesX).transition(t).call(this.make_x_gridlines(xScale)
+            .tickSize(-this.width)
+            .tickFormat(""))
 
-        // Drawing
-        let t = d3.transition()
-            .duration(500)
-        
-        let x = this.chart.selectAll(".x")
-            .data(["dummy"])
-            
+        // Update X axis
+        let x = this.chart.selectAll(".x").data(["dummy"])   
         let newX = x.enter().append("g")
             .attr("class", "x axis")
             .attr("transform", "translate("+[this.margin.left, this.height-this.margin.top]+")")
+        x.merge(newX).transition(t).call(xAxisCall)
+
+        // Update Y axis
+        let y = this.chart.selectAll(".y").data(["dummy"])
+        let newY = y.enter().append("g")
+            .attr("class", "y axis")
+            .attr("transform", "translate("+[this.margin.left, this.margin.top]+")")
+        y.merge(newY).transition(t).call(yAxisCall)
 
         // Update text on the X-axis and Y-axis
         this.chart.selectAll(".xtext").text(xFeature)
         this.chart.selectAll(".ytext").text(yFeature)
         this.chart.selectAll(".yearText").text(year).style("opacity", 0.3)
-
-        x.merge(newX).transition(t).call(xAxisCall)
-
-        let y = this.chart.selectAll(".y")
-            .data(["dummy"])
-            
-        let newY = y.enter().append("g")
-            .attr("class", "y axis")
-            .attr("transform", "translate("+[this.margin.left, this.margin.top]+")")
-
-        y.merge(newY).transition(t).call(yAxisCall)
         ////////////////////////////////////
 
         // Selecting and updating the data.
