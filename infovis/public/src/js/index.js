@@ -11,6 +11,18 @@ import "../style.css"
 
 let _year = "1999"
 let _genre = "Rock"
+let _mute = false;
+
+const mute = document.getElementById("mute")
+    mute.addEventListener("click", () => {
+    _mute = !_mute
+    mute.innerHTML = _mute ? "unmute" : "mute";
+    if (_mute) {
+        const audio = document.getElementById("audio")
+        audio.pause()
+    }
+})
+
 // scatter plot
 const showSeatingChart = () => {
     // Show the seating chart
@@ -148,7 +160,7 @@ const seatingChartOnclick = (entry) => {
     albumArt.src = entry.image_640;
     const audio = document.getElementById("audio")
 
-    if (entry.preview_url) {
+    if (entry.preview_url && !_mute) {
         audio.src = entry.preview_url
     } else {
         audio.pause();

@@ -77,6 +77,12 @@ body {
     padding: 0 10%;
 }
 
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .content {
     display: flex;
     flex-direction: row;
