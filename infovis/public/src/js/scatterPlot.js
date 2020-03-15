@@ -10,8 +10,8 @@ export default class ScatterPlot {
     }
     
     init() {
-        this.margin = {top: 10, right: 30, bottom: 30, left: 60},
-        this.width = 460 - this.margin.left - this.margin.right,
+        this.margin = {top: 10, right: 30, bottom: 30, left: 150},
+        this.width = 550 - this.margin.left - this.margin.right,
         this.height = 400 - this.margin.top - this.margin.bottom;
 
         // append the svg object to the body of the page
@@ -45,7 +45,7 @@ export default class ScatterPlot {
         this.chart.append("text")
           .attr("class", "yearText")
           .attr("y", 35)
-          .attr("x", 265)
+          .attr("x", 267)
           .style("font-size", "30px")
           .text("2000")
 
@@ -106,6 +106,7 @@ export default class ScatterPlot {
         .text(function (d) {
             return d[0].toUpperCase() + d.slice(1,d.length); // capitalize 1st letter
         });
+        return newDropdown
     }
     //https://bl.ocks.org/shimizu/914c769f05f1b2e1d09428c7eedd7f8a
 
@@ -116,10 +117,18 @@ export default class ScatterPlot {
         let genreStats = Object.keys(data[year][0])
 
         // X axis
-        this.addDropdown(genreStats, "xFeature")
+        let xDropdown = this.addDropdown(genreStats, "xFeature")
+        xDropdown
+            .style("position", "absolute")
+            .style("margin-left", (this.width + this.margin.left) / 2 + "px")
+            .style("margin-top", this.height + this.margin.bottom + "px")
 
         // Y axis
-        this.addDropdown(genreStats, "yFeature")
+        let yDropdown = this.addDropdown(genreStats, "yFeature")
+        yDropdown
+            .style("position", "absolute")
+            .style("margin-top", this.height / 2 + "px")
+            .style("margin-right", this.width + "px")
     }
     
     make_x_gridlines(x) {        
