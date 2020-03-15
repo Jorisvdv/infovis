@@ -50,12 +50,16 @@
     border: 3px solid black;
 }
 
+#seating-chart-tooltip img {
+    width: 200px;
+}
+
 #seating-chart-tooltip div {
     border-bottom: 3px solid black;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 #seating-chart-tooltip div:last-child {
