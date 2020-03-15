@@ -233,7 +233,7 @@ export default class ScatterPlot {
             d3.select(this)
                 .style("stroke", "black")
                 .style("stroke-width", "3px")
-                .attr("opacity", 0.5);
+                .attr("opacity", 0.7);
 
             // Capitalize first letter
             let xFeatureText = xFeature.substring(0, 1).toUpperCase() + xFeature.substring(1, xFeature.length)
