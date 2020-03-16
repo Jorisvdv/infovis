@@ -1,11 +1,13 @@
 import * as d3 from "d3"
 import colors from "./../data/scattercolors.json"
 import axis from "./../data/axisMapping.json"
+import genreData from "./../../../../data/data/scatterplot.json"
 
 export default class ScatterPlot {
-    constructor(selector, onClick) {
+    constructor(selector, onClick, radarPlot) {
         this.selector = selector;
         this.onClick = onClick;
+        this.radarPlot = radarPlot;
         console.log(onClick)
     }
     
@@ -198,12 +200,21 @@ export default class ScatterPlot {
         y.merge(newY).transition(t).call(yAxisCall)
 
         // Update year text
-        console.log(this.chart.selectAll(".yearText"), year)
         this.chart.selectAll(".yearText").text(this.year).style("opacity", 0.3)
         ////////////////////////////////////
 
         // Selecting and updating the data.
         const dots = this.chart.selectAll('circle').data(this.data);
+
+        // Call update for radarplot. 
+        const radarChartRef = this.radarPlot
+        const updateRadarPlot = function (genre) {
+            for (let i=0; i<genreData[year].length;i++) {
+                if (genreData[year][i]["genre"] === genre) {
+                    radarChartRef.update([genreData[year][i]])
+                }
+            }
+        }
 
         // Add all paths to svg
         dots.enter()
@@ -213,6 +224,7 @@ export default class ScatterPlot {
           .on("click", (d) => {this.onClick(d["genre"])})
           .on("mouseover", function(d) { 
             // Retrieve values.
+            updateRadarPlot(d.genre)
             let tooltip = d3.select(".tooltip")
             let xFeature = d3.select("#xFeature").node().value;
             let yFeature = d3.select("#yFeature").node().value;

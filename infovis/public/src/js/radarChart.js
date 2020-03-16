@@ -1,4 +1,5 @@
 import * as d3 from "d3"
+import colors from "./../data/scattercolors.json"
 
 export default class RadarChart {
     constructor(selector, onClick, features) {
@@ -120,16 +121,33 @@ export default class RadarChart {
             .append("path")
             .attr("opacity", 0.5)
             .attr('d', function(d) {return stopLine(d) + 'Z'})
+            .style("fill", function(d, i) {
+                let genre = data[i]["genre"]
+                if (i === 0 && data.length > 1) { return "gray" }
+                return colors[data[i]["genre"]]
+            })
 
             // Causes the new data to merge with the old data
             .merge(paths)
             .transition().duration(1000)
-            .attr('d', function(d) {return line(d) + 'Z'});
+            .attr('d', function(d) {return line(d) + 'Z'})
+            .style("fill", function(d, i) { 
+                let genre = data[i]["genre"]
+                if (i === 0 && data.length > 1) { return "gray" }
+                return colors[data[i]["genre"]]
+            });
 
         // Remove paths that are no longer in the data.
         paths.exit()
             .transition().duration(1000)
                 .attr('d', function(d) {return stopLine(d) + 'Z'})
+                .style("fill", function(d, i) {
+                    try {
+                        let genre = data[i]["genre"]
+                        if (i === 0 && data.length > 1) { return "gray" }
+                        return colors[data[i]["genre"]]
+                    } catch(err) {}
+                })
             .remove()
     }   
 }

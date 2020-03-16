@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import debounce from "lodash.debounce"
+import colors from "./../data/scattercolors.json"
 
 export default class SeatingChart {
     constructor(selector, onClick, data) {
@@ -11,7 +12,6 @@ export default class SeatingChart {
 
     init() {
         // init the chart here
-        this.color = d3.scaleOrdinal(d3.schemeTableau10)
         const chart = document.getElementsByClassName(this.selector)[0]
         const data = this.data.sort((a, b) => {
             return a[this.year] - b[this.year]
@@ -20,7 +20,7 @@ export default class SeatingChart {
             const square = document.createElement("div")
             square.innerHTML = d[this.year];
             square.className = "square"
-            square.style.background = this.color(d["genre"]);
+            square.style.background = colors[d["genre"]];
             square.style.opacity = this.genre === d["genre"] ? "1" : "0.25";
             chart.appendChild(square)
         })
@@ -65,7 +65,7 @@ export default class SeatingChart {
         data.forEach(d => {
             const square = document.createElement("div")
             square.innerHTML = d[this.year];
-            square.style.background = this.color(d["genre"]);
+            square.style.background = colors[d["genre"]];
             square.style.opacity = this.genre === d["genre"] ? "1" : "0.25";
             if (this.genre === d["genre"]) {
                 square.addEventListener('mouseenter', (e) => this._onHover(e, d, this.year))

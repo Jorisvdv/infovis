@@ -11,7 +11,7 @@ import "../style.css"
 
 let _year = "1999"
 let _genre = "Rock"
-let _mute = false;
+let _mute = true;
 
 const mute = document.getElementById("mute")
     mute.addEventListener("click", () => {
@@ -91,22 +91,7 @@ const updateGenreDetails = () => {
     genreDetails[3].children[1].innerHTML = "" + data.duration.toFixed(2)
 }
 
-const scatterOnClick = (genre) => {
-    _genre = genre;
-    seatingChart.update(_year, genre)
-    showSeatingChart()
-    updateGenreDetails()
-}
-
-const scatter = new ScatterPlot("div#scatterplot", scatterOnClick)
-scatter.init()
-scatter.addDropdowns(genreData)
-scatter.update(genreData[_year], _year)
-
-
 // Radar Chart
-
-
 const radarOnClick = () => {
     console.log("radr")
 }
@@ -125,6 +110,18 @@ const radarChart = new RadarChart(
     ]
 )
 radarChart.init()
+
+const scatterOnClick = (genre) => {
+    _genre = genre;
+    seatingChart.update(_year, genre)
+    showSeatingChart()
+    updateGenreDetails()
+}
+
+const scatter = new ScatterPlot("div#scatterplot", scatterOnClick, radarChart)
+scatter.init()
+scatter.addDropdowns(genreData)
+scatter.update(genreData[_year], _year)
 
 // Line chart
 // only show the features selected
@@ -154,9 +151,19 @@ updateLineChart()
 
 // seating chart
 const seatingChartOnclick = (entry) => {
-    radarChart.update([entry])
+    for (let i=0; i<genreData[_year].length;i++) {
+        if (genreData[_year][i]["genre"] === entry.genre) {
+            radarChart.update([genreData[_year][i], entry])
+        }
+    }
+
+    //radarChart.update([entry])
 
     const albumArt = document.getElementsByClassName("song-details-album-art")[0]
+    const songInfo = Array.from(document.getElementsByClassName("song-detail"))
+
+    songInfo[0].children[1].innerHTML = entry.artist;
+    songInfo[1].children[1].innerHTML = entry.title;
     albumArt.src = entry.image_640;
     const audio = document.getElementById("audio")
 
