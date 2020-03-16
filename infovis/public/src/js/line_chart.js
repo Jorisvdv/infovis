@@ -12,25 +12,39 @@ export default class LineChart {
         this.margin = {top: 15, right: 35, bottom: 15, left: 35};
         this.width = 850;
         this.height = 410;
-        this.formatValue = d3.format(",.2f");
+
+        this.infoPanelMargin = {top:this.margin.top, right:10, bottom:this.margin.bottom, left:35};
+        this.infoPanelWidth = 150;
+        this.infoPanelHeight = this.height;
 
         this.colorScale = {
-            "valence": "#e91e63",
-            "speechiness": "#673ab7",
-            "liveness": "#795548",
-            "instrumentalness": "#009688",
             "energy": "#cddc39",
             "danceability": "#ffc107",
+            "valence": "#e91e63",
             "acousticness": "#ff5722",
+            "liveness": "#795548",
+            "instrumentalness": "#009688",
+            "speechiness": "#673ab7",
         };
+
+        this.allFeatures = Object.keys(this.colorScale)
 
         this.chart = d3
             .select(this.selector)
             .append("svg")
             .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom)
+            .style("float", "left")
             .append("g")
             .attr("transform", `translate(${this.margin.left}, ${this.margin.top})`)
+
+        this.infoPanel = d3
+            .select(this.selector)
+            .append("svg")
+            .attr("class", "infoPanel")
+            .attr("width", this.infoPanelWidth + this.infoPanelMargin.left + this.infoPanelMargin.right)
+            .attr("height", this.infoPanelHeight + this.infoPanelMargin.top + this.infoPanelMargin.bottom)
+            .style("float", "left")
 
         this.line = d3.line()
             .x(d => {
@@ -67,6 +81,21 @@ export default class LineChart {
             .attr("text-anchor", "middle")
             .attr("font-size", 12);
 
+        const labels = this.infoPanel.selectAll(".infoText")
+            .data(this.allFeatures);
+
+        labels.enter().append("text")
+            .attr("class", "infoText")
+            .attr("fill", d => this.colorScale[d])
+            .attr("text-anchor", "start")
+            .attr("font", 12)
+            .attr("dy", (_, i) => 1 + i * 2 + "em")
+            .attr("transform", `translate(0,${this.infoPanelHeight / 2.5})`)
+            .text(e => e)
+            .merge(labels);
+
+        this.chart.selectAll(".line-chart-inputs")
+            .append("transform", `translate(50,50)`)
     }
 
     update(data) {
@@ -121,21 +150,21 @@ export default class LineChart {
     }
 
     tooltip(data) {
-        const audioFeatures = this._getAudioFeatures(data)
-        
-        const labels = this.focus.selectAll(".lineHoverText")
-            .data(audioFeatures)
-        
-        const circles = this.focus.selectAll(".hoverCircle")
-            .data(audioFeatures)
 
-        labels.enter().append("text")
-            .attr("class", "lineHoverText")
-            .style("fill", d => this.colorScale[d.key])
-            .attr("text-anchor", "start")
-            .attr("font", 12)
+        const infoValues = this.infoPanel.selectAll(".infoTextValues")
+            .data(this.allFeatures)
+
+        const circles = this.focus.selectAll(".hoverCircle")
+            .data(this._getActiveFeatures(data))
+
+        infoValues.enter().append("text")
+            .attr("class", "infoTextValues")
+            .attr("fill", d => this.colorScale[d])
+            .attr("text-anchor", "end")
+            .attr("fond", 12)
             .attr("dy", (_, i) => 1 + i * 2 + "em")
-            .merge(labels)
+            .attr("transform", `translate(${this.infoPanelWidth + this.infoPanelMargin.left + this.infoPanelMargin.right}, ${this.infoPanelHeight / 2.5})`)
+            .merge(infoValues);
 
         circles.enter().append("circle")
             .attr("class", "hoverCircle")
@@ -170,19 +199,8 @@ export default class LineChart {
                     .style("stroke", e => this.colorScale[e])
                     .style("fill", "none");
 
-                this.focus.selectAll(".lineHoverText")
-                    .attr("transform",
-                        "translate(" + this.x(selectedYear) + "," + this.height / 2.5 + ")")
-                    .text(e => e + " " + this.formatValue(dataOfYear[e]))
-                    .style("stroke", e => this.colorScale[e])
-
-                this.x(selectedYear) > (this.width - this.width / 4)
-                    ? this.focus.selectAll("text.lineHoverText")
-                        .attr("text-anchor", "end")
-                        .attr("dx", -10)
-                    : this.focus.selectAll("text.lineHoverText")
-                        .attr("text-anchor", "start")
-                        .attr("dx", 10)
+                this.infoPanel.selectAll(".infoTextValues")
+                    .text(e =>dataOfYear[e])
             })
             .on("click", () => {
                 const years = this._getYears(data)
@@ -190,7 +208,7 @@ export default class LineChart {
             });
     }
 
-    _getAudioFeatures(data) {
+    _getActiveFeatures(data) {
         return data.map(d => d.key)
     }
 
@@ -211,11 +229,18 @@ export default class LineChart {
         const features = data.map(d => d.key);
         const years = data.map(d => d.data.map(e => e.year))[0];
         const values = data.map(d => d.data.map(e => e.data));
+        const formatValue = d3.format(",.2f");
 
         const dataOfYear = {};
         for (let i in features) {
-            dataOfYear[features[i]] = values[i][d3.bisectLeft(years.map(d => parseInt(d)), selectedYear.getFullYear())];
+            dataOfYear[features[i]] = formatValue(values[i][d3.bisectLeft(years.map(d => parseInt(d)), selectedYear.getFullYear())]);
         };
+        
+        for (let i in this.allFeatures) {
+            if (!(this.allFeatures[i] in dataOfYear)) {
+                dataOfYear[this.allFeatures[i]] = " "
+            }
+        }
         return dataOfYear
     }
 }
