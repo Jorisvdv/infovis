@@ -34,7 +34,7 @@
 
 .seating-chart-back {
     height: 42px;
-    background: pink;
+    background: #D9201B;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -67,8 +67,29 @@
     padding: 0;
 }
 
+h2{
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: bold;
+  /* padding: 3% 0 1% 0;   */
+}
+
+#scatterplot{
+  padding: 5%;
+}
+
+#line-chart{
+  padding: 0 3%;
+}
+
+#line-chart-inputs{
+  padding: 0 15px 15px 15px;
+}
+
 body {
-    background-color: #e5e5e5;
+    /* background-color: #e5e5e5; */
+    /* background-color: #cfd9df; */
+    background-color: #edf2f7;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .container {
