@@ -1,0 +1,178 @@
+.seating-chart {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    width: 25px;
+    height: 25px;
+    background: attr(data-background color);
+    font-size: 8px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.active {
+    cursor: pointer;
+}
+
+.seating-chart-container {
+    display: none;
+    padding: 32px;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.seating-chart-title {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+}
+
+.seating-chart-back {
+    height: 42px;
+    background: #D9201B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 16px;
+}
+
+#mute{
+  height: 42px;
+  background: #D9201B;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 16px;
+}
+
+#seating-chart-tooltip {
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    border: 3px solid black;
+}
+
+#seating-chart-tooltip img {
+    width: 200px;
+}
+
+#seating-chart-tooltip div {
+    border-bottom: 3px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+#seating-chart-tooltip div:last-child {
+    border: none;
+    padding: 0;
+}
+
+h2{
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: bold;
+  /* padding: 3% 0 1% 0;   */
+}
+
+#scatterplot{
+  padding: 5%;
+}
+
+#line-chart{
+  padding: 0 3%;
+}
+
+#line-chart-inputs{
+  padding: 0 15px 15px 15px;
+}
+
+body {
+    /* background-color: #e5e5e5; */
+    /* background-color: #cfd9df; */
+    background-color: #edf2f7;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.charts {
+    border: lightgrey 2px solid;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.left {
+    margin-right: 16px;
+}
+
+.genre-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.genre-detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.genre-detail span:first-child {
+    color: grey;
+}
+
+.song-details {
+    width: 100%;
+    position: relative;
+    max-width: 400px;
+    height: auto;
+    display: none;
+
+}
+
+/* Button to playback song */
+.song-details .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.song-details-album-art {
+    width: 300px;
+}
+
+.btn:hover .musicbutton {
+    fill: rgba(52, 52, 52, 0.850)
+}
+
+.right .charts {
+    padding: 16px;
+}

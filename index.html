@@ -3,8 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Plot 2000</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans+Condensed:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eddbd87adb.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<script src="/js.00a46daa.js"></script>
+<div class="container">
+    <div class="top">
+        <img src="Logo.svg" alt="Plot 2000 logo">
+        <!-- <h1 class="title">Plot 2000</h1> -->
+            <button id="mute"><i class="fas fa-volume-mute"></i></button>
+
+    </div>
+    <div class="content">
+        <div class="left">
+            <h2 class="left-title">Genre Properties Over The Years</h2>
+            <div class="seating-chart-title">
+                <button class="seating-chart-back"><i class="fas fa-arrow-left"></i> Back</button>
+                <h2 class="seating-chart-genre"></h2>
+            </div>
+            <div class="charts">
+                <div class="seating-chart-container">
+                    <div class="seating-chart"></div>
+                    <div id="seating-chart-tooltip">
+                        <div class="rank">#1111</div>
+                        <div class="artist">YOLO</div>
+                        <div class="title">YEET</div>
+                        <div class="album-art">
+                            <img src="http://placekitten.com/300/300" alt="album art">
+                        </div>
+                    </div>
+                </div>
+                <div id="scatterplot"></div>
+                <div id="line-chart"></div>
+                <div class="line-chart-inputs">
+                    <label>
+                        <input type="checkbox" checked="checked" id="acousticness">
+                        Acousticness
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="danceability">
+                        Danceability
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="energy">
+                        Energy
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="instrumentalness">
+                        Instrumentalness
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="liveness">
+                        Liveness
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="speechiness">
+                        Speechiness
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="valence">
+                        Valance
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <h2>Genre Details</h2>
+            <div class="charts">
+                <div class="genre-details">
+                    <div class="genre-detail"><span>Mean Tempo</span><span></span></div>
+                    <div class="genre-detail"><span>Times in List</span><span></span></div>
+                    <div class="genre-detail"><span>Mean release year</span><span></span></div>
+                    <div class="genre-detail"><span>Mean Length</span><span></span></div>
+                </div>
+                <div class="song-details">
+                    <h3>Song Details</h3>
+                    <div class="genre-detail song-detail"><span>Artist</span><span></span></div>
+                    <div class="genre-detail song-detail"><span>Name</span><span></span></div>
+                    <img src="" class="song-details-album-art">
+                </div>
+                <div id="radarchart"></div>
+            </div>
+        </div>
+        <div id="Details"></div>
+    </div>
+</div>
+<audio loop autoplay id="audio">
+</audio>
+<script src="js/index.js"></script>
 </body>
 </html>
