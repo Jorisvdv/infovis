@@ -8,7 +8,7 @@
     height: 25px;
     background: attr(data-background color);
     font-size: 8px;
-    color: #fff;
+    /*color: rgba(256, 256, 256, 0);*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,9 +21,9 @@
 
 .seating-chart-container {
     display: none;
-    padding: 32px;
+    padding: 16px 0px 16px 16px;
     overflow-y: scroll;
-    height: 50vh;
+    height: 58vh;
 }
 
 .seating-chart-title {
@@ -56,6 +56,7 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
+    z-index: 3;
     border: 3px solid black;
 }
 
@@ -152,6 +153,14 @@ body {
 
 }
 
+.song-details-xl {
+    height: 40px;
+}
+
+.song-details-desc {
+    padding-right: 10px;
+}
+
 /* Button to playback song */
 .song-details .btn {
     position: absolute;
@@ -166,11 +175,44 @@ body {
 }
 
 .song-details-album-art {
+    position: relative;
     width: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    z-index: 2;
+}
+
+#helpplaceholder {
+    font-weight: bold;
+    position: absolute;
+    width: 300px;
+    top: 25vh;
+    left: 2vw;
+    z-index: 1;
+}
+
+.selectSquare > input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.selectSquare:hover {
+    cursor: pointer;
+}
+
+.selectSquare {
+    width: 23px;
+    height: 23px;
+    opacity: 0.25;
 }
 
 .btn:hover .musicbutton {
     fill: rgba(52, 52, 52, 0.850)
+}
+
+.genre-select-container {
+    padding: 16px 16px 0px 16px;
+    display: none;
 }
 
 .right .charts {

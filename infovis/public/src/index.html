@@ -22,6 +22,7 @@
                 <h2 class="seating-chart-genre"></h2>
             </div>
             <div class="charts">
+                <form><div class="genre-select-container"></div></form>
                 <div class="seating-chart-container">
                     <div class="seating-chart"></div>
                     <div id="seating-chart-tooltip">
@@ -37,32 +38,123 @@
                 <div id="line-chart"></div>
                 <div class="line-chart-inputs">
                     <label>
-                        <input type="checkbox" checked="checked" id="acousticness">
-                        Acousticness
+                        <input type="checkbox" checked="checked" id="Rock">
+                        Rock
                     </label>
+                
                     <label>
-                        <input type="checkbox" checked="checked" id="danceability">
-                        Danceability
+                        <input type="checkbox" checked="checked" id="Classic rock">
+                        Classic rock
                     </label>
+                
                     <label>
-                        <input type="checkbox" checked="checked" id="energy">
-                        Energy
+                        <input type="checkbox" checked="checked" id="Soft rock">
+                        Soft rock
                     </label>
+                
                     <label>
-                        <input type="checkbox" checked="checked" id="instrumentalness">
-                        Instrumentalness
+                        <input type="checkbox" checked="checked" id="Pop">
+                        Pop
                     </label>
+                
                     <label>
-                        <input type="checkbox" checked="checked" id="liveness">
-                        Liveness
+                        <input type="checkbox" checked="checked" id="Other">
+                        Other
                     </label>
+                
                     <label>
-                        <input type="checkbox" checked="checked" id="speechiness">
-                        Speechiness
+                        <input type="checkbox" checked="checked" id="Dutch rock">
+                        Dutch rock
                     </label>
+                
                     <label>
-                        <input type="checkbox" checked="checked" id="valence">
-                        Valance
+                        <input type="checkbox" checked="checked" id="Nederpop">
+                        Nederpop
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Folk">
+                        Folk
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Rock-and-roll">
+                        Rock-and-roll
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Soul">
+                        Soul
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="House">
+                        House
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Karaoke">
+                        Karaoke
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Jazz">
+                        Jazz
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Chanson">
+                        Chanson
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Disco">
+                        Disco
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Reggae">
+                        Reggae
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Singer-songwriter">
+                        Singer-songwriter
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Blues">
+                        Blues
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Country">
+                        Country
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Electronica/dance">
+                        Electronica/dance
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Hip-hop">
+                        Hip-hop
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Metal">
+                        Metal
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Rap">
+                        Rap
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" checked="checked" id="Techno">
+                        Techno
                     </label>
                 </div>
             </div>
@@ -79,8 +171,9 @@
                 <div class="song-details">
                     <h3>Song Details</h3>
                     <div class="genre-detail song-detail"><span>Artist</span><span></span></div>
-                    <div class="genre-detail song-detail"><span>Name</span><span></span></div>
+                    <div class="genre-detail song-detail song-details-xl "><span class="song-details-desc">Name</span><span></span></div>
                     <img src="" class="song-details-album-art">
+                    <div id="helpplaceholder">Click on a square to get started</div>
                 </div>
                 <div id="radarchart"></div>
             </div>
