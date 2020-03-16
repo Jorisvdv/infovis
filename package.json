@@ -7,7 +7,7 @@
     "start": "parcel serve infovis/public/src/index.html",
     "build": "parcel build --out-dir infovis/public/dist infovis/public/src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy":"gh-pages -d infovis/public/dist"
+    "deploy":"echo \"plot2000.nl\" > infovis/public/dist/CNAME && gh-pages -d infovis/public/dist"
   },
   "repository": {
     "type": "git",
