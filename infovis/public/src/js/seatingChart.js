@@ -22,6 +22,7 @@ export default class SeatingChart {
             square.className = "square"
             square.style.background = colors[d["genre"]];
             square.style.opacity = this.genre === d["genre"] ? "1" : "0.25";
+            square.style.color = this.genre === d["genre"] ? "rgba(256, 256, 256, 1)" : "rgba(256, 256, 256, 0)";
             chart.appendChild(square)
         })
     }
@@ -67,6 +68,7 @@ export default class SeatingChart {
             square.innerHTML = d[this.year];
             square.style.background = colors[d["genre"]];
             square.style.opacity = this.genre === d["genre"] ? "1" : "0.25";
+            square.style.color = this.genre === d["genre"] ? "rgba(256, 256, 256, 1)" : "rgba(256, 256, 256, 0)";
             if (this.genre === d["genre"]) {
                 square.addEventListener('mouseenter', (e) => this._onHover(e, d, this.year))
                 square.addEventListener('mouseleave', () => this._onMouseLeave())

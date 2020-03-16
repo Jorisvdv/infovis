@@ -8,7 +8,7 @@
     height: 25px;
     background: attr(data-background color);
     font-size: 8px;
-    color: #fff;
+    /*color: rgba(256, 256, 256, 0);*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,9 +21,9 @@
 
 .seating-chart-container {
     display: none;
-    padding: 32px;
+    padding: 16px 0px 16px 16px;
     overflow-y: scroll;
-    height: 50vh;
+    height: 57vh;
 }
 
 .seating-chart-title {
@@ -158,6 +158,8 @@ body {
 
 .song-details-album-art {
     width: 300px;
+    min-height: 300px;
+    max-height: 300px;
 }
 
 .btn:hover .musicbutton {
