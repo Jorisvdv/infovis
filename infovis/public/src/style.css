@@ -47,6 +47,7 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
+    z-index: 3;
     border: 3px solid black;
 }
 
@@ -157,9 +158,19 @@ body {
 }
 
 .song-details-album-art {
+    position: relative;
     width: 300px;
     min-height: 300px;
     max-height: 300px;
+    z-index: 2;
+}
+
+#helpplaceholder {
+    position: absolute;
+    width: 300px;
+    top: 25vh;
+    left: 2vw;
+    z-index: 1;
 }
 
 .btn:hover .musicbutton {
