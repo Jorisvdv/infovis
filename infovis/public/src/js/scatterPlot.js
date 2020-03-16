@@ -230,7 +230,7 @@ export default class ScatterPlot {
             let yFeature = d3.select("#yFeature").node().value;
 
             // Everything invisible except the selected one.
-            d3.selectAll("circle").attr("opacity", 0.2)
+            d3.selectAll("#scatterplot circle").attr("opacity", 0.2)
 
             d3.select(this)
                 .style("stroke", "black")
