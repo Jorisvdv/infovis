@@ -209,7 +209,6 @@ export default class ScatterPlot {
         // Call update for radarplot. 
         const radarChartRef = this.radarPlot
         const updateRadarPlot = function (genre) {
-            console.log(radarChartRef, genre, year, genreData[year])
             for (let i=0; i<genreData[year].length;i++) {
                 if (genreData[year][i]["genre"] === genre) {
                     radarChartRef.update([genreData[year][i]])

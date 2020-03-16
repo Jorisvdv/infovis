@@ -141,10 +141,12 @@ export default class RadarChart {
         paths.exit()
             .transition().duration(1000)
                 .attr('d', function(d) {return stopLine(d) + 'Z'})
-                .style("fill", function(d, i) { 
-                    let genre = data[i]["genre"]
-                    if (i === 0 && data.length > 1) { return "gray" }
-                    return colors[data[i]["genre"]]
+                .style("fill", function(d, i) {
+                    try {
+                        let genre = data[i]["genre"]
+                        if (i === 0 && data.length > 1) { return "gray" }
+                        return colors[data[i]["genre"]]
+                    } catch(err) {}
                 })
             .remove()
     }   
