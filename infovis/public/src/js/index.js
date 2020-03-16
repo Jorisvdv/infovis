@@ -15,8 +15,8 @@ let _mute = true;
 
 const mute = document.getElementById("mute")
     mute.addEventListener("click", () => {
-    _mute = !_mute
-    mute.innerHTML = _mute ? "unmute" : "mute";
+    _mute = !_mute;
+    mute.childNodes[0].className = _mute ? "fas fa-volume-mute" : "fas fa-volume-up";
     if (_mute) {
         const audio = document.getElementById("audio")
         audio.pause()
