@@ -231,6 +231,9 @@ export default class ScatterPlot {
 
             // Everything invisible except the selected one.
             d3.selectAll("#scatterplot circle").attr("opacity", 0.2)
+            d3.selectAll("#line-chart path").attr("opacity", 0.2)
+            d3.selectAll("#" + d.genre.replace(/\s/g, '')).attr("opacity", 1)
+            console.log("#line-chart path #" + d.genre.replace(/\s/g, ''))
 
             d3.select(this)
                 .style("stroke", "black")
@@ -259,6 +262,7 @@ export default class ScatterPlot {
                 .style("stroke", "none");
 
                 d3.selectAll("circle").attr("opacity", 0.5)
+                d3.selectAll("#line-chart path").attr("opacity", 1)
 
                 let tooltip = d3.select(".tooltip")      
                 tooltip.transition()        

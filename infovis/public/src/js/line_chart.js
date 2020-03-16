@@ -93,12 +93,13 @@ export default class LineChart {
             .append("path")
             .merge(lines)
             .attr("class", "line")
+            .attr("id", d => d.key.replace(/\s/g, ''))
             .style("stroke", d => {
                 return this.colorScale[d.key];
             })
             .style("fill", "none")
             .style("stroke-width", 2)
-            .attr("d", d => this.line(d.data))      
+            .attr("d", d => this.line(d.data))  
 
         // Put in the overlay for tooltip
         this.chart.append("rect")
