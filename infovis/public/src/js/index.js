@@ -156,12 +156,9 @@ updateLineChart()
 const seatingChartOnclick = (entry) => {
     for (let i=0; i<genreData[_year].length;i++) {
         if (genreData[_year][i]["genre"] === entry.genre) {
-            console.log(entry)
             radarChart.update([genreData[_year][i], entry])
         }
     }
-
-    console.log("calleeddd")
 
     //radarChart.update([entry])
 

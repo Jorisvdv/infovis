@@ -198,7 +198,6 @@ export default class ScatterPlot {
         y.merge(newY).transition(t).call(yAxisCall)
 
         // Update year text
-        console.log(this.chart.selectAll(".yearText"), year)
         this.chart.selectAll(".yearText").text(this.year).style("opacity", 0.3)
         ////////////////////////////////////
 

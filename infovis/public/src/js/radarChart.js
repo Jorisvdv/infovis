@@ -95,8 +95,6 @@ export default class RadarChart {
             this.features = this.features[0]
         }
 
-        console.log("radar", data)
-
         let dataCoordinates = [];
         for (let i=0; i<data.length; i++) {
             dataCoordinates.push(this.getPathCoordinates(data[i]))
