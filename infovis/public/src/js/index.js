@@ -2,7 +2,7 @@ import genreData from "./../../../../data/data/scatterplot.json"
 import RadarChart from "./radarChart"
 import ScatterPlot from "./scatterPlot"
 import LineChart from "./line_chart";
-import lineChartData from "../../../../data/data/lineplot_object"
+import lineChartData from "../../../../data/data/lineplot_genre_object"
 import SeatingChart from "./seatingChart";
 import seatingData from "../../../../data/song_data_20200304.json"
 
