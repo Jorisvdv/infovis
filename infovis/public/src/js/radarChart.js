@@ -95,6 +95,8 @@ export default class RadarChart {
             this.features = this.features[0]
         }
 
+        console.log("radar", data)
+
         let dataCoordinates = [];
         for (let i=0; i<data.length; i++) {
             dataCoordinates.push(this.getPathCoordinates(data[i]))
@@ -123,20 +125,29 @@ export default class RadarChart {
             .attr('d', function(d) {return stopLine(d) + 'Z'})
             .style("fill", function(d, i) {
                 let genre = data[i]["genre"]
-                return colors[genre] || "gray"
+                if (i === 0) { return "gray" }
+                return colors[data[i]["genre"]]
             })
 
             // Causes the new data to merge with the old data
             .merge(paths)
             .transition().duration(1000)
             .attr('d', function(d) {return line(d) + 'Z'})
-            .style("fill", function(d, i) { return colors[data[i]["genre"]] || "gray"});
+            .style("fill", function(d, i) { 
+                let genre = data[i]["genre"]
+                if (i === 0) { return "gray" }
+                return colors[data[i]["genre"]]
+            });
 
         // Remove paths that are no longer in the data.
         paths.exit()
             .transition().duration(1000)
                 .attr('d', function(d) {return stopLine(d) + 'Z'})
-                .style("fill", function(d, i) { return colors[data[i]["genre"]] || "gray"})
+                .style("fill", function(d, i) { 
+                    let genre = data[i]["genre"]
+                    if (i === 0) { return "gray" }
+                    return colors[data[i]["genre"]]
+                })
             .remove()
     }   
 }
