@@ -2,7 +2,7 @@ import genreData from "./data/data/scatterplot.json"
 import RadarChart from "./radarChart"
 import ScatterPlot from "./scatterPlot"
 import LineChart from "./line_chart";
-import lineChartData from "./data/data/lineplot_object"
+import lineChartData from "../../../../data/data/lineplot_genre_object"
 import SeatingChart from "./seatingChart";
 import seatingData from "./data/song_data_20200304.json"
 
@@ -32,6 +32,9 @@ const showSeatingChart = () => {
     const scatterPlotElement = document.getElementById("scatterplot")
     scatterPlotElement.style.display = "none";
 
+    const seatingChartLegenda = document.getElementsByClassName("genre-select-container")[0]
+    seatingChartLegenda.style.display = "flex"
+
     // show seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
     seatingChartTitle.style.display = "flex"
@@ -52,6 +55,9 @@ const hideSeatingChart = () => {
     // show the scatter plot
     const scatterPlotElement = document.getElementById("scatterplot")
     scatterPlotElement.style.display = "initial";
+
+    const seatingChartLegenda = document.getElementsByClassName("genre-select-container")[0]
+    seatingChartLegenda.style.display = "none"
 
     // hide seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
@@ -176,5 +182,6 @@ const seatingChartOnclick = (entry) => {
 }
 const seatingChart = new SeatingChart("seating-chart", seatingChartOnclick, seatingData)
 seatingChart.init()
+seatingChart.createLegenda()
 
 seatingChart.update(_year, "Rock")

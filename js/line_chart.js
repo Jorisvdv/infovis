@@ -1,4 +1,5 @@
 import * as d3 from "d3"
+import colors from "./../data/scattercolors.json"
 
 
 export default class LineChart {
@@ -8,20 +9,12 @@ export default class LineChart {
     }
 
     init() {
-        this.margin = {top: 15, right: 35, bottom: 15, left: 35};
+        this.margin = {top: 15, right: 35, bottom: 5, left: 35};
         this.width = 600;
         this.height = 200;
         this.formatValue = d3.format(",.2f");
 
-        this.colorScale = {
-            "valence": "#e91e63",
-            "speechiness": "#673ab7",
-            "liveness": "#795548",
-            "instrumentalness": "#009688",
-            "energy": "#cddc39",
-            "danceability": "#ffc107",
-            "acousticness": "#ff5722",
-        };
+        this.colorScale = colors;
 
         this.chart = d3
             .select(this.selector)
@@ -82,7 +75,7 @@ export default class LineChart {
 
         this.y = d3
             .scaleLinear()
-            .domain([0, 1])
+            .domain([0, 700])
             .range([this.height - this.margin.top - this.margin.bottom, 0]);
 
         d3.select(".x-axis")
@@ -100,12 +93,13 @@ export default class LineChart {
             .append("path")
             .merge(lines)
             .attr("class", "line")
+            .attr("id", d => d.key.replace(/\s/g, ''))
             .style("stroke", d => {
                 return this.colorScale[d.key];
             })
             .style("fill", "none")
             .style("stroke-width", 2)
-            .attr("d", d => this.line(d.data))      
+            .attr("d", d => this.line(d.data))  
 
         // Put in the overlay for tooltip
         this.chart.append("rect")
