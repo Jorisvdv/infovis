@@ -41,6 +41,15 @@
     margin-right: 16px;
 }
 
+#mute{
+  height: 42px;
+  background: #D9201B;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 16px;
+}
+
 #seating-chart-tooltip {
     background: #fff;
     display: none;
