@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel serve infovis/public/src/index.html",
     "build": "parcel build --out-dir infovis/public/dist infovis/public/src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy":"gh-pages -d infovis/public/src"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Jorisvdv/infovis/issues"
   },
-  "homepage": "https://github.com/Jorisvdv/infovis#readme",
+  "homepage": "https://github.io/Jorisvdv/infovis",
   "dependencies": {
     "d3": "^5.15.0",
     "d3-request": "^1.0.6",
