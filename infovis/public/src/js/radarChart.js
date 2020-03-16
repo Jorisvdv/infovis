@@ -123,7 +123,7 @@ export default class RadarChart {
             .attr('d', function(d) {return stopLine(d) + 'Z'})
             .style("fill", function(d, i) {
                 let genre = data[i]["genre"]
-                if (i === 0) { return "gray" }
+                if (i === 0 && data.length > 1) { return "gray" }
                 return colors[data[i]["genre"]]
             })
 
@@ -133,7 +133,7 @@ export default class RadarChart {
             .attr('d', function(d) {return line(d) + 'Z'})
             .style("fill", function(d, i) { 
                 let genre = data[i]["genre"]
-                if (i === 0) { return "gray" }
+                if (i === 0 && data.length > 1) { return "gray" }
                 return colors[data[i]["genre"]]
             });
 
@@ -143,7 +143,7 @@ export default class RadarChart {
                 .attr('d', function(d) {return stopLine(d) + 'Z'})
                 .style("fill", function(d, i) { 
                     let genre = data[i]["genre"]
-                    if (i === 0) { return "gray" }
+                    if (i === 0 && data.length > 1) { return "gray" }
                     return colors[data[i]["genre"]]
                 })
             .remove()

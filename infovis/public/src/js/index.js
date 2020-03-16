@@ -91,22 +91,7 @@ const updateGenreDetails = () => {
     genreDetails[3].children[1].innerHTML = "" + data.duration.toFixed(2)
 }
 
-const scatterOnClick = (genre) => {
-    _genre = genre;
-    seatingChart.update(_year, genre)
-    showSeatingChart()
-    updateGenreDetails()
-}
-
-const scatter = new ScatterPlot("div#scatterplot", scatterOnClick)
-scatter.init()
-scatter.addDropdowns(genreData)
-scatter.update(genreData[_year], _year)
-
-
 // Radar Chart
-
-
 const radarOnClick = () => {
     console.log("radr")
 }
@@ -125,6 +110,18 @@ const radarChart = new RadarChart(
     ]
 )
 radarChart.init()
+
+const scatterOnClick = (genre) => {
+    _genre = genre;
+    seatingChart.update(_year, genre)
+    showSeatingChart()
+    updateGenreDetails()
+}
+
+const scatter = new ScatterPlot("div#scatterplot", scatterOnClick, radarChart)
+scatter.init()
+scatter.addDropdowns(genreData)
+scatter.update(genreData[_year], _year)
 
 // Line chart
 // only show the features selected
