@@ -27,6 +27,33 @@ export default class SeatingChart {
         })
     }
 
+    createLegenda() {
+        Object.keys(colors).forEach(d => {
+            const legenda = document.getElementsByClassName("genre-select-container")[0]
+            const selectSquare = document.createElement("div")
+            selectSquare.innerHTML = '<input type="radio" class="genreSelect" id=radio-' + d.replace(/\s/g, '') + ' name="genreSelect">' 
+            selectSquare.className = "square selectSquare"
+            selectSquare.style.background = colors[d];
+            selectSquare.style.border = "solid 1px " + colors[d]
+            selectSquare.style.opacity = this.genre === d ? "1" : "0.25";
+            selectSquare.style.color = this.genre === d ? "rgba(256, 256, 256, 1)" : "rgba(256, 256, 256, 0)";
+            selectSquare.addEventListener("click", function() { 
+                this.children[0].checked = true
+                const selects = Array.from(document.getElementsByClassName("genreSelect"))
+                selects.forEach(d => {
+                    if (d.checked) {
+                        d.parentElement.style.opacity = 1
+                        d.parentElement.style.border = "solid 1px black"
+                    } else {
+                        d.parentElement.style.opacity = 0.25
+                        d.parentElement.style.border = "solid 1px " + d.parentElement.style.background
+                    }
+                })
+            })
+            legenda.appendChild(selectSquare)
+        })
+    }
+
     _onMouseMove(event) {
                 const tooltip = document.getElementById("seating-chart-tooltip")
 

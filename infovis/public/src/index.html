@@ -21,6 +21,7 @@
                 <h2 class="seating-chart-genre"></h2>
             </div>
             <div class="charts">
+                <form><div class="genre-select-container"></div></form>
                 <div class="seating-chart-container">
                     <div class="seating-chart"></div>
                     <div id="seating-chart-tooltip">
@@ -33,12 +34,9 @@
                     </div>
                 </div>
                 <div id="scatterplot"></div>
-               <!--  <div id="slidercontainer">
-                    <input type="range" min="1999" max="2019" value="1999" class="slider" id="yearslider" oninput="console.log(this.value)">
-                </div> -->
                 <div id="line-chart"></div>
                 <div class="line-chart-inputs">
-                    <!-- <label>
+                    <label>
                         <input type="checkbox" checked="checked" id="Rock">
                         Rock
                     </label>
@@ -156,7 +154,7 @@
                     <label>
                         <input type="checkbox" checked="checked" id="Techno">
                         Techno
-                    </label> -->
+                    </label>
                 </div>
             </div>
         </div>
@@ -172,7 +170,7 @@
                 <div class="song-details">
                     <h3>Song Details</h3>
                     <div class="genre-detail song-detail"><span>Artist</span><span></span></div>
-                    <div class="genre-detail song-detail"><span>Name</span><span></span></div>
+                    <div class="genre-detail song-detail song-details-xl "><span class="song-details-desc">Name</span><span></span></div>
                     <img src="" class="song-details-album-art">
                     <div id="helpplaceholder">Click on a square to get started</div>
                 </div>

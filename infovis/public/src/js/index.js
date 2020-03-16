@@ -32,6 +32,9 @@ const showSeatingChart = () => {
     const scatterPlotElement = document.getElementById("scatterplot")
     scatterPlotElement.style.display = "none";
 
+    const seatingChartLegenda = document.getElementsByClassName("genre-select-container")[0]
+    seatingChartLegenda.style.display = "flex"
+
     // show seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
     seatingChartTitle.style.display = "flex"
@@ -52,6 +55,9 @@ const hideSeatingChart = () => {
     // show the scatter plot
     const scatterPlotElement = document.getElementById("scatterplot")
     scatterPlotElement.style.display = "initial";
+
+    const seatingChartLegenda = document.getElementsByClassName("genre-select-container")[0]
+    seatingChartLegenda.style.display = "none"
 
     // hide seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
@@ -176,5 +182,6 @@ const seatingChartOnclick = (entry) => {
 }
 const seatingChart = new SeatingChart("seating-chart", seatingChartOnclick, seatingData)
 seatingChart.init()
+seatingChart.createLegenda()
 
 seatingChart.update(_year, "Rock")
