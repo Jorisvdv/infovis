@@ -215,6 +215,17 @@ body {
     display: none;
 }
 
+#genre-select-tooltip {
+    background-color: rgba(46, 45, 44, 0.6);
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    z-index: 3;
+    border: 3px solid black;
+}
+
 .right .charts {
     padding: 16px;
 }

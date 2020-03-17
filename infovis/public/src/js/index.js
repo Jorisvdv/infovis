@@ -121,6 +121,7 @@ const scatterOnClick = (genre) => {
     _genre = genre;
     seatingChart.update(_year, genre)
     showSeatingChart()
+    colorSelect.setGenre(genre)
     updateGenreDetails()
 }
 
@@ -144,10 +145,13 @@ Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).for
     element.children[0].addEventListener("click", updateLineChart)
 })
 
-const onClick = (year) => {
-    _year = year;
-    const data = genreData[year]
-    scatter.update(data, _year)
+const onClick = (year, genre) => {
+    if (year !== undefined) { 
+        _year = year;
+        const data = genreData[year]
+        scatter.update(data, _year)
+    }
+    if (genre !== undefined) {_genre = genre;}
     seatingChart.update(_year, _genre)
 }
 
@@ -182,6 +186,7 @@ const seatingChartOnclick = (entry) => {
 }
 const seatingChart = new SeatingChart("seating-chart", seatingChartOnclick, seatingData)
 seatingChart.init()
-seatingChart.createLegenda()
-
 seatingChart.update(_year, "Rock")
+
+const colorSelect = new ColorSelect(seatingChart, onClick)
+colorSelect.init()
