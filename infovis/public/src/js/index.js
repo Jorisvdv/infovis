@@ -1,4 +1,4 @@
-import genreData from "./data/data/scatterplot.json"
+import genreData from "../data/scatterplot.json"
 import RadarChart from "./radarChart"
 import ScatterPlot from "./scatterPlot"
 import LineChart from "./line_chart";
