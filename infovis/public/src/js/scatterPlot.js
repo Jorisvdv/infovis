@@ -8,7 +8,6 @@ export default class ScatterPlot {
         this.selector = selector;
         this.onClick = onClick;
         this.radarPlot = radarPlot;
-        console.log(onClick)
     }
     
     init() {

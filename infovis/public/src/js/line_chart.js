@@ -179,7 +179,7 @@ export default class LineChart {
             })
             .on("click", () => {
                 const years = this._getYears(data)
-                this.onClick(this._getClosestYearToMouse(years).getFullYear().toString())
+                this.onClick(this._getClosestYearToMouse(years).getFullYear().toString(), undefined)
             });
     }
 
