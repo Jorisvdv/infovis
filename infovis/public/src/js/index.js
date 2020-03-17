@@ -1,11 +1,15 @@
-import genreData from "./../../../../data/data/scatterplot.json"
+import genreData from "./data/data/scatterplot.json"
 import RadarChart from "./radarChart"
 import ScatterPlot from "./scatterPlot"
 import LineChart from "./line_chart";
 import lineChartData from "../../../../data/data/lineplot_genre_object";
 import SeatingChart from "./seatingChart";
+<<<<<<< HEAD
 import seatingData from "../../../../data/song_data_20200304.json";
 import ColorSelect from "./colorSelect.js";
+=======
+import seatingData from "./data/song_data_20200304.json"
+>>>>>>> 0afadb9e4732db890b9c67ef3b356e08654f0f9f
 
 import "normalize.css"
 import "../style.css"
