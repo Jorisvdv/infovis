@@ -5,6 +5,7 @@ import LineChart from "./line_chart";
 import lineChartData from "../../../../data/data/lineplot_genre_object.json"
 import SeatingChart from "./seatingChart";
 import seatingData from "../../../../data/song_data_20200304.json"
+import ColorSelect from "./colorSelect.js"
 
 import "normalize.css"
 import "../style.css"
