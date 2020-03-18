@@ -168,6 +168,11 @@ body {
     opacity: 0;
 }
 
+.bold-title {
+    font-weight: bold;
+    color: black;
+}
+
 #detail-become-invisible {
     transition: opacity .9s ease-in-out;
     opacity: 0;
@@ -177,7 +182,7 @@ body {
     transform: translate3d(20px, 0px, 0px);
 }*/
 
-.genre-detail span:first-child {
+.genre-detail span:nth-child(2) {
     color: grey;
 }
 

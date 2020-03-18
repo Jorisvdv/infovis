@@ -12,7 +12,7 @@ export default class ScatterPlot {
     }
     
     init() {
-        this.margin = {top: 40, right: 30, bottom: 30, left: 30},
+        this.margin = {top: 40, right: 30, bottom: 30, left: 40},
         this.width = Math.max(800, (window.innerWidth * 0.5)) - this.margin.left - this.margin.right,
         this.height = 500 - this.margin.top - this.margin.bottom;
 
@@ -177,13 +177,13 @@ export default class ScatterPlot {
         // Update genre details 
         const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
         // Mean tempo
-        genreDetails[0].children[2].innerHTML = ""+ Math.floor(d.tempo);
+        genreDetails[1].children[2].innerHTML = ""+ Math.floor(d.tempo);
         // times in list
-        genreDetails[1].children[2].innerHTML = "" + d.size
+        genreDetails[2].children[2].innerHTML = "" + d.size
         // mean release yer
-        genreDetails[2].children[2].innerHTML = "" + d.release_year.toFixed(1)
+        genreDetails[3].children[2].innerHTML = "" + d.release_year.toFixed(1)
         // Mean Length
-        genreDetails[3].children[2].innerHTML = "" + d.duration.toFixed(2)
+        genreDetails[4].children[2].innerHTML = "" + d.duration.toFixed(2)
     }
 
     update(data, year) {
