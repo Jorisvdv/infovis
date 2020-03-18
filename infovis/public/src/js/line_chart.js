@@ -30,13 +30,13 @@ export default class LineChart {
             .append("g")
             .attr("transform", `translate(${this.margin.left}, ${this.margin.top})`)
 
-        this.infoPanel = d3
-            .select(this.selector)
-            .append("svg")
-            .attr("class", "infoPanel")
-            .attr("width", this.infoPanelWidth + this.infoPanelMargin.left + this.infoPanelMargin.right)
-            .attr("height", this.infoPanelHeight + this.infoPanelMargin.top + this.infoPanelMargin.bottom)
-            .style("float", "left")
+        // this.infoPanel = d3
+        //     .select(this.selector)
+        //     .append("svg")
+        //     .attr("class", "infoPanel")
+        //     .attr("width", this.infoPanelWidth + this.infoPanelMargin.left + this.infoPanelMargin.right)
+        //     .attr("height", this.infoPanelHeight + this.infoPanelMargin.top + this.infoPanelMargin.bottom)
+        //     .style("float", "left")
 
         this.line = d3.line()
             .x(d => {
@@ -73,18 +73,17 @@ export default class LineChart {
             .attr("text-anchor", "middle")
             .attr("font-size", 12);
 
-        const labels = this.infoPanel.selectAll(".infoText")
-            .data(this.allFeatures);
+        // const labels = this.infoPanel.selectAll(".infoText")
+        //     .data(this.allFeatures);
 
-        labels.enter().append("text")
-            .attr("class", "infoText")
-            .attr("fill", d => this.colorScale[d])
-            .attr("text-anchor", "start")
-            .attr("font", 12)
-            .attr("dy", (_, i) => 1 + i * 2 + "em")
-            .attr("transform", `translate(0,${this.infoPanelHeight / 2.5})`)
-            .text(e => e)
-            .merge(labels);
+        // labels.enter().append("text")
+        //     .attr("class", "infoText")
+        //     .attr("fill", d => this.colorScale[d])
+        //     .attr("text-anchor", "start")
+        //     .attr("font", 12)
+        //     .attr("dy", (_, i) => 1 + i * 2 + "em")
+        //     .text(e => e)
+        //     .merge(labels);
 
         this.chart.selectAll(".line-chart-inputs")
             .append("transform", `translate(50,50)`)
@@ -146,20 +145,20 @@ export default class LineChart {
 
     tooltip(data) {
 
-        const infoValues = this.infoPanel.selectAll(".infoTextValues")
-            .data(this.allFeatures)
+        // const infoValues = this.infoPanel.selectAll(".infoTextValues")
+        //     .data(this.allFeatures)
 
         const circles = this.focus.selectAll(".hoverCircle")
             .data(this._getActiveFeatures(data))
 
-        infoValues.enter().append("text")
-            .attr("class", "infoTextValues")
-            .attr("fill", d => this.colorScale[d])
-            .attr("text-anchor", "end")
-            .attr("fond", 12)
-            .attr("dy", (_, i) => 1 + i * 2 + "em")
-            .attr("transform", `translate(${this.infoPanelWidth + this.infoPanelMargin.left + this.infoPanelMargin.right}, ${this.infoPanelHeight / 2.5})`)
-            .merge(infoValues);
+        // infoValues.enter().append("text")
+        //     .attr("class", "infoTextValues")
+        //     .attr("fill", d => this.colorScale[d])
+        //     .attr("text-anchor", "end")
+        //     .attr("fond", 12)
+        //     .attr("dy", (_, i) => 1 + i * 2 + "em")
+        //     .attr("transform", `translate(${this.infoPanelWidth + this.infoPanelMargin.left + this.infoPanelMargin.right},0)`)
+        //     .merge(infoValues);
 
         circles.enter().append("circle")
             .attr("class", "hoverCircle")
@@ -194,8 +193,13 @@ export default class LineChart {
                     .style("stroke", e => this.colorScale[e])
                     .style("fill", "none");
 
-                this.infoPanel.selectAll(".infoTextValues")
-                    .text(e =>dataOfYear[e])
+                // this.infoPanel.selectAll(".infoTextValues")
+                //     .text(e =>dataOfYear[e])
+
+                d3.selectAll(".valueOfGenre").text(e => dataOfYear[e])
+
+                Object.keys(dataOfYear).forEach(d =>
+                    document.getElementById(`${d}-value`).innerHTML = Math.round(dataOfYear[d]));
             })
             .on("click", () => {
                 const years = this._getYears(data)
