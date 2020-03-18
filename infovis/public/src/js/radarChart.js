@@ -63,7 +63,7 @@ export default class RadarChart {
 
             //draw axis label
             this.chart.append("text")
-            .attr("x", label_coordinate.x - 3)
+            .attr("x", label_coordinate.x - 25)
             .attr("y", label_coordinate.y + 4)
             .text(ft_name)
             .attr("font-size", this.size * 12);

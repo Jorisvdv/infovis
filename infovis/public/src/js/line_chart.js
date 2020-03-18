@@ -10,7 +10,7 @@ export default class LineChart {
 
     init() {
         this.margin = {top: 15, right: 35, bottom: 5, left: 35};
-        this.width = 600;
+        this.width = 1050;
         this.height = 200;
         this.formatValue = d3.format(",.2f");
 

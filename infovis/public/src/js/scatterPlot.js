@@ -11,9 +11,11 @@ export default class ScatterPlot {
     }
     
     init() {
-        this.margin = {top: 10, right: 30, bottom: 30, left: 190},
-        this.width = 550 - this.margin.left - this.margin.right,
-        this.height = 400 - this.margin.top - this.margin.bottom;
+        this.margin = {top: 40, right: 30, bottom: 30, left: 30},
+        //this.width = 1050 - this.margin.left - this.margin.right,
+        //this.height = 500 - this.margin.top - this.margin.bottom;
+        this.width = 1050 - this.margin.left - this.margin.right,
+        this.height = 500 - this.margin.top - this.margin.bottom;
 
         // append the svg object to the body of the page
         this.chart = d3.select(this.selector)
@@ -27,9 +29,10 @@ export default class ScatterPlot {
         // Add year text
         this.chart.append("text")
           .attr("class", "yearText")
-          .attr("y", 35)
-          .attr("x", 230)
-          .style("font-size", "30px")
+          .attr("y", 120)
+          .attr("x", this.width - 360)
+          .style("font-size", "150px")
+          .style("opacity", 0.2)
           .text("2000")
 
         // Initial axis drawing
@@ -103,15 +106,15 @@ export default class ScatterPlot {
         let xDropdown = this.addDropdown(genreStats, "xFeature")
         xDropdown
             .style("position", "absolute")
-            .style("margin-left", (this.width + this.margin.left) / 2 + "px")
-            .style("margin-top", this.height + this.margin.bottom + "px")
+            .style("margin-left", this.width + this.margin.left - 150 + "px")
+            .style("margin-top", this.height + this.margin.bottom + this.margin.top + "px")
 
         // Y axis
         let yDropdown = this.addDropdown(genreStats, "yFeature")
         yDropdown
             .style("position", "absolute")
-            .style("margin-top", this.height / 2 + "px")
-            .style("margin-right", this.width + "px")
+            .style("margin-top", "0px") //this.height / 2 
+            .style("margin-left", this.margin.left + "px")
     }
     
     make_x_gridlines(x) {        
@@ -199,7 +202,7 @@ export default class ScatterPlot {
         y.merge(newY).transition(t).call(yAxisCall)
 
         // Update year text
-        this.chart.selectAll(".yearText").text(this.year).style("opacity", 0.3)
+        this.chart.selectAll(".yearText").text(this.year).style("opacity", 0.1)
         ////////////////////////////////////
 
         // Selecting and updating the data.

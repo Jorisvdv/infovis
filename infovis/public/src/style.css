@@ -21,7 +21,7 @@
 
 .seating-chart-container {
     display: none;
-    padding: 16px 0px 16px 16px;
+    padding: 0px 0px 16px 16px;
     overflow-y: scroll;
     height: 58vh;
 }
@@ -211,7 +211,7 @@ body {
 }
 
 .genre-select-container {
-    padding: 16px 16px 0px 16px;
+    padding: 16px 16px 16px 16px;
     display: none;
 }
 
