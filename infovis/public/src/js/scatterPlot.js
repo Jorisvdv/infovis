@@ -72,6 +72,8 @@ export default class ScatterPlot {
     }
 
     addDropdown(data, id) {
+
+        data.shift() // remove genre
         let newDropdown = d3.select(this.selector)
             .insert("select", "svg")
             .attr("id", id)
@@ -123,6 +125,61 @@ export default class ScatterPlot {
     make_y_gridlines(y) {        
         return d3.axisLeft(y)
             .ticks()
+    }
+
+    _mouseOver(event, d, year) {
+        // Retrieve values. 
+        let tooltip = d3.select(".tooltip")
+        let xFeature = d3.select("#xFeature").node().value;
+        let yFeature = d3.select("#yFeature").node().value;
+
+        for (let i=0; i<genreData[year].length;i++) {
+                if (genreData[year][i]["genre"] === d.genre) {
+                    this.radarPlot.update([genreData[year][i]])
+                }
+        }
+
+        // Everything invisible except the selected one.
+        d3.selectAll("#scatterplot circle").attr("opacity", 0.2)
+        d3.selectAll("#line-chart path").attr("opacity", 0.2)
+        d3.selectAll("#" + d.genre.replace(/\s/g, '').replace("/", ""))
+            .attr("opacity", 1)
+            .style("stroke-width", "4")
+
+        d3.select(event.target)
+            .style("stroke", "black")
+            .style("stroke-width", "3px")
+            .attr("opacity", 0.7);
+
+        // Capitalize first letter
+        let xFeatureText = xFeature.substring(0, 1).toUpperCase() + xFeature.substring(1, xFeature.length)
+        let yFeatureText = yFeature.substring(0, 1).toUpperCase() + yFeature.substring(1, yFeature.length)
+
+        // Build tooltip
+        var html  = "Genre: " + d.genre + "<br/>" +
+                    xFeatureText + ": " + Math.round((d[xFeature] + Number.EPSILON) * 100) / 100 + "<br/>" +
+                    yFeatureText + ": " + Math.round((d[yFeature] + Number.EPSILON) * 100) / 100;
+
+        tooltip.html(html)
+            .style("left", (d3.event.pageX + 15) + "px")
+            .style("top", (d3.event.pageY - 28) + "px")
+        .transition()
+            .duration(200) // ms
+            .style("opacity", .9)
+            .style("display", "initial") 
+
+        console.log(d)
+
+        // Update genre details 
+        const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
+        // Mean tempo
+        genreDetails[0].children[2].innerHTML = ""+ Math.floor(d.tempo);
+        // times in list
+        genreDetails[1].children[2].innerHTML = "" + d.size
+        // mean release yer
+        genreDetails[2].children[2].innerHTML = "" + d.release_year.toFixed(1)
+        // Mean Length
+        genreDetails[3].children[2].innerHTML = "" + d.duration.toFixed(2)
     }
 
     update(data, year) {
@@ -206,71 +263,13 @@ export default class ScatterPlot {
         // Selecting and updating the data.
         const dots = this.chart.selectAll('circle').data(this.data);
 
-        // Call update for radarplot. 
-        const radarChartRef = this.radarPlot
-        const updateRadarPlot = function (genre) {
-            for (let i=0; i<genreData[year].length;i++) {
-                if (genreData[year][i]["genre"] === genre) {
-                    radarChartRef.update([genreData[year][i]])
-                }
-            }
-        }
-
         // Add all paths to svg
         dots.enter()
           .append("circle")
           .attr("cx", function (d) { return xScale(d[xFeature]); } )
           .attr("cy", function (d) { return yScale(d[yFeature]); } )
           .on("click", (d) => {this.onClick(d["genre"])})
-          .on("mouseover", function(d) { 
-            // Retrieve values.
-            try {updateRadarPlot(d.genre)} catch(err) {}// Silence error?}
-            let tooltip = d3.select(".tooltip")
-            let xFeature = d3.select("#xFeature").node().value;
-            let yFeature = d3.select("#yFeature").node().value;
-
-            // Everything invisible except the selected one.
-            d3.selectAll("#scatterplot circle").attr("opacity", 0.2)
-            d3.selectAll("#line-chart path").attr("opacity", 0.2)
-            d3.selectAll("#" + d.genre.replace(/\s/g, '').replace("/", ""))
-                .attr("opacity", 1)
-                .style("stroke-width", "4")
-
-            d3.select(this)
-                .style("stroke", "black")
-                .style("stroke-width", "3px")
-                .attr("opacity", 0.7);
-
-            // Capitalize first letter
-            let xFeatureText = xFeature.substring(0, 1).toUpperCase() + xFeature.substring(1, xFeature.length)
-            let yFeatureText = yFeature.substring(0, 1).toUpperCase() + yFeature.substring(1, yFeature.length)
-
-            // Build tooltip
-            var html  = "Genre: " + d.genre + "<br/>" +
-                        xFeatureText + ": " + Math.round((d[xFeature] + Number.EPSILON) * 100) / 100 + "<br/>" +
-                        yFeatureText + ": " + Math.round((d[yFeature] + Number.EPSILON) * 100) / 100;
-
-            tooltip.html(html)
-                .style("left", (d3.event.pageX + 15) + "px")
-                .style("top", (d3.event.pageY - 28) + "px")
-            .transition()
-                .duration(200) // ms
-                .style("opacity", .9)
-                .style("display", "initial") 
-
-            console.log(d)
-
-            // Update genre details 
-            const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
-            // Mean tempo
-            genreDetails[0].children[2].innerHTML = ""+ Math.floor(d.tempo);
-            // times in list
-            genreDetails[1].children[2].innerHTML = "" + d.size
-            // mean release yer
-            genreDetails[2].children[2].innerHTML = "" + d.release_year.toFixed(1)
-            // Mean Length
-            genreDetails[3].children[2].innerHTML = "" + d.duration.toFixed(2)
-            })
+          .on("mouseover", (d) => this._mouseOver(event, d, this.year))
             
            .on("mouseout", function(d) { 
                 d3.select(this)
