@@ -73,7 +73,6 @@ export default class ScatterPlot {
     }
 
     addDropdown(data, id) {
-        //console.log("adddropdown", this.data, data)
         let newDropdown = d3.select(this.selector)
             .insert("select", "svg")
             .attr("id", id)
@@ -171,8 +170,10 @@ export default class ScatterPlot {
             .style("opacity", .9)
             .style("display", "initial") 
 
-        console.log(d)
+        this.updateGenreInfo(d)
+    }
 
+    updateGenreInfo(d) {
         // Update genre details 
         const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
         // Mean tempo
@@ -228,10 +229,9 @@ export default class ScatterPlot {
         for (let i=0; i<genreData[this.year].length;i++) {
             if (genreData[this.year][i]["genre"] === this.defaultGenre) {
                 this.radarPlot.update([genreData[this.year][i]])
+                this.updateGenreInfo(genreData[this.year][i])
             }
         }
-
-
 
         // Animation
         let t = d3.transition().duration(500)
