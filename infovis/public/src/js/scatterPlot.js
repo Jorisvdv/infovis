@@ -8,12 +8,12 @@ export default class ScatterPlot {
         this.selector = selector;
         this.onClick = onClick;
         this.radarPlot = radarPlot;
-        this.defaulGenre = "Rock";
+        this.defaultGenre = "Rock";
     }
     
     init() {
         this.margin = {top: 40, right: 30, bottom: 30, left: 30},
-        this.width = 1050 - this.margin.left - this.margin.right,
+        this.width = Math.max(800, (window.innerWidth * 0.5)) - this.margin.left - this.margin.right,
         this.height = 500 - this.margin.top - this.margin.bottom;
 
         // append the svg object to the body of the page
@@ -73,8 +73,7 @@ export default class ScatterPlot {
     }
 
     addDropdown(data, id) {
-
-        data.shift() // remove genre
+        //console.log("adddropdown", this.data, data)
         let newDropdown = d3.select(this.selector)
             .insert("select", "svg")
             .attr("id", id)
@@ -99,9 +98,10 @@ export default class ScatterPlot {
 
     addDropdowns(data) {
         // Year
-
         let year = Object.keys(data)[0]
         let genreStats = Object.keys(data[year][0])
+        genreStats.shift();
+        this.data = data;
 
         // X axis
         let xDropdown = this.addDropdown(genreStats, "xFeature")
@@ -129,12 +129,11 @@ export default class ScatterPlot {
     }
 
     _mouseOver(event, d, year) {
-        // Retrieve values. 
         let tooltip = d3.select(".tooltip")
         let xFeature = d3.select("#xFeature").node().value;
         let yFeature = d3.select("#yFeature").node().value;
 
-        this.defaulGenre = d.genre;
+        this.defaultGenre = d.genre;
 
         for (let i=0; i<genreData[year].length;i++) {
             if (genreData[year][i]["genre"] === d.genre) {
@@ -191,8 +190,11 @@ export default class ScatterPlot {
         // Source Updating axis
         // https://bl.ocks.org/shimizu/914c769f05f1b2e1d09428c7eedd7f8a
         // 
-
-        this.data = data
+        if (data === undefined) {
+            console.log("update: ", this.data)
+        } else {
+            this.data = data
+        }
         if (year !== undefined) {
             this.year = year
         }
@@ -224,10 +226,11 @@ export default class ScatterPlot {
         yAxisCall.scale(yScale)
 
         for (let i=0; i<genreData[this.year].length;i++) {
-            if (genreData[year][i]["genre"] === this.defaulGenre) {
+            if (genreData[this.year][i]["genre"] === this.defaultGenre) {
                 this.radarPlot.update([genreData[this.year][i]])
             }
         }
+
 
 
         // Animation
