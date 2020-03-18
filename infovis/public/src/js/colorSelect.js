@@ -37,7 +37,6 @@ export default class ColorSelect {
     }
 
     setGenre(genre) {
-        console.log(genre)
         const radioButton = document.getElementById("radio-" + genre.replace(/\s/g, ''))
         radioButton.checked = true
         this._updateOpacity()

@@ -56,7 +56,7 @@ const hideSeatingChart = () => {
     seatingChartElement.style.display = "none"
     // show the scatter plot
     const scatterPlotElement = document.getElementById("scatterplot")
-    scatterPlotElement.style.display = "initial";
+    scatterPlotElement.style.display = "flex";
 
     const seatingChartLegenda = document.getElementsByClassName("genre-select-container")[0]
     seatingChartLegenda.style.display = "none"
@@ -67,7 +67,7 @@ const hideSeatingChart = () => {
 
     // show scatter plot title
     const leftTitle = document.getElementsByClassName("left-title")[0]
-    leftTitle.style.display = "initial";
+    leftTitle.style.display = "flex";
 
     document.getElementsByClassName("song-details")[0].style.display = "none"
 

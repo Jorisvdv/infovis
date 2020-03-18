@@ -12,8 +12,6 @@ export default class ScatterPlot {
     
     init() {
         this.margin = {top: 40, right: 30, bottom: 30, left: 30},
-        //this.width = 1050 - this.margin.left - this.margin.right,
-        //this.height = 500 - this.margin.top - this.margin.bottom;
         this.width = 1050 - this.margin.left - this.margin.right,
         this.height = 500 - this.margin.top - this.margin.bottom;
 
@@ -226,7 +224,7 @@ export default class ScatterPlot {
           .on("click", (d) => {this.onClick(d["genre"])})
           .on("mouseover", function(d) { 
             // Retrieve values.
-            updateRadarPlot(d.genre)
+            try {updateRadarPlot(d.genre)} catch(err) {}// Silence error?}
             let tooltip = d3.select(".tooltip")
             let xFeature = d3.select("#xFeature").node().value;
             let yFeature = d3.select("#yFeature").node().value;
