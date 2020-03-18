@@ -28,7 +28,7 @@ export default class ScatterPlot {
         this.chart.append("text")
           .attr("class", "yearText")
           .attr("y", 35)
-          .attr("x", 267)
+          .attr("x", 230)
           .style("font-size", "30px")
           .text("2000")
 
@@ -181,7 +181,7 @@ export default class ScatterPlot {
             .attr("opacity", 0.05)
             .attr("transform", "translate(0," + this.height + ")")
         gridlinesX.merge(newgridlinesX).transition(t).call(this.make_x_gridlines(xScale)
-            .tickSize(-this.width)
+            .tickSize(-this.height)
             .tickFormat(""))
 
         // Update X axis
