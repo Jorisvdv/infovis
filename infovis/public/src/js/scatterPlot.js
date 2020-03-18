@@ -12,8 +12,6 @@ export default class ScatterPlot {
     
     init() {
         this.margin = {top: 40, right: 30, bottom: 30, left: 30},
-        //this.width = 1050 - this.margin.left - this.margin.right,
-        //this.height = 500 - this.margin.top - this.margin.bottom;
         this.width = 1050 - this.margin.left - this.margin.right,
         this.height = 500 - this.margin.top - this.margin.bottom;
 
