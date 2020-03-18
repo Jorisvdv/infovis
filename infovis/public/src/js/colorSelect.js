@@ -23,16 +23,7 @@ export default class ColorSelect {
         })
     }
 
-    setGenre(genre) {
-        console.log(genre)
-        const radioButton = document.getElementById("radio-" + genre.replace(/\s/g, ''))
-        radioButton.checked = true
-        radioButton.parentElement.style.opacity = 1
-        radioButton.parentElement.style.border = "solid 1px black"
-    }
-
-    _onClickLegenda(event, d) {
-        event.target.children[0].checked = true
+    _updateOpacity() {
         const selects = Array.from(document.getElementsByClassName("genreSelect"))
         selects.forEach(d => {
             if (d.checked) {
@@ -43,7 +34,19 @@ export default class ColorSelect {
                 d.parentElement.style.border = "solid 1px " + d.parentElement.style.background
             }
         })
+    }
+
+    setGenre(genre) {
+        console.log(genre)
+        const radioButton = document.getElementById("radio-" + genre.replace(/\s/g, ''))
+        radioButton.checked = true
+        this._updateOpacity()
+    }
+
+    _onClickLegenda(event, d) {
+        event.target.children[0].checked = true
         this.onClick(undefined, d)
+        this._updateOpacity()
         const pageTitle = document.getElementsByClassName("seating-chart-genre")[0].innerHTML = d;
     }
 
