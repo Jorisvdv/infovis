@@ -90,10 +90,7 @@ export default class LineChart {
             .append("transform", `translate(50,50)`)
     }
 
-    update(data) {
-
-        this._adjustYRange(data, ["Rock"])
-
+    update(data, speed) {
         // overlay has to be drawn on top of the visualistation. 
         // Remove it here, replace it at the end of the update function.
         this.chart.selectAll(".overlay").remove();
@@ -106,13 +103,14 @@ export default class LineChart {
 
         this.y = d3
             .scaleLinear()
-            .domain([0, 700])
+            .domain(this._getYDomain(data, 10))
             .range([this.height - this.margin.top - this.margin.bottom, 0]);
 
         d3.select(".x-axis")
             .call(d3.axisBottom(this.x));
 
         d3.select(".y-axis")
+            .transition().duration(speed)
             .call(d3.axisLeft(this.y));
 
         const lines = this.chart
@@ -130,6 +128,8 @@ export default class LineChart {
             })
             .style("fill", "none")
             .style("stroke-width", 2)
+            .transition().duration(speed)
+            .style("opacity", d => d.checked ? 1 : 0.2)
             .attr("d", d => this.line(d.data))  
 
         // Put in the overlay for tooltip
@@ -241,18 +241,28 @@ export default class LineChart {
         return dataOfYear
     }
 
-    _adjustYRange(data, selectedGenres) {
-        const selectedData = data.filter ( entry => {
-            let found = false
-            selectedGenres.forEach(element => {
-                if (entry.key === element && found == false) {
-                    found = true
-                }
-            });
-            return found
-        });
+    _getYDomain(data, domainPadding) {
+        let max = data.map(genre => 
+            genre.checked ? genre.data.map(e => e.data)
+                .reduce( function (a, b) {
+                    return Math.max(a, b);
+                }) : 0)
+                    .reduce( function (a, b) {
+                        return Math.max(a, b);
+                });
 
-        console.log(selectedData)
-        const boundaries = selectedData.reduce(d => console.log(d.data))
+        let min = data.map(genre => 
+            genre.checked ? genre.data.map(e => e.data)
+                .reduce( function (a, b) {
+                    return Math.min(a, b);
+            }) : 1000)
+                    .reduce( function (a, b) {
+                        return Math.min(a, b);
+            });
+        
+        max = max + domainPadding
+        min = min >= domainPadding ? min - domainPadding : min;
+
+        return [min, max]
     }
 }

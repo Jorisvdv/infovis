@@ -135,12 +135,14 @@ scatter.update(genreData[_year], _year)
 // Line chart
 // only show the features selected
 function updateLineChart() {
-    const data = Array.from(lineChartData).filter(item => {
+    const data = Array.from(lineChartData)
+    
+    data.forEach(item => {
         const checkbox = document.getElementById(`${item.key}-checkbox`)
-        return checkbox ? checkbox.checked : false;
+        item.checked = checkbox ? checkbox.checked : false;
     })
 
-    lineChart.update(data)
+    lineChart.update(data, 1000)
 }
 
 Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).forEach(element => {
