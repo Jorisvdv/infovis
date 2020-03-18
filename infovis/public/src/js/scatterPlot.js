@@ -258,6 +258,8 @@ export default class ScatterPlot {
                 .style("opacity", .9)
                 .style("display", "initial") 
 
+            console.log(d)
+
             // Update genre details 
             const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
             // Mean tempo
