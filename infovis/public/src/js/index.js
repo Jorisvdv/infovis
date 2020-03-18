@@ -66,7 +66,7 @@ const hideSeatingChart = () => {
 
     // show scatter plot title
     const leftTitle = document.getElementsByClassName("left-title")[0]
-    leftTitle.style.display = "initial";
+    leftTitle.style.display = "flex";
 
     document.getElementsByClassName("song-details")[0].style.display = "none"
 
