@@ -21,7 +21,7 @@
 
 .seating-chart-container {
     display: none;
-    padding: 16px 0px 16px 16px;
+    padding: 0px 0px 16px 16px;
     overflow-y: scroll;
     height: 58vh;
 }
@@ -211,8 +211,19 @@ body {
 }
 
 .genre-select-container {
-    padding: 16px 16px 0px 16px;
+    padding: 16px 16px 16px 16px;
     display: none;
+}
+
+#genre-select-tooltip {
+    background-color: rgba(46, 45, 44, 0.6);
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    z-index: 3;
+    border: 3px solid black;
 }
 
 .right .charts {
