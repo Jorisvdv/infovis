@@ -55,7 +55,7 @@ const hideSeatingChart = () => {
     seatingChartElement.style.display = "none"
     // show the scatter plot
     const scatterPlotElement = document.getElementById("scatterplot")
-    scatterPlotElement.style.display = "initial";
+    scatterPlotElement.style.display = "flex";
 
     const seatingChartLegenda = document.getElementsByClassName("genre-select-container")[0]
     seatingChartLegenda.style.display = "none"
