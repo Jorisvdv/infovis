@@ -158,7 +158,8 @@ export default class ScatterPlot {
         // Build tooltip
         var html  = "Genre: " + d.genre + "<br/>" +
                     xFeatureText + ": " + Math.round((d[xFeature] + Number.EPSILON) * 100) / 100 + "<br/>" +
-                    yFeatureText + ": " + Math.round((d[yFeature] + Number.EPSILON) * 100) / 100;
+                    yFeatureText + ": " + Math.round((d[yFeature] + Number.EPSILON) * 100) / 100 + "<br/>" +
+                    "Size: " + d.size;
 
         tooltip.html(html)
             .style("left", (d3.event.pageX + 15) + "px")
