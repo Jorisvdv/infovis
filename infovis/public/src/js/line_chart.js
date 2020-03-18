@@ -93,7 +93,7 @@ export default class LineChart {
             .append("path")
             .merge(lines)
             .attr("class", "line")
-            .attr("id", d => d.key.replace(/\s/g, ''))
+            .attr("id", d => d.key.replace(/\s/g, '').replace("/", ""))
             .style("stroke", d => {
                 return this.colorScale[d.key];
             })

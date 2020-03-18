@@ -232,7 +232,7 @@ export default class ScatterPlot {
             // Everything invisible except the selected one.
             d3.selectAll("#scatterplot circle").attr("opacity", 0.2)
             d3.selectAll("#line-chart path").attr("opacity", 0.2)
-            d3.selectAll("#" + d.genre.replace(/\s/g, ''))
+            d3.selectAll("#" + d.genre.replace(/\s/g, '').replace("/", ""))
                 .attr("opacity", 1)
                 .style("stroke-width", "4")
 

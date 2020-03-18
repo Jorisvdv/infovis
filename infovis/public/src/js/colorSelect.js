@@ -10,7 +10,7 @@ export default class ColorSelect {
         Object.keys(colors).forEach(d => {
             const legenda = document.getElementsByClassName("genre-select-container")[0]
             const selectSquare = document.createElement("div")
-            selectSquare.innerHTML = '<input type="radio" class="genreSelect" id=radio-' + d.replace(/\s/g, '') + ' name="genreSelect">' 
+            selectSquare.innerHTML = '<input type="radio" class="genreSelect" id=radio-' + d.replace(/\s/g, '').replace("/", "") + ' name="genreSelect">' 
             selectSquare.className = "square selectSquare"
             selectSquare.style.background = colors[d];
             selectSquare.style.border = "solid 1px " + colors[d]
@@ -37,7 +37,7 @@ export default class ColorSelect {
     }
 
     setGenre(genre) {
-        const radioButton = document.getElementById("radio-" + genre.replace(/\s/g, ''))
+        const radioButton = document.getElementById("radio-" + genre.replace(/\s/g, '').replace("/", ""))
         radioButton.checked = true
         this._updateOpacity()
     }
