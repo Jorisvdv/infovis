@@ -13,7 +13,7 @@ export default class ScatterPlot {
     
     init() {
         this.margin = {top: 40, right: 30, bottom: 30, left: 40},
-        this.width = Math.max(800, (window.innerWidth * 0.5)) - this.margin.left - this.margin.right,
+        this.width = 800 - this.margin.left - this.margin.right,
         this.height = 500 - this.margin.top - this.margin.bottom;
 
         // append the svg object to the body of the page
