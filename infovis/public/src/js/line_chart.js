@@ -92,6 +92,8 @@ export default class LineChart {
 
     update(data) {
 
+        this._adjustYRange(data, ["Rock"])
+
         // overlay has to be drawn on top of the visualistation. 
         // Remove it here, replace it at the end of the update function.
         this.chart.selectAll(".overlay").remove();
@@ -235,5 +237,20 @@ export default class LineChart {
             }
         }
         return dataOfYear
+    }
+
+    _adjustYRange(data, selectedGenres) {
+        const selectedData = data.filter ( entry => {
+            let found = false
+            selectedGenres.forEach(element => {
+                if (entry.key === element && found == false) {
+                    found = true
+                }
+            });
+            return found
+        });
+
+        console.log(selectedData)
+        const boundaries = selectedData.reduce(d => console.log(d.data))
     }
 }
