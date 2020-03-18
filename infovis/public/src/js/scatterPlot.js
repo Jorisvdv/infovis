@@ -8,6 +8,7 @@ export default class ScatterPlot {
         this.selector = selector;
         this.onClick = onClick;
         this.radarPlot = radarPlot;
+        this.defaulGenre = "Rock";
     }
     
     init() {
@@ -133,10 +134,12 @@ export default class ScatterPlot {
         let xFeature = d3.select("#xFeature").node().value;
         let yFeature = d3.select("#yFeature").node().value;
 
+        this.defaulGenre = d.genre;
+
         for (let i=0; i<genreData[year].length;i++) {
-                if (genreData[year][i]["genre"] === d.genre) {
-                    this.radarPlot.update([genreData[year][i]])
-                }
+            if (genreData[year][i]["genre"] === d.genre) {
+                this.radarPlot.update([genreData[year][i]])
+            }
         }
 
         // Everything invisible except the selected one.
@@ -219,6 +222,12 @@ export default class ScatterPlot {
         yScale.domain([yMin, yMax]).range([ this.height, 0]);
         xAxisCall.scale(xScale)
         yAxisCall.scale(yScale)
+
+        for (let i=0; i<genreData[this.year].length;i++) {
+            if (genreData[year][i]["genre"] === this.defaulGenre) {
+                this.radarPlot.update([genreData[this.year][i]])
+            }
+        }
 
 
         // Animation
