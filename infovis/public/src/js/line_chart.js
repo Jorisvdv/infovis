@@ -10,7 +10,7 @@ export default class LineChart {
 
     init() {
         this.margin = {top: 15, right: 35, bottom: 5, left: 35};
-        this.width = 600;
+        this.width = 1050;
         this.height = 200;
         this.formatValue = d3.format(",.2f");
 
@@ -179,7 +179,9 @@ export default class LineChart {
             })
             .on("click", () => {
                 const years = this._getYears(data)
-                this.onClick(this._getClosestYearToMouse(years).getFullYear().toString(), undefined)
+                const closestYear = this._getClosestYearToMouse(years).getFullYear().toString()
+                document.getElementsByClassName("year-title")[0].innerHTML = `&nbsp&nbsp-&nbsp&nbsp${closestYear}`
+                this.onClick(closestYear, undefined)
             });
     }
 

@@ -122,6 +122,7 @@ const scatterOnClick = (genre) => {
     _genre = genre;
     seatingChart.update(_year, genre)
     showSeatingChart()
+    document.getElementsByClassName("year-title")[0].innerHTML = `&nbsp&nbsp-&nbsp&nbsp${_year}`
     colorSelect.setGenre(genre)
     updateGenreDetails()
 }
