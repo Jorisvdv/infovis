@@ -140,7 +140,8 @@ export default class RadarChart {
             });
 
         // Remove paths that are no longer in the data.
-        paths.exit()
+        try {
+            paths.exit()
             .transition().duration(1000)
                 .attr('d', function(d) {return stopLine(d) + 'Z'})
                 .style("fill", function(d, i) {
@@ -150,5 +151,8 @@ export default class RadarChart {
                     return color.substring(0, color.length - 1) + ",0.4)"
                 })
             .remove()
+        } catch (err) {
+            // pass, doesn't cause any trouble, but it is needed?
+        }
     }   
 }
