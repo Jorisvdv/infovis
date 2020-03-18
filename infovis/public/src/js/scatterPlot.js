@@ -279,7 +279,7 @@ export default class ScatterPlot {
             .transition().duration(1000)
               .attr("cx", function (d) { return xScale(d[xFeature]); } )
               .attr("cy", function (d) { return yScale(d[yFeature]); } )
-              .attr("r", function (d) { if (d.size === 0 ) {return 0} else {return Math.log(d.size) ** 1.5;}})
+              .attr("r", function (d) { return Math.sqrt(d.size * 1.5/Math.PI)})
               .style("fill", function (d) { return colors[d.genre] } )
               .attr("opacity", 0.5)
 
