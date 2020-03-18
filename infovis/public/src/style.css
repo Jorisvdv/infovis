@@ -138,7 +138,44 @@ body {
 .genre-detail {
     display: flex;
     justify-content: space-between;
+    transition: transform .1s ease-in-out;
 }
+
+#movable-detail-forward {
+    transition: transform .9s ease-in-out;
+    transform: translate3d(100px, 0px, 0px);
+}
+
+#movable-detail-backward {
+    transition: transform .9s ease-in-out;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+#movable-detail-enter-correct {
+    transform: translate3d(0px, 0px, 0px);
+}
+
+#movable-detail-leave-correct {
+    transform: translate3d(100px, 0px, 0px);
+}
+
+#detail-become-visible {
+    transition: opacity .9s ease-in-out;
+    opacity: 1;
+}
+
+#detail-invisible {
+    opacity: 0;
+}
+
+#detail-become-invisible {
+    transition: opacity .9s ease-in-out;
+    opacity: 0;
+}
+
+/*.genre-detail:hover > #movable-detail {
+    transform: translate3d(20px, 0px, 0px);
+}*/
 
 .genre-detail span:first-child {
     color: grey;

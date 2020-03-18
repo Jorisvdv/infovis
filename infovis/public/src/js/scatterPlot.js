@@ -256,8 +256,20 @@ export default class ScatterPlot {
             .transition()
                 .duration(200) // ms
                 .style("opacity", .9)
-                .style("display", "initial")     
+                .style("display", "initial") 
+
+            // Update genre details 
+            const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
+            // Mean tempo
+            genreDetails[0].children[2].innerHTML = ""+ Math.floor(d.tempo);
+            // times in list
+            genreDetails[1].children[2].innerHTML = "" + d.size
+            // mean release yer
+            genreDetails[2].children[2].innerHTML = "" + d.release_year.toFixed(1)
+            // Mean Length
+            genreDetails[3].children[2].innerHTML = "" + d.duration.toFixed(2)
             })
+            
            .on("mouseout", function(d) { 
                 d3.select(this)
                 .style("stroke", "none");
@@ -271,7 +283,7 @@ export default class ScatterPlot {
                 tooltip.transition()        
                 .duration(500)      
                 .style("opacity", 0)
-                .style("display", "none");   
+                .style("display", "none");  
             })
 
             // Causes the new data to merge with the old data

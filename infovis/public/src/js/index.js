@@ -45,7 +45,8 @@ const showSeatingChart = () => {
     const leftTitle = document.getElementsByClassName("left-title")[0]
     leftTitle.style.display = "none";
 
-        document.getElementsByClassName("song-details")[0].style.display = "initial"
+    document.getElementsByClassName("song-details")[0].style.display = "initial"
+    animateLeave()
 
 }
 
@@ -71,6 +72,7 @@ const hideSeatingChart = () => {
     document.getElementsByClassName("song-details")[0].style.display = "none"
 
     document.getElementById("audio").pause()
+    animateLeave()
 }
 
 document.getElementsByClassName("seating-chart-back")[0].addEventListener("click", hideSeatingChart)
@@ -86,17 +88,75 @@ const updateGenreDetails = () => {
 
     const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
     // Mean tempo
-    genreDetails[0].children[1].innerHTML = ""+ Math.floor(data.tempo);
+    genreDetails[0].children[2].innerHTML = ""+ Math.floor(data.tempo);
 
     // times in list
-    genreDetails[1].children[1].innerHTML = "" + data.size
+    genreDetails[1].children[2].innerHTML = "" + data.size
 
     // mean release yer
-    genreDetails[2].children[1].innerHTML = "" + data.release_year.toFixed(1)
+    genreDetails[2].children[2].innerHTML = "" + data.release_year.toFixed(1)
 
     // Mean Length
-    genreDetails[3].children[1].innerHTML = "" + data.duration.toFixed(2)
+    genreDetails[3].children[2].innerHTML = "" + data.duration.toFixed(2)
 }
+
+const animateEnter = () => {
+        const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
+        genreDetails[0].children[1].setAttribute("id", "movable-detail-forward")
+        genreDetails[1].children[1].setAttribute("id", "movable-detail-forward")
+        genreDetails[2].children[1].setAttribute("id", "movable-detail-forward")
+        genreDetails[3].children[1].setAttribute("id", "movable-detail-forward")
+
+        setTimeout(function() {
+            console.log("become visible")
+            genreDetails[0].children[0].style.display = "flex"
+            genreDetails[1].children[0].style.display = "flex"
+            genreDetails[2].children[0].style.display = "flex"
+            genreDetails[3].children[0].style.display = "flex"
+            genreDetails[0].children[1].setAttribute("id", "movable-detail-enter-correct")
+            genreDetails[1].children[1].setAttribute("id", "movable-detail-enter-correct")
+            genreDetails[2].children[1].setAttribute("id", "movable-detail-enter-correct")
+            genreDetails[3].children[1].setAttribute("id", "movable-detail-enter-correct")
+            }, 900)
+
+        setTimeout(function(){
+            genreDetails[0].children[0].setAttribute("id", "detail-become-visible")
+            genreDetails[1].children[0].setAttribute("id", "detail-become-visible")
+            genreDetails[2].children[0].setAttribute("id", "detail-become-visible")
+            genreDetails[3].children[0].setAttribute("id", "detail-become-visible")
+        }, 1400)
+    }
+
+const animateLeave = () => {
+        const genreDetails = Array.from(document.getElementsByClassName("genre-detail"))
+        genreDetails[0].children[0].setAttribute("id", "detail-become-invisible")
+        genreDetails[1].children[0].setAttribute("id", "detail-become-invisible")
+        genreDetails[2].children[0].setAttribute("id", "detail-become-invisible")
+        genreDetails[3].children[0].setAttribute("id", "detail-become-invisible")
+
+        setTimeout(function(){
+            genreDetails[0].children[0].style.display = "none"
+            genreDetails[1].children[0].style.display = "none"
+            genreDetails[2].children[0].style.display = "none"
+            genreDetails[3].children[0].style.display = "none"
+            genreDetails[0].children[1].setAttribute("id", "movable-detail-leave-correct")
+            genreDetails[1].children[1].setAttribute("id", "movable-detail-leave-correct")
+            genreDetails[2].children[1].setAttribute("id", "movable-detail-leave-correct")
+            genreDetails[3].children[1].setAttribute("id", "movable-detail-leave-correct")
+        }, 900)
+
+        setTimeout(function() {
+                genreDetails[0].children[1].setAttribute("id", "movable-detail-backward")
+                genreDetails[1].children[1].setAttribute("id", "movable-detail-backward")
+                genreDetails[2].children[1].setAttribute("id", "movable-detail-backward")
+                genreDetails[3].children[1].setAttribute("id", "movable-detail-backward")
+            }, 1400)
+        // genreDetails[0].children[1].setAttribute("id", "movable-detail-backward")
+        // genreDetails[1].children[1].setAttribute("id", "movable-detail-backward")
+        // genreDetails[2].children[1].setAttribute("id", "movable-detail-backward")
+        // genreDetails[3].children[1].setAttribute("id", "movable-detail-backward")
+    }
+
 
 // Radar Chart
 const radarOnClick = () => {
@@ -125,6 +185,7 @@ const scatterOnClick = (genre) => {
     document.getElementsByClassName("year-title")[0].innerHTML = `&nbsp&nbsp-&nbsp&nbsp${_year}`
     colorSelect.setGenre(genre)
     updateGenreDetails()
+    animateEnter()
 }
 
 const scatter = new ScatterPlot("div#scatterplot", scatterOnClick, radarChart)
