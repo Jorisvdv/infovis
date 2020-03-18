@@ -2,6 +2,7 @@ import genreData from "../../../../data/data/scatterplot.json";
 import RadarChart from "./radarChart";
 import ScatterPlot from "./scatterPlot";
 import LineChart from "./line_chart";
+import LineChartSelect from "./lineChartSelect";
 import lineChartData from "../../../../data/data/lineplot_genre_object.json"
 import SeatingChart from "./seatingChart";
 import seatingData from "../../../../data/song_data_20200304.json"
@@ -196,15 +197,22 @@ scatter.init()
 scatter.addDropdowns(genreData)
 scatter.update(genreData[_year], _year)
 
+
+const lineChartSelect = new LineChartSelect(onClick)
+lineChartSelect.init()
+
+
 // Line chart
 // only show the features selected
 function updateLineChart() {
-    const data = Array.from(lineChartData).filter(item => {
-        const checkbox = document.getElementById(item.key)
-        return checkbox ? checkbox.checked : false;
+    const data = Array.from(lineChartData)
+    
+    data.forEach(item => {
+        const checkbox = document.getElementById(`${item.key}-checkbox`)
+        item.checked = checkbox ? checkbox.checked : false;
     })
 
-    lineChart.update(data)
+    lineChart.update(data, 1000)
 }
 
 Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).forEach(element => {
