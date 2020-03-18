@@ -85,7 +85,7 @@ export default class RadarChart {
         }
         return coordinates;
     }
-    
+
     update(data) {
         // Data is a list containing dictionaries
 

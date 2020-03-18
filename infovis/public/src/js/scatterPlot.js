@@ -224,7 +224,7 @@ export default class ScatterPlot {
           .on("click", (d) => {this.onClick(d["genre"])})
           .on("mouseover", function(d) { 
             // Retrieve values.
-            updateRadarPlot(d.genre)
+            try {updateRadarPlot(d.genre)} catch(err) {}// Silence error?}
             let tooltip = d3.select(".tooltip")
             let xFeature = d3.select("#xFeature").node().value;
             let yFeature = d3.select("#yFeature").node().value;
