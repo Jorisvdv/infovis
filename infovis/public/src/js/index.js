@@ -2,6 +2,7 @@ import genreData from "../../../../data/data/scatterplot.json";
 import RadarChart from "./radarChart";
 import ScatterPlot from "./scatterPlot";
 import LineChart from "./line_chart";
+import LineChartSelect from "./lineChartSelect";
 import lineChartData from "../../../../data/data/lineplot_genre_object.json"
 import SeatingChart from "./seatingChart";
 import seatingData from "../../../../data/song_data_20200304.json"
@@ -131,6 +132,11 @@ const scatter = new ScatterPlot("div#scatterplot", scatterOnClick, radarChart)
 scatter.init()
 scatter.addDropdowns(genreData)
 scatter.update(genreData[_year], _year)
+
+
+const lineChartSelect = new LineChartSelect(onClick)
+lineChartSelect.init()
+
 
 // Line chart
 // only show the features selected
