@@ -27,6 +27,7 @@ const mute = document.getElementById("mute")
 
 const play = document.getElementById("play")
 play.addEventListener("click", () => {
+    play.disabled = true;
     let counter = 0
     const startYear = 1999;
     const callback = () => {
@@ -36,6 +37,8 @@ play.addEventListener("click", () => {
         lineChart.updateToolTip(lineChartData, new Date(year))
         if (counter < 21) {
             setTimeout(callback, 1000)
+        } else {
+            play.disabled = false
         }
     }
     setTimeout(callback, 1000)
