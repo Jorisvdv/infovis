@@ -87,8 +87,6 @@ export default class LineChart {
         //     .text(e => e)
         //     .merge(labels);
 
-        this.chart.selectAll(".line-chart-inputs")
-            .append("transform", `translate(50,50)`)
     }
 
     updateToolTip(data, year) {
@@ -241,7 +239,6 @@ export default class LineChart {
         const i = d3.bisectLeft(years, mouseOverDate);
         const yearLeft = years[i - 1];
         const yearRight = years[i];
-
         return mouseOverDate - yearLeft < yearRight - mouseOverDate ? yearLeft : yearRight;
     }
 

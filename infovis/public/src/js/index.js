@@ -2,11 +2,11 @@ import genreData from "../../../../data/data/scatterplot.json";
 import RadarChart from "./radarChart";
 import ScatterPlot from "./scatterPlot";
 import LineChart from "./line_chart";
-import LineChartSelect from "./lineChartSelect";
 import lineChartData from "../../../../data/data/lineplot_genre_object.json"
 import SeatingChart from "./seatingChart";
 import seatingData from "../../../../data/song_data_20200304.json"
 import ColorSelect from "./colorSelect.js"
+import ColorSelectCheckbox from "./colorSelectCheckbox.js"
 
 import "normalize.css"
 import "../style.css"
@@ -56,6 +56,9 @@ const showSeatingChart = () => {
     const seatingChartLegenda = document.getElementsByClassName("genre-select-container")[0]
     seatingChartLegenda.style.display = "flex"
 
+    const genreSelect = document.getElementById("genreSelectCheckboxes")
+    genreSelect.style.display = "none"
+
     // show seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
     seatingChartTitle.style.display = "flex"
@@ -85,6 +88,9 @@ const hideSeatingChart = () => {
     // hide seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
     seatingChartTitle.style.display = "none"
+
+    const genreSelect = document.getElementById("genreSelectCheckboxes")
+    genreSelect.style.display = "flex"
 
     // show scatter plot title
     const leftTitle = document.getElementsByClassName("left-title")[0]
@@ -210,15 +216,6 @@ const scatterOnClick = (genre) => {
     animateEnter()
 }
 
-const lineChartSelect = new LineChartSelect(onClick)
-lineChartSelect.init()
-
-function updateScatterPlotVisibility(element) {
-    const id = element.children[0].children[0].id
-    const comingIn = element.children[0].children[0].checked
-
-    scatter.setVisibilityOfCircle(id, comingIn)
-}
 
 const scatter = new ScatterPlot("div#scatterplot", scatterOnClick, radarChart)
 scatter.init()
@@ -231,19 +228,12 @@ function updateLineChart() {
     const data = Array.from(lineChartData)
     
     data.forEach(item => {
-        const checkbox = document.getElementById(`${item.key}-checkbox`)
-        item.checked = checkbox.checked ? true : false;
+        const checkbox = document.getElementById(item.key.replace(/\s/g, '').replace("/", "") + "-checkbox")
+        item.checked = checkbox ? checkbox.checked : false;
     })
 
     lineChart.update(data, 1000)
 }
-
-
-
-Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).forEach(element => {
-    element.children[0].addEventListener("click", updateLineChart)
-    element.children[0].addEventListener("click", function() {updateScatterPlotVisibility(element)})
-})
 
 const onClick = (year, genre) => {
     if (year !== undefined) { 
@@ -255,9 +245,13 @@ const onClick = (year, genre) => {
     seatingChart.update(_year, _genre)
 }
 
+
 const lineChart = new LineChart("#line-chart", onClick);
 lineChart.init()
 updateLineChart()
+
+const colorSelectCheckbox = new ColorSelectCheckbox(scatter, updateLineChart)
+colorSelectCheckbox.init()
 
 // seating chart
 const seatingChartOnclick = (entry) => {
@@ -294,3 +288,4 @@ seatingChart.update(_year, "Rock")
 
 const colorSelect = new ColorSelect(seatingChart, onClick)
 colorSelect.init()
+updateLineChart()

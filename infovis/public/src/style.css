@@ -15,6 +15,18 @@
     cursor: default;
 }
 
+.radio-square {
+    width: 25px;
+    height: 25px;
+    background: attr(data-background color);
+    font-size: 12px;
+    /*color: rgba(256, 256, 256, 0);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
 .active {
     cursor: pointer;
 }
@@ -95,7 +107,9 @@ h2 {
 }
 
 #scatterplot {
-    padding: 5%;
+    margin: auto;
+    width: 800px;
+    padding: 16px;
 }
 
 #line-chart {
@@ -337,9 +351,19 @@ body {
 }
 
 .selectSquare {
-    width: 23px;
+    color: white;
+    width: 100px;
     height: 23px;
     opacity: 0.25;
+}
+
+.selectSquareCheckbox > input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.selectSquareCheckbox:hover {
+    cursor: pointer;
 }
 
 .btn:hover .musicbutton {
@@ -347,8 +371,18 @@ body {
 }
 
 .genre-select-container {
+    flex-wrap: wrap;
+    align-content: flex-start;
     padding: 16px 16px 16px 16px;
     display: none;
+}
+
+#genreSelectCheckboxes {
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 16px 16px 0px 50px;
 }
 
 #genre-select-tooltip {
@@ -364,4 +398,20 @@ body {
 
 .right .charts {
     padding: 16px;
+}
+
+.checkboxSquare {
+    width: 100px;
+    height: 25px;
+    background: attr(data-background color);
+    font-size: 11px;
+    padding: 0px 8px 0px 8px;
+    color: rgba(256, 256, 256, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.svgText {
+    pointer-events: none;
 }
