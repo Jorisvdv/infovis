@@ -239,7 +239,6 @@ export default class LineChart {
         const i = d3.bisectLeft(years, mouseOverDate);
         const yearLeft = years[i - 1];
         const yearRight = years[i];
-
         return mouseOverDate - yearLeft < yearRight - mouseOverDate ? yearLeft : yearRight;
     }
 

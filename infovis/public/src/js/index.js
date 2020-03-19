@@ -288,3 +288,6 @@ seatingChart.update(_year, "Rock")
 const colorSelect = new ColorSelect(seatingChart, onClick)
 colorSelect.init()
 updateLineChart()
+
+// I can't find the source of this shit:
+document.getElementsByClassName("line-chart-inputs")[0].style.display = "none"

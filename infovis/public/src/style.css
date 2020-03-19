@@ -275,11 +275,11 @@ body {
 }
 
 #genreSelectCheckboxes {
-    height: 20vh;
+    height: 100px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding: 16px 16px 16px 16px;
+    padding: 16px 16px 0px 50px;
 }
 
 #genre-select-tooltip {
