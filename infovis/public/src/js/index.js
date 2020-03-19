@@ -243,7 +243,7 @@ const lineChart = new LineChart("#line-chart", onClick);
 lineChart.init()
 updateLineChart()
 
-const colorSelectCheckbox = new ColorSelectCheckbox(updateLineChart)
+const colorSelectCheckbox = new ColorSelectCheckbox(scatter, updateLineChart)
 colorSelectCheckbox.init()
 
 // seating chart

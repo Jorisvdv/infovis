@@ -36,10 +36,11 @@ export default class SeatingChart {
 
     _onHover(event, entry, year) {
         const tooltip = document.getElementById("seating-chart-tooltip")
-        tooltip.children[3].children[0].src = entry.image_640
-        tooltip.children[0].innerHTML = entry[year]
-        tooltip.children[1].innerHTML = entry.artist
-        tooltip.children[2].innerHTML = entry.title
+        tooltip.children[0].children[0].src = entry.image_640
+        tooltip.children[1].innerHTML = '<i class="fas fa-lg fa-music"></i>'+ entry.title;
+        tooltip.children[2].innerHTML = '<i class="fas fa-lg fa-user"></i>' + entry.artist;
+        tooltip.children[3].innerHTML = '<i class="fas fa-lg fa-hashtag"></i>' + entry[year];
+        console.log(tooltip.children[2]);
         tooltip.style.display = "flex";
         tooltip.style.position = "absolute";
         tooltip.style.left = `${event.pageX+20}px`;
