@@ -234,11 +234,6 @@ function updateLineChart() {
     lineChart.update(data, 1000)
 }
 
-// Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).forEach(element => {
-//     console.log("test")
-//     element.children[0].addEventListener("click", updateLineChart)
-// })
-
 const onClick = (year, genre) => {
     if (year !== undefined) { 
         _year = year;

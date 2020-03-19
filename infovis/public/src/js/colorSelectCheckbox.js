@@ -12,7 +12,7 @@ export default class ColorSelectCheckbox {
 
             selectSquare.innerHTML = '<input type="checkbox" class="genreSelect" id=' + 
             d.replace(/\s/g, '').replace("/", "") + '-checkbox name="genreSelect">' + d + 
-            '<span id=' + `${d}-checkbox` + ' style="float:right">0<span>'
+            '<span id="' + `${d}-value` + '" style="float:right">0<span>'
 
             selectSquare.className = "checkboxSquare selectSquare active"
             selectSquare.style.background = colors[d];

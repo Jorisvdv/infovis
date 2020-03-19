@@ -87,8 +87,6 @@ export default class LineChart {
         //     .text(e => e)
         //     .merge(labels);
 
-        // this.chart.selectAll(".line-chart-inputs")
-        //     .append("transform", `translate(50,50)`)
     }
 
     updateToolTip(data, year) {
