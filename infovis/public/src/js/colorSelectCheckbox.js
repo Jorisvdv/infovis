@@ -11,11 +11,11 @@ export default class ColorSelectCheckbox {
             const legenda = document.getElementById("genreSelectCheckboxes")
             const selectSquare = document.createElement("div")
 
-            selectSquare.innerHTML = '<input type="checkbox" class="genreSelect" id=' + 
-            d.replace(/\s/g, '').replace("/", "") + '-checkbox name="genreSelect">' + d + 
+            selectSquare.innerHTML = '<input type="checkbox" class="genreCheckSelect" id=' + 
+            d.replace(/\s/g, '').replace("/", "") + '-checkbox name="genreCheckSelect">' + d + 
             '<span id="' + `${d}-value` + '" style="float:right">0<span>'
 
-            selectSquare.className = "checkboxSquare selectSquare active"
+            selectSquare.className = "checkboxSquare selectSquareCheckbox active"
             selectSquare.style.background = colors[d];
             selectSquare.children[0].checked = true
             selectSquare.style.textDecoration = "overline"
@@ -30,7 +30,7 @@ export default class ColorSelectCheckbox {
     }
 
     _updateOpacity() {
-        const selects = Array.from(document.getElementsByClassName("genreSelect"))
+        const selects = Array.from(document.getElementsByClassName("genreCheckSelect"))
         selects.forEach(d => {
             if (d.checked) {
                 d.parentElement.style.opacity = 1

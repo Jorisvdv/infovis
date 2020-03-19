@@ -275,6 +275,15 @@ body {
     opacity: 0.25;
 }
 
+.selectSquareCheckbox > input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.selectSquareCheckbox:hover {
+    cursor: pointer;
+}
+
 .btn:hover .musicbutton {
     fill: rgba(52, 52, 52, 0.850)
 }
