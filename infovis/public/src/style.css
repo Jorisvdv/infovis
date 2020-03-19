@@ -178,15 +178,12 @@ body {
     opacity: 0;
 }
 
-/*.genre-detail:hover > #movable-detail {
-    transform: translate3d(20px, 0px, 0px);
-}*/
-
 .genre-detail span:nth-child(2) {
     color: grey;
 }
 
 .song-details {
+    top: 16px;
     width: 100%;
     position: relative;
     max-width: 400px;

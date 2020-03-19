@@ -47,6 +47,7 @@ const showSeatingChart = () => {
     leftTitle.style.display = "none";
 
     document.getElementsByClassName("song-details")[0].style.display = "initial"
+    document.getElementById("right-title").innerHTML = "Song Details"
     animateLeave()
 
 }
@@ -71,6 +72,7 @@ const hideSeatingChart = () => {
     leftTitle.style.display = "flex";
 
     document.getElementsByClassName("song-details")[0].style.display = "none"
+    document.getElementById("right-title").innerHTML = "Genre Details"
 
     document.getElementById("audio").pause()
     animateLeave()
@@ -136,6 +138,7 @@ const animateLeave = () => {
         genreDetails[2].children[0].setAttribute("id", "detail-become-invisible")
         genreDetails[3].children[0].setAttribute("id", "detail-become-invisible")
         genreDetails[4].children[0].setAttribute("id", "detail-become-invisible")
+        document.getElementById("radarchart").setAttribute("class", "moveable-backward-radarchart")
 
         setTimeout(function(){
             genreDetails[0].children[0].style.display = "none"
@@ -155,10 +158,6 @@ const animateLeave = () => {
                 genreDetails[3].children[1].setAttribute("id", "movable-detail-backward")
                 genreDetails[4].children[1].setAttribute("id", "movable-detail-backward")
             }, 1100)
-        // genreDetails[0].children[1].setAttribute("id", "movable-detail-backward")
-        // genreDetails[1].children[1].setAttribute("id", "movable-detail-backward")
-        // genreDetails[2].children[1].setAttribute("id", "movable-detail-backward")
-        // genreDetails[3].children[1].setAttribute("id", "movable-detail-backward")
     }
 
 
