@@ -56,6 +56,9 @@ const showSeatingChart = () => {
     const seatingChartLegenda = document.getElementsByClassName("genre-select-container")[0]
     seatingChartLegenda.style.display = "flex"
 
+    const genreSelect = document.getElementById("genreSelectCheckboxes")
+    genreSelect.style.display = "none"
+
     // show seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
     seatingChartTitle.style.display = "flex"
@@ -85,6 +88,9 @@ const hideSeatingChart = () => {
     // hide seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
     seatingChartTitle.style.display = "none"
+
+    const genreSelect = document.getElementById("genreSelectCheckboxes")
+    genreSelect.style.display = "flex"
 
     // show scatter plot title
     const leftTitle = document.getElementsByClassName("left-title")[0]
@@ -209,6 +215,7 @@ const scatterOnClick = (genre) => {
     updateGenreDetails()
     animateEnter()
 }
+
 
 const scatter = new ScatterPlot("div#scatterplot", scatterOnClick, radarChart)
 scatter.init()

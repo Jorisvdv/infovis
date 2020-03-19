@@ -10,15 +10,15 @@ export default class ColorSelect {
         Object.keys(colors).forEach(d => {
             const legenda = document.getElementsByClassName("genre-select-container")[0]
             const selectSquare = document.createElement("div")
-            selectSquare.innerHTML = '<input type="radio" class="genreSelect" id=radio-' + d.replace(/\s/g, '').replace("/", "") + ' name="genreSelect">' 
-            selectSquare.className = "square selectSquare"
+            selectSquare.innerHTML = '<input type="radio" class="genreSelect" id=radio-' + d.replace(/\s/g, '').replace("/", "") + ' name="genreSelect">' + d
+            selectSquare.className = "radio-square selectSquare"
             selectSquare.style.background = colors[d];
             selectSquare.style.border = "solid 1px " + colors[d]
             selectSquare.style.opacity = this.genre === d ? "1" : "0.25";
-            selectSquare.style.color = this.genre === d ? "rgba(256, 256, 256, 1)" : "rgba(256, 256, 256, 0)";
+            // selectSquare.style.color = this.genre === d ? "rgba(256, 256, 256, 1)" : "rgba(256, 256, 256, 0)";
             selectSquare.addEventListener("click", (e) => this._onClickLegenda(e, d))
-            selectSquare.addEventListener('mouseenter', (e) => this._onHoverLegenda(e, d))
-            selectSquare.addEventListener('mouseleave', () => this._onMouseLeaveLegenda())
+            // selectSquare.addEventListener('mouseenter', (e) => this._onHoverLegenda(e, d))
+            // selectSquare.addEventListener('mouseleave', () => this._onMouseLeaveLegenda())
             legenda.appendChild(selectSquare)
         })
     }

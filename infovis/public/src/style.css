@@ -15,6 +15,18 @@
     cursor: default;
 }
 
+.radio-square {
+    width: 25px;
+    height: 25px;
+    background: attr(data-background color);
+    font-size: 12px;
+    /*color: rgba(256, 256, 256, 0);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
 .active {
     cursor: pointer;
 }
@@ -270,7 +282,7 @@ body {
 
 .selectSquare {
     color: white;
-    width: 23px;
+    width: 100px;
     height: 23px;
     opacity: 0.25;
 }
@@ -289,7 +301,8 @@ body {
 }
 
 .genre-select-container {
-    overflow: auto;
+    flex-wrap: wrap;
+    align-content: flex-start;
     padding: 16px 16px 16px 16px;
     display: none;
 }
