@@ -229,7 +229,6 @@ export default class LineChart {
 
     _getActiveFeatures(data) {
         const activeData = data.filter(d => {return d.checked})
-        console.log(activeData)
         return activeData.map(d => d.key)
     }
 
