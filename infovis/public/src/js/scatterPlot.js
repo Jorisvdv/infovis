@@ -2,6 +2,7 @@ import * as d3 from "d3"
 import colors from "./../data/scattercolors.json"
 import axis from "./../data/axisMapping.json"
 import genreData from "./../../../../data/data/scatterplot.json"
+import { timeout } from "d3";
 
 export default class ScatterPlot {
     constructor(selector, onClick, radarPlot) {
@@ -279,6 +280,7 @@ export default class ScatterPlot {
         // Add all paths to svg
         dots.enter()
           .append("circle")
+          .attr("class", "scatterCircle")
           .attr("cx", function (d) { return xScale(d[xFeature]); } )
           .attr("cy", function (d) { return yScale(d[yFeature]); } )
           .on("click", (d) => {this.onClick(d["genre"])})
@@ -320,6 +322,45 @@ export default class ScatterPlot {
             .remove()
 
 
-        }   
+        }
+
+    setVisibilityOfCircle(id, comingIn) {
+        
+        const duration = 700;
+        const genre = id.slice(0, "-checkbox".length * -1);
+
+        // I don't know why but d3.select(#{correct id}) doesn't work.
+
+        if (comingIn) {
+            d3.selectAll(".scatterCircle")
+                .style("display", d => {              
+                    if (d.genre == genre) {
+                        return null;
+                    }
+                })
+                .transition().duration(duration)
+                .style("opacity", d => {
+                    if (d.genre == genre) {
+                        return 0.5;
+                    }
+                })
+        } else {
+            setTimeout(function () {
+                d3.selectAll(".scatterCircle")
+                    .style("display", d => {              
+                        if (d.genre == genre) {
+                            return "none";
+                        }
+                    })          
+            }, duration);
+            d3.selectAll(".scatterCircle")
+                .transition().duration(duration)
+                .style("opacity", d => {
+                    if (d.genre == genre) {
+                        return 0;
+                    }
+                })
+        }
+    }
 }
 

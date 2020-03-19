@@ -210,15 +210,20 @@ const scatterOnClick = (genre) => {
     animateEnter()
 }
 
+const lineChartSelect = new LineChartSelect(onClick)
+lineChartSelect.init()
+
+function updateScatterPlotVisibility(element) {
+    const id = element.children[0].children[0].id
+    const comingIn = element.children[0].children[0].checked
+
+    scatter.setVisibilityOfCircle(id, comingIn)
+}
+
 const scatter = new ScatterPlot("div#scatterplot", scatterOnClick, radarChart)
 scatter.init()
 scatter.addDropdowns(genreData)
 scatter.update(genreData[_year], _year)
-
-
-const lineChartSelect = new LineChartSelect(onClick)
-lineChartSelect.init()
-
 
 // Line chart
 // only show the features selected
@@ -227,14 +232,17 @@ function updateLineChart() {
     
     data.forEach(item => {
         const checkbox = document.getElementById(`${item.key}-checkbox`)
-        item.checked = checkbox ? checkbox.checked : false;
+        item.checked = checkbox.checked ? true : false;
     })
 
     lineChart.update(data, 1000)
 }
 
+
+
 Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).forEach(element => {
     element.children[0].addEventListener("click", updateLineChart)
+    element.children[0].addEventListener("click", function() {updateScatterPlotVisibility(element)})
 })
 
 const onClick = (year, genre) => {
