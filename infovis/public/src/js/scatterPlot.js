@@ -325,22 +325,22 @@ export default class ScatterPlot {
         }
 
     setVisibilityOfCircle(id, comingIn) {
-        
+        console.log("setvisi", id, comingIn)
         const duration = 700;
         const genre = id.slice(0, "-checkbox".length * -1);
-
         // I don't know why but d3.select(#{correct id}) doesn't work.
 
         if (comingIn) {
             d3.selectAll(".scatterCircle")
-                .style("display", d => {              
-                    if (d.genre == genre) {
+                .style("display", d => {   
+                    console.log("Genres same?:", d.genre, genre)           
+                    if (d.genre.replace(/\s/g, '').replace("/", "") == genre) {
                         return null;
                     }
                 })
                 .transition().duration(duration)
                 .style("opacity", d => {
-                    if (d.genre == genre) {
+                    if (d.genre.replace(/\s/g, '').replace("/", "") == genre) {
                         return 0.5;
                     }
                 })
@@ -348,7 +348,7 @@ export default class ScatterPlot {
             setTimeout(function () {
                 d3.selectAll(".scatterCircle")
                     .style("display", d => {              
-                        if (d.genre == genre) {
+                        if (d.genre.replace(/\s/g, '').replace("/", "") == genre) {
                             return "none";
                         }
                     })          
@@ -356,7 +356,7 @@ export default class ScatterPlot {
             d3.selectAll(".scatterCircle")
                 .transition().duration(duration)
                 .style("opacity", d => {
-                    if (d.genre == genre) {
+                    if (d.genre.replace(/\s/g, '').replace("/", "") == genre) {
                         return 0;
                     }
                 })

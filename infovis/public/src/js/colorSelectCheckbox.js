@@ -1,8 +1,9 @@
 import colors from "./../data/scattercolors.json"
 
 export default class ColorSelectCheckbox {
-    constructor(onClick) {
+    constructor(scatter, onClick) {
         this.onClick = onClick
+        this.scatter = scatter
     }
 
     init() {
@@ -51,6 +52,13 @@ export default class ColorSelectCheckbox {
     }
 
     _onClickLegenda(event, d) {
+        // This is to remove dots from the scatter
+        let id = event.target.children[0].id
+        let comingIn = event.target.children[0].checked
+        console.log("LEgenda", id, comingIn)
+        this.scatter.setVisibilityOfCircle(id, !comingIn)
+
+
         if (event.target.children[0].checked) {
             event.target.children[0].checked = false
         } else { 
@@ -61,6 +69,13 @@ export default class ColorSelectCheckbox {
         this._updateOpacity()
         //const pageTitle = document.getElementsByClassName("seating-chart-genre")[0].innerHTML = d;
     }
+
+//     function updateScatterPlotVisibility(element) {
+//     const id = element.children[0].children[0].id
+//     const comingIn = element.children[0].children[0].checked
+
+//     scatter.setVisibilityOfCircle(id, comingIn)
+// }
 
     _onHoverLegenda(event, d) {
         event.target.style.opacity = 1
