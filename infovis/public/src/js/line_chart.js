@@ -228,7 +228,9 @@ export default class LineChart {
     }
 
     _getActiveFeatures(data) {
-        return data.map(d => d.key)
+        const activeData = data.filter(d => {return d.checked})
+        console.log(activeData)
+        return activeData.map(d => d.key)
     }
 
     _getYears(data) {
