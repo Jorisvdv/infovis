@@ -84,7 +84,9 @@ h2 {
 }
 
 #scatterplot {
-    padding: 5%;
+    margin: auto;
+    width: 800px;
+    padding: 16px;
 }
 
 #line-chart {
@@ -256,6 +258,7 @@ body {
 }
 
 .selectSquare {
+    color: white;
     width: 23px;
     height: 23px;
     opacity: 0.25;
@@ -266,8 +269,17 @@ body {
 }
 
 .genre-select-container {
+    overflow: auto;
     padding: 16px 16px 16px 16px;
     display: none;
+}
+
+#genreSelectCheckboxes {
+    height: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 16px 16px 16px 16px;
 }
 
 #genre-select-tooltip {
@@ -283,4 +295,16 @@ body {
 
 .right .charts {
     padding: 16px;
+}
+
+.checkboxSquare {
+    width: 100px;
+    height: 25px;
+    background: attr(data-background color);
+    font-size: 11px;
+    padding: 0px 8px 0px 8px;
+    color: rgba(256, 256, 256, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

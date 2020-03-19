@@ -7,6 +7,7 @@ import lineChartData from "../../../../data/data/lineplot_genre_object.json"
 import SeatingChart from "./seatingChart";
 import seatingData from "../../../../data/song_data_20200304.json"
 import ColorSelect from "./colorSelect.js"
+import ColorSelectCheckbox from "./colorSelectCheckbox.js"
 
 import "normalize.css"
 import "../style.css"
@@ -226,16 +227,17 @@ function updateLineChart() {
     const data = Array.from(lineChartData)
     
     data.forEach(item => {
-        const checkbox = document.getElementById(`${item.key}-checkbox`)
+        const checkbox = document.getElementById(item.key.replace(/\s/g, '').replace("/", "") + "-checkbox")
         item.checked = checkbox ? checkbox.checked : false;
     })
 
     lineChart.update(data, 1000)
 }
 
-Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).forEach(element => {
-    element.children[0].addEventListener("click", updateLineChart)
-})
+// Array.from(document.getElementsByClassName("line-chart-inputs")[0].children).forEach(element => {
+//     console.log("test")
+//     element.children[0].addEventListener("click", updateLineChart)
+// })
 
 const onClick = (year, genre) => {
     if (year !== undefined) { 
@@ -247,9 +249,13 @@ const onClick = (year, genre) => {
     seatingChart.update(_year, _genre)
 }
 
+
 const lineChart = new LineChart("#line-chart", onClick);
 lineChart.init()
 updateLineChart()
+
+const colorSelectCheckbox = new ColorSelectCheckbox(updateLineChart)
+colorSelectCheckbox.init()
 
 // seating chart
 const seatingChartOnclick = (entry) => {
@@ -286,3 +292,4 @@ seatingChart.update(_year, "Rock")
 
 const colorSelect = new ColorSelect(seatingChart, onClick)
 colorSelect.init()
+updateLineChart()
