@@ -93,7 +93,7 @@ export default class LineChart {
 
     updateToolTip(data, year) {
         const yearData = this._getDataOfYear(data, year)
-        this.moveTooltip(year, yearData)
+        this.moveTooltip(year, yearData, 500)
     }
 
     update(data, speed) {
@@ -181,11 +181,14 @@ export default class LineChart {
             //     this.focus.style("display", "none");
             // })
             .on("mousemove", () => {
-                // get data of the closest year to the corresponding x value of mouse
-                const years = this._getYears(data)
-                const selectedYear = this._getClosestYearToMouse(years)
-                const dataOfYear = this._getDataOfYear(data, selectedYear)
-                this.moveTooltip(selectedYear, dataOfYear)
+                const play = document.getElementById("play")
+                if (!play.disabled) {
+                    // get data of the closest year to the corresponding x value of mouse
+                    const years = this._getYears(data)
+                    const selectedYear = this._getClosestYearToMouse(years)
+                    const dataOfYear = this._getDataOfYear(data, selectedYear)
+                    this.moveTooltip(selectedYear, dataOfYear, 80)
+                }
             })
             .on("click", () => {
                 const years = this._getYears(data)
@@ -196,17 +199,20 @@ export default class LineChart {
             });
     }
 
-    moveTooltip(selectedYear, dataOfYear) {
+    moveTooltip(selectedYear, dataOfYear, duration) {
 
         this.focus.select(".lineHover")
+            .transition().duration(duration)
             .attr("transform", "translate(" + this.x(selectedYear) + "," + this.height + ")");
 
         this.focus.select(".lineHoverDate")
+            .transition().duration(duration)
             .attr("transform",
                 "translate(" + this.x(selectedYear) + "," + (this.height + this.margin.bottom) + ")")
             .text(selectedYear.getFullYear().toString());
 
         this.focus.selectAll(".hoverCircle")
+            .transition().duration(duration)
             .attr("cy", e => this.y(dataOfYear[e]))
             .attr("cx", this.x(selectedYear))
             .style("stroke", e => this.colorScale[e])
@@ -222,7 +228,8 @@ export default class LineChart {
     }
 
     _getActiveFeatures(data) {
-        return data.map(d => d.key)
+        const activeData = data.filter(d => {return d.checked})
+        return activeData.map(d => d.key)
     }
 
     _getYears(data) {
