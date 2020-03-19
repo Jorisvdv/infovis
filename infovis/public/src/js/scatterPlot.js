@@ -28,7 +28,7 @@ export default class ScatterPlot {
 
         // Add year text
         this.chart.append("text")
-          .attr("class", "yearText")
+          .attr("class", "yearText svgText")
           .attr("y", 120)
           .attr("x", this.width - 360)
           .style("font-size", "150px")

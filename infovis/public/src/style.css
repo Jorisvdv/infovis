@@ -319,3 +319,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+.svgText {
+    pointer-events: none;
+}
