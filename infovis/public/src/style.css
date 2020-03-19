@@ -142,12 +142,12 @@ body {
 }
 
 #movable-detail-forward {
-    transition: transform .9s ease-in-out;
+    transition: transform .5s ease-in-out;
     transform: translate3d(100px, 0px, 0px);
 }
 
 #movable-detail-backward {
-    transition: transform .9s ease-in-out;
+    transition: transform .5s ease-in-out;
     transform: translate3d(0px, 0px, 0px);
 }
 
@@ -160,7 +160,7 @@ body {
 }
 
 #detail-become-visible {
-    transition: opacity .9s ease-in-out;
+    transition: opacity .5s ease-in-out;
     opacity: 1;
 }
 
@@ -174,7 +174,7 @@ body {
 }
 
 #detail-become-invisible {
-    transition: opacity .9s ease-in-out;
+    transition: opacity .5s ease-in-out;
     opacity: 0;
 }
 

@@ -118,7 +118,7 @@ const animateEnter = () => {
             genreDetails[2].children[1].setAttribute("id", "movable-detail-enter-correct")
             genreDetails[3].children[1].setAttribute("id", "movable-detail-enter-correct")
             genreDetails[4].children[1].setAttribute("id", "movable-detail-enter-correct")
-            }, 900)
+            }, 600)
 
         setTimeout(function(){
             genreDetails[0].children[0].setAttribute("id", "detail-become-visible")
@@ -126,7 +126,7 @@ const animateEnter = () => {
             genreDetails[2].children[0].setAttribute("id", "detail-become-visible")
             genreDetails[3].children[0].setAttribute("id", "detail-become-visible")
             genreDetails[4].children[0].setAttribute("id", "detail-become-visible")
-        }, 1400)
+        }, 1100)
     }
 
 const animateLeave = () => {
@@ -147,14 +147,14 @@ const animateLeave = () => {
             genreDetails[2].children[1].setAttribute("id", "movable-detail-leave-correct")
             genreDetails[3].children[1].setAttribute("id", "movable-detail-leave-correct")
             genreDetails[4].children[1].setAttribute("id", "movable-detail-leave-correct")
-        }, 900)
+        }, 600)
 
         setTimeout(function() {
                 genreDetails[1].children[1].setAttribute("id", "movable-detail-backward")
                 genreDetails[2].children[1].setAttribute("id", "movable-detail-backward")
                 genreDetails[3].children[1].setAttribute("id", "movable-detail-backward")
                 genreDetails[4].children[1].setAttribute("id", "movable-detail-backward")
-            }, 1400)
+            }, 1100)
         // genreDetails[0].children[1].setAttribute("id", "movable-detail-backward")
         // genreDetails[1].children[1].setAttribute("id", "movable-detail-backward")
         // genreDetails[2].children[1].setAttribute("id", "movable-detail-backward")
