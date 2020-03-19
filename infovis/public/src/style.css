@@ -54,27 +54,38 @@
     background: #fff;
     display: none;
     flex-direction: column;
-    align-items: center;
-    width: 200px;
+    /* align-items: center; */
+    width: 280px;
+    border-radius: 5px;
     z-index: 3;
-    border: 3px solid black;
+    border: grey 2px solid;
 }
 
 #seating-chart-tooltip img {
-    width: 200px;
+    width: 240px;
 }
 
 #seating-chart-tooltip div {
-    border-bottom: 3px solid black;
-    width: 100%;
+    /* border-bottom: 3px solid black; */
     display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    justify-content: flex-start;
+    /* float: left; */
+    padding: 0px 0px 25px 20px;
 }
 
-#seating-chart-tooltip div:last-child {
+.fas{
+  padding-right: 12px;
+  color: #8A8A8A;
+}
+
+#seating-chart-tooltip div:first-child {
     border: none;
-    padding: 0;
+    padding: 25px 0 25px 0;
+    align-self: center;
+}
+
+.title{
+  font-weight: bold;
 }
 
 h2 {
