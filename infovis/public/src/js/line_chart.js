@@ -13,7 +13,9 @@ export default class LineChart {
         this.width = 800;
         this.height = 200;
 
-        this.infoPanelMargin = {top:this.margin.top, right:10, bottom:this.margin.bottom, left:35};
+        this.year = "1999"
+
+        this.infoPanelMargin = {top: this.margin.top, right: 10, bottom: this.margin.bottom, left: 35};
         this.infoPanelWidth = 150;
         this.infoPanelHeight = this.height;
 
@@ -48,18 +50,18 @@ export default class LineChart {
         this.chart
             .append("g")
             .attr("class", "x-axis")
-            .attr("transform", `translate(0,${this.height-this.margin.top-this.margin.bottom})`);
+            .attr("transform", `translate(0,${this.height - this.margin.top - this.margin.bottom})`);
 
         // Y Axis
         this.chart
             .append("g")
             .attr("class", "y-axis")
-    
+
         // focus for tooltip
         this.focus = this.chart.append("g")
             .attr("id", "tooltip-focus")
             .attr("class", "focus")
-            .style("display", "none");
+        // .style("display", "none");
 
         this.focus.append("line").attr("class", "lineHover")
             .style("stroke", "#999")
@@ -87,6 +89,11 @@ export default class LineChart {
 
         this.chart.selectAll(".line-chart-inputs")
             .append("transform", `translate(50,50)`)
+    }
+
+    updateToolTip(data, year) {
+        const yearData = this._getDataOfYear(data, year)
+        this.moveTooltip(year, yearData)
     }
 
     update(data, speed) {
@@ -129,7 +136,7 @@ export default class LineChart {
             .style("stroke-width", 2)
             .transition().duration(speed)
             .style("opacity", d => d.checked ? 1 : 0.2)
-            .attr("d", d => this.line(d.data))  
+            .attr("d", d => this.line(d.data))
 
         // Put in the overlay for tooltip
         this.chart.append("rect")
@@ -167,46 +174,51 @@ export default class LineChart {
             .merge(circles);
 
         this.chart.select("#tooltip-overlay")
-            .on("mouseover", () => {
-                this.focus.style("display", null);
-            })
-            .on("mouseout", () => {
-                this.focus.style("display", "none");
-            })
+            // .on("mouseover", () => {
+            //     this.focus.style("display", null);
+            // })
+            // .on("mouseout", () => {
+            //     this.focus.style("display", "none");
+            // })
             .on("mousemove", () => {
                 // get data of the closest year to the corresponding x value of mouse
                 const years = this._getYears(data)
                 const selectedYear = this._getClosestYearToMouse(years)
                 const dataOfYear = this._getDataOfYear(data, selectedYear)
-
-                this.focus.select(".lineHover")
-                    .attr("transform", "translate(" + this.x(selectedYear) + "," + this.height + ")");
-
-                this.focus.select(".lineHoverDate")
-                    .attr("transform",
-                        "translate(" + this.x(selectedYear) + "," + (this.height + this.margin.bottom) + ")")
-                    .text(selectedYear.getFullYear().toString());
-
-                this.focus.selectAll(".hoverCircle")
-                    .attr("cy", e => this.y(dataOfYear[e]))
-                    .attr("cx", this.x(selectedYear))
-                    .style("stroke", e => this.colorScale[e])
-                    .style("fill", "none");
-
-                // this.infoPanel.selectAll(".infoTextValues")
-                //     .text(e =>dataOfYear[e])
-
-                d3.selectAll(".valueOfGenre").text(e => dataOfYear[e])
-
-                Object.keys(dataOfYear).forEach(d =>
-                    document.getElementById(`${d}-value`).innerHTML = Math.round(dataOfYear[d]));
+                this.moveTooltip(selectedYear, dataOfYear)
             })
             .on("click", () => {
                 const years = this._getYears(data)
                 const closestYear = this._getClosestYearToMouse(years).getFullYear().toString()
+                this.year = closestYear;
                 document.getElementsByClassName("year-title")[0].innerHTML = `&nbsp&nbsp-&nbsp&nbsp${closestYear}`
                 this.onClick(closestYear, undefined)
             });
+    }
+
+    moveTooltip(selectedYear, dataOfYear) {
+
+        this.focus.select(".lineHover")
+            .attr("transform", "translate(" + this.x(selectedYear) + "," + this.height + ")");
+
+        this.focus.select(".lineHoverDate")
+            .attr("transform",
+                "translate(" + this.x(selectedYear) + "," + (this.height + this.margin.bottom) + ")")
+            .text(selectedYear.getFullYear().toString());
+
+        this.focus.selectAll(".hoverCircle")
+            .attr("cy", e => this.y(dataOfYear[e]))
+            .attr("cx", this.x(selectedYear))
+            .style("stroke", e => this.colorScale[e])
+            .style("fill", "none");
+
+        // this.infoPanel.selectAll(".infoTextValues")
+        //     .text(e =>dataOfYear[e])
+
+        d3.selectAll(".valueOfGenre").text(e => dataOfYear[e])
+
+        Object.keys(dataOfYear).forEach(d =>
+            document.getElementById(`${d}-value`).innerHTML = Math.round(dataOfYear[d]));
     }
 
     _getActiveFeatures(data) {
@@ -219,9 +231,9 @@ export default class LineChart {
 
     _getClosestYearToMouse(years) {
         const mouseOverDate = this.x.invert(d3.mouse(this.chart.select("#tooltip-overlay").node())[0]);
-        const             i = d3.bisectLeft(years, mouseOverDate);
-        const      yearLeft = years[i - 1];
-        const     yearRight = years[i];
+        const i = d3.bisectLeft(years, mouseOverDate);
+        const yearLeft = years[i - 1];
+        const yearRight = years[i];
 
         return mouseOverDate - yearLeft < yearRight - mouseOverDate ? yearLeft : yearRight;
     }
@@ -235,8 +247,9 @@ export default class LineChart {
         const dataOfYear = {};
         for (let i in features) {
             dataOfYear[features[i]] = formatValue(values[i][d3.bisectLeft(years.map(d => parseInt(d)), selectedYear.getFullYear())]);
-        };
-        
+        }
+        ;
+
         for (let i in this.allFeatures) {
             if (!(this.allFeatures[i] in dataOfYear)) {
                 dataOfYear[this.allFeatures[i]] = " "
@@ -246,24 +259,24 @@ export default class LineChart {
     }
 
     _getYDomain(data, domainPadding) {
-        let max = data.map(genre => 
+        let max = data.map(genre =>
             genre.checked ? genre.data.map(e => e.data)
-                .reduce( function (a, b) {
+                .reduce(function (a, b) {
                     return Math.max(a, b);
                 }) : 0)
-                    .reduce( function (a, b) {
-                        return Math.max(a, b);
-                });
-
-        let min = data.map(genre => 
-            genre.checked ? genre.data.map(e => e.data)
-                .reduce( function (a, b) {
-                    return Math.min(a, b);
-            }) : 1000)
-                    .reduce( function (a, b) {
-                        return Math.min(a, b);
+            .reduce(function (a, b) {
+                return Math.max(a, b);
             });
-        
+
+        let min = data.map(genre =>
+            genre.checked ? genre.data.map(e => e.data)
+                .reduce(function (a, b) {
+                    return Math.min(a, b);
+                }) : 1000)
+            .reduce(function (a, b) {
+                return Math.min(a, b);
+            });
+
         max = max + domainPadding
         min = min >= domainPadding ? min - domainPadding : min;
 

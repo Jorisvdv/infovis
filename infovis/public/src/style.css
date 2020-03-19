@@ -41,13 +41,13 @@
     margin-right: 16px;
 }
 
-#mute{
-  height: 42px;
-  background: #D9201B;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  margin-right: 16px;
+#mute {
+    height: 42px;
+    background: #D9201B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 16px;
 }
 
 #seating-chart-tooltip {
@@ -77,22 +77,38 @@
     padding: 0;
 }
 
-h2{
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: bold;
-  /* padding: 3% 0 1% 0;   */
+h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    /* padding: 3% 0 1% 0;   */
 }
 
-#scatterplot{
-  padding: 5%;
+#scatterplot {
+    padding: 5%;
 }
 
-#line-chart{
-  padding: 0 3%;
+#line-chart {
+    padding: 0 3%;
+    /*height: 250px;*/
+    /*width: 1250px;*/
 }
 
-#line-chart-inputs{
-  padding: 0 15px 15px 15px;
+#line-chart-inputs {
+    padding: 0 15px 15px 15px;
+}
+
+.line-chart-container {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+
+#play {
+    width: 64px;
+    height: 64px;
+    border-radius: 50px;
+    border: none;
+    background: red;
 }
 
 body {

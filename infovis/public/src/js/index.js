@@ -25,6 +25,22 @@ const mute = document.getElementById("mute")
     }
 })
 
+const play = document.getElementById("play")
+play.addEventListener("click", () => {
+    let counter = 0
+    const startYear = 1999;
+    const callback = () => {
+        const year = "" + (startYear + counter)
+        counter++;
+        onClick(year, _genre)
+        lineChart.updateToolTip(lineChartData, new Date(year))
+        if (counter < 21) {
+            setTimeout(callback, 1000)
+        }
+    }
+    setTimeout(callback, 1000)
+})
+
 // scatter plot
 const showSeatingChart = () => {
     // Show the seating chart
