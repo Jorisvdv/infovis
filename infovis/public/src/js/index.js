@@ -25,11 +25,23 @@ const mute = document.getElementById("mute")
     }
 })
 
+let playActive = true;
 const play = document.getElementById("play")
 play.addEventListener("click", () => {
-    play.disabled = true;
     let counter = 0
     const startYear = 1999;
+    if (!playActive) {
+        return
+    }
+
+    playActive = false
+    play.style.background="#ae1a16"
+    play.style.cursor = "not-allowed"
+    setTimeout(() => {
+        playActive = true
+        play.style.background="#D9201B"
+        play.style.cursor = "pointer"
+    }, 1000*20)
     const callback = () => {
         const year = "" + (startYear + counter)
         counter++;
@@ -41,7 +53,7 @@ play.addEventListener("click", () => {
             play.disabled = false
         }
     }
-    setTimeout(callback, 1000)
+    callback()
 })
 
 // scatter plot
