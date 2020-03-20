@@ -62,14 +62,14 @@ const showSeatingChart = () => {
     // show seating chart title
     const seatingChartTitle = document.getElementsByClassName("seating-chart-title")[0]
     seatingChartTitle.style.display = "flex"
-    seatingChartTitle.children[1].innerHTML = _genre;
+    seatingChartTitle.children[1].innerHTML = "Top2000 Rankings " + _genre + " Songs in";
 
     // hide scatter plot title
     const leftTitle = document.getElementsByClassName("left-title")[0]
     leftTitle.style.display = "none";
 
     document.getElementsByClassName("song-details")[0].style.display = "initial"
-    document.getElementById("right-title").innerHTML = "Song Details"
+    document.getElementById("right-title").innerHTML = "Song Properties"
     animateLeave()
 
 }
@@ -97,7 +97,7 @@ const hideSeatingChart = () => {
     leftTitle.style.display = "flex";
 
     document.getElementsByClassName("song-details")[0].style.display = "none"
-    document.getElementById("right-title").innerHTML = "Genre Details"
+    document.getElementById("right-title").innerHTML = "Genre Properties"
 
     document.getElementById("audio").pause()
     animateLeave()
@@ -210,7 +210,7 @@ const scatterOnClick = (genre) => {
     _genre = genre;
     seatingChart.update(_year, genre)
     showSeatingChart()
-    document.getElementsByClassName("year-title")[0].innerHTML = `&nbsp&nbsp-&nbsp&nbsp${_year}`
+    document.getElementsByClassName("year-title")[0].innerHTML = `&nbsp${_year}`
     colorSelect.setGenre(genre)
     updateGenreDetails()
     animateEnter()

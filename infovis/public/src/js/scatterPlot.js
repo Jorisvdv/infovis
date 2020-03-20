@@ -161,7 +161,7 @@ export default class ScatterPlot {
         var html  = "Genre: " + d.genre + "<br/>" +
                     xFeatureText + ": " + Math.round((d[xFeature] + Number.EPSILON) * 100) / 100 + "<br/>" +
                     yFeatureText + ": " + Math.round((d[yFeature] + Number.EPSILON) * 100) / 100 + "<br/>" +
-                    "Size: " + d.size;
+                    d.genre + " songs in top2000: " + d.size;
 
         tooltip.html(html)
             .style("left", (d3.event.pageX + 15) + "px")

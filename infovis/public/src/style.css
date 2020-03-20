@@ -313,8 +313,19 @@ body {
     opacity: 0;
 }
 
-.genre-detail span:nth-child(2) {
+.genre-detail span:nth-child(1) {
+    /* color: grey; */
     color: grey;
+}
+
+.genre-details span:nth-child(2) {
+    /* color: grey; */
+    color: grey;
+}
+
+.genre-details span:nth-child(1) {
+    /* color: grey; */
+    color: black;
 }
 
 .song-details {
@@ -333,6 +344,8 @@ body {
 
 .song-details-desc {
     padding-right: 10px;
+    /* color: grey; */
+
 }
 
 /* Button to playback song */
