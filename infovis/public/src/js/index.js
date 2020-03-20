@@ -13,12 +13,12 @@ import "../style.css"
 
 let _year = "1999"
 let _genre = "Rock"
-let _mute = true;
+let _mute = false;
 
 const mute = document.getElementById("mute")
     mute.addEventListener("click", () => {
     _mute = !_mute;
-    mute.childNodes[0].className = _mute ? "fas fa-volume-mute" : "fas fa-volume-up";
+    mute.childNodes[0].className = _mute ? "fas fa-volume-up" : "fas fa-volume-mute";
     if (_mute) {
         const audio = document.getElementById("audio")
         audio.pause()
