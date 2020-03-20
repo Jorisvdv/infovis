@@ -149,8 +149,6 @@ export default class LineChart {
     }
 
     tooltip(data) {
-        console.log(data)
-
         // const infoValues = this.infoPanel.selectAll(".infoTextValues")
         //     .data(this.allFeatures)
 
