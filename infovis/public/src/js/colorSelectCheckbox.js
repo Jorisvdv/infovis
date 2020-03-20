@@ -18,7 +18,7 @@ export default class ColorSelectCheckbox {
             selectSquare.className = "checkboxSquare selectSquareCheckbox active"
             selectSquare.style.background = colors[d];
             selectSquare.children[0].checked = true
-            selectSquare.style.textDecoration = "overline"
+            selectSquare.style.textDecoration = "underline"
             selectSquare.style.border = "solid 1px " + colors[d]
             selectSquare.style.opacity = "1"
             //selectSquare.style.color = this.genre === d ? "rgba(256, 256, 256, 1)" : "rgba(256, 256, 256, 0)";
@@ -34,7 +34,7 @@ export default class ColorSelectCheckbox {
         selects.forEach(d => {
             if (d.checked) {
                 d.parentElement.style.opacity = 1
-                d.parentElement.style.textDecoration = "overline"
+                d.parentElement.style.textDecoration = "underline"
                 // d.parentElement.style.border = "solid 1px black"
             } else {
                 d.parentElement.style.opacity = 0.25
@@ -87,7 +87,7 @@ export default class ColorSelectCheckbox {
         event.target.style.border = "solid 1px " + colors[d]
         if (event.target.children[0].checked) {
             event.target.style.opacity = 1
-            event.target.style.textDecoration = "overline"
+            event.target.style.textDecoration = "underline"
         }
     }
 }
