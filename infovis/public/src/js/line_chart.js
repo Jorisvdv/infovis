@@ -149,6 +149,7 @@ export default class LineChart {
     }
 
     tooltip(data) {
+        console.log(data)
 
         // const infoValues = this.infoPanel.selectAll(".infoTextValues")
         //     .data(this.allFeatures)
@@ -175,9 +176,10 @@ export default class LineChart {
             // .on("mouseover", () => {
             //     this.focus.style("display", null);
             // })
-            // .on("mouseout", () => {
-            //     this.focus.style("display", "none");
-            // })
+            .on("mouseout", () => {
+                const dataOfYear = this._getDataOfYear(data, new Date(this.year))
+                this.moveTooltip(new Date(this.year), dataOfYear)
+            })
             .on("mousemove", () => {
                 const play = document.getElementById("play")
                 if (!play.disabled) {
@@ -226,7 +228,9 @@ export default class LineChart {
     }
 
     _getActiveFeatures(data) {
-        const activeData = data.filter(d => {return d.checked})
+        const activeData = data.filter(d => {
+            return d.checked
+        })
         return activeData.map(d => d.key)
     }
 
